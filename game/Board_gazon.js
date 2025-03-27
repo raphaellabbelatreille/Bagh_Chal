@@ -9,18 +9,16 @@ export default class Board_gazon {
         this.creerGazon();
         
     }
-    creerGazon(){
-        
+    creerGazon(){ 
         for (let y = 0; y < this.taille;y++) {
             let newRow = document.createElement("div");
             newRow.classList =" row";
             newRow.id = "row"+y;
             for (let x = 0; x < this.taille ;x++) {
-                console.log("hello?")
                 let newTile = document.createElement("div");
                 let node = document.createElement("img");
                 let pairity = "";
-                node.id = x+y*5;
+                node.id = x+y*this.taille;
                 if ( (node.id % 2) == 0) {
                     pairity = "Odd"
                 } else {
@@ -30,19 +28,19 @@ export default class Board_gazon {
                 if (y == 0){
                     if (x == 0){
                         node.src = "img/Node/Corner.svg"
-                    } else if (x == 4){
+                    } else if (x == this.taille-1){
                         node.src = "img/Node/Corner.svg"
                         node.style= "transform: rotate(90deg);"
                     } else {
                         node.src = "img/Node/Border_"+pairity+".svg"
                         node.style= "transform: rotate(90deg);"
                     }
-                } else if(y == 4) {
+                } else if(y == (this.taille-1)) {
                     
                     if (x == 0){
                         node.src = "img/Node/Corner.svg"
                         node.style= "transform: rotate(270deg);"
-                    } else if (x == 4){
+                    } else if (x == this.taille-1){
                         node.src = "img/Node/Corner.svg"
                         node.style= "transform: rotate(180deg);"
                     } else {
@@ -52,7 +50,7 @@ export default class Board_gazon {
                 } else {
                     if (x == 0){
                         node.src = "img/Node/Border_"+pairity+".svg"
-                    } else if (x == 4){
+                    } else if (x == this.taille-1){
                         node.src = "img/Node/Border_"+pairity+".svg"
                         node.style= "transform: rotate(180deg);"
                     } else {
@@ -71,7 +69,6 @@ export default class Board_gazon {
             }
         this.board.appendChild(newRow)
         }
-        console.log(this.listeGazon)
     }
 
     getListeGazon(){

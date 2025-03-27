@@ -5,9 +5,10 @@ export default class Jeton extends Element{
     /*public id:number = 0;
     protected x:number = 0;
     protected y:number = 0;*/
-    constructor(x, y, BoardTile, htmlElement, gameWorld) {
+    constructor(x, y, BoardTile, listJeton, htmlElement,  gameWorld) {
         super(htmlElement);
         this.BoardTile = BoardTile 
+        this.listeJeton = listJeton
         this.gameWorld = gameWorld
         this.possibleMove = new Array;
         this.MoveBinder = new Array;
@@ -20,21 +21,20 @@ export default class Jeton extends Element{
         this.selectionerJeton_lier = this.selectionerJeton.bind(this)
         this.mouvementNormalVers_lier = this.mouvementNormalVers.bind(this)
         this.finirSelection_lier = this.finirSelection.bind(this)
-        /*this.element.addEventListener("click", this.selectionerJeton_lier)*/
+        this.element.addEventListener("click", this.selectionerJeton_lier)
 
     }
     creerjeton(x, y){
         this.jetonX = x
-            this.jetonY = y
+        this.jetonY = y
         for(let index=0 ; index< this.BoardTile.length ; index++){
             if (this.BoardTile[index].x == this.jetonX && this.BoardTile[index].y == this.jetonY){
                 this.currentNode = this.BoardTile[index]
             }
         }
-        this.element.style.top = this.jetonY *100+"px"
-        this.element.style.left = this.jetonX*100+"px"
-        console.log(this.currentNode)
+        this.mouvementNormalVers(this.currentNode)
     }
+
     debutHover(){
         window.clearInterval(this.refMinuterieHover);
         this.timer = 10
@@ -48,6 +48,8 @@ export default class Jeton extends Element{
         }
     }
 
+
+
     selectionerJeton(){
         if (this.actif == true){
             this.finirSelection()
@@ -56,44 +58,53 @@ export default class Jeton extends Element{
             this.actif = true;
             for(let index=0 ; index< this.BoardTile.length ; index++){
                 let tile = this.BoardTile[index]
-                if (! tile.occupe){
-                    if (tile.x == this.currentNode.x && tile.y == this.currentNode.y){ } else 
-                        if (this.currentNode.even){
-                            if (tile.x >= (this.currentNode.x-1) && tile.x <= (this.currentNode.x+1) && tile.y >= (this.currentNode.y-1) && tile.y <= (this.currentNode.y+1) ){
-                                    this.possibleMove.push(tile)
-                                    this.MoveBinder.push(this.mouvementNormalVers.bind(this, tile))
+                if (this.currentNode.even){
+                        if (tile.x >= (this.currentNode.x-1) && tile.x <= (this.currentNode.x+1) && tile.y >= (this.currentNode.y-1) && tile.y <= (this.currentNode.y+1) ){
+                            if (tile.occupe){ 
+                                this.selectionnerJetonSuperieur(tile);
+                            } else {
+                                this.possibleMove.push(tile)
+                                this.MoveBinder.push(this.mouvementNormalVers.bind(this, tile))
                             }
-                        } else {
-                            if ((tile.x >= (this.jetonX-1) && tile.x <= (this.jetonX+1) && tile.y == this.currentNode.y ) || (tile.x == this.jetonX && tile.y >= (this.jetonY-1) && tile.y <= (this.jetonY+1)) ){
-                                    this.possibleMove.push(tile)
-                                    this.MoveBinder.push(this.mouvementNormalVers.bind(this, tile))
+                                
+                        }
+                    } else {
+                        if ((tile.x >= (this.jetonX-1) && tile.x <= (this.jetonX+1) && tile.y == this.currentNode.y ) || (tile.x == this.jetonX && tile.y >= (this.jetonY-1) && tile.y <= (this.jetonY+1)) ){
+                            if (tile.occupe){ 
+                                this.selectionnerJetonSuperieur(tile);
+                            } else {
+                                this.possibleMove.push(tile)
+                                this.MoveBinder.push(this.mouvementNormalVers.bind(this, tile))
                             }
+                        }
                     }
-                }
-                
-                
+                }    
             }
+            this.creerListeDeMove()
         }
+    creerListeDeMove(){
         for (let index = 0 ; index< this.possibleMove.length ; index++){
             this.possibleMove[index].element.addEventListener("click", this.MoveBinder[index])
         }
+        console.log(this.possibleMove)
     }
 
     mouvementNormalVers(e){
         this.currentNode.quandJetonSort();
         this.currentNode.element.removeEventListener("click", this.finirSelection_lier)
         this.currentNode = e
+        this.currentNode.jetonOnTop = this;
+
+        this.currentNode.occupe = true;
         this.jetonX = e.x 
         this.jetonY = e.y 
-        this.element.style.top = this.jetonY*100+"px"
-        this.element.style.left = this.jetonX*100+"px"
+        this.element.style.top = this.jetonY*(this.gameWorld.DISTANCE_ENTRE_NODE)+"px"
+        this.element.style.left = this.jetonX*(this.gameWorld.DISTANCE_ENTRE_NODE)+"px"
         this.gameWorld.finirTour();
 
     }
 
     finirSelection(){
-        console.log("finirselection")
-        console.log(this.possibleMove)
         this.currentNode.element.removeEventListener("click", this.finirSelection_lier)
         for(let index=0 ; index < this.possibleMove.length ; index++){
             this.possibleMove[index].element.removeEventListener("click", this.MoveBinder[index])
@@ -101,11 +112,12 @@ export default class Jeton extends Element{
         this.actif = false
         this.possibleMove = []
         this.MoveBinder = []
-        console.log(this.possibleMove)
     }
 
 
     detruireJeton(){
+        this.element.removeEventListener("click", this.selectionerJeton_lier)
+
         this.detruireElement()
     }
 }

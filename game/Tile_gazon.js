@@ -13,10 +13,12 @@ export class Tile_gazon extends Element {
         }
         this.occupe = false;
     }
-    quandJetonRentre(){
+    quandJetonRentre(jeton){
         this.occupe = false;
+        this.jetonOnTop = jeton
     }
     quandJetonSort(){
         this.occupe = false;
+        this.jetonOnTop = "";
     }
 }
