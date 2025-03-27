@@ -49,7 +49,12 @@ export default class Jeton extends Element{
     }
 
 
-
+    activerSelection(){
+        this.element.addEventListener("click", this.selectionerJeton_lier)
+    }
+    deactiverSelection(){
+        this.element.removeEventListener("click", this.selectionerJeton_lier)
+    }
     selectionerJeton(){
         if (this.actif == true){
             this.finirSelection()
