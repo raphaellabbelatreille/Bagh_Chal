@@ -13,6 +13,12 @@ export class Tile_gazon extends Element {
         }
         this.occupe = false;
     }
+    souligneNode(){
+        this.element.style.border = "3px solid blue"
+    }
+    deSouligneNode(){
+        this.element.style.border = ""
+    }
     quandJetonRentre(jeton){
         this.occupe = false;
         this.jetonOnTop = jeton

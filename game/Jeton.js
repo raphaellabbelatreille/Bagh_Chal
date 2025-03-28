@@ -56,6 +56,7 @@ export default class Jeton extends Element{
         this.element.removeEventListener("click", this.selectionerJeton_lier)
     }
     selectionerJeton(){
+        let juge = 0
         if (this.actif == true){
             this.finirSelection()
         } else {
@@ -85,13 +86,24 @@ export default class Jeton extends Element{
                     }
                 }    
             }
-            this.creerListeDeMove()
+            if (this.possibleMove.length == 0){
+                console.log("ce jeton")
+                console.log(this.element);
+                console.log("est coincé")
+                juge =1
+            } else {
+                for (let index = 0 ; index< this.possibleMove.length ; index++){
+                    this.possibleMove[index].element.addEventListener("click", this.MoveBinder[index])
+                    this.possibleMove[index].souligneNode()
+                }
+            
+            }
+            return juge
         }
     creerListeDeMove(){
         for (let index = 0 ; index< this.possibleMove.length ; index++){
             this.possibleMove[index].element.addEventListener("click", this.MoveBinder[index])
         }
-        console.log(this.possibleMove)
     }
 
     mouvementNormalVers(e){
@@ -113,6 +125,7 @@ export default class Jeton extends Element{
         this.currentNode.element.removeEventListener("click", this.finirSelection_lier)
         for(let index=0 ; index < this.possibleMove.length ; index++){
             this.possibleMove[index].element.removeEventListener("click", this.MoveBinder[index])
+            this.possibleMove[index].deSouligneNode();
         }
         this.actif = false
         this.possibleMove = []
@@ -121,6 +134,7 @@ export default class Jeton extends Element{
 
 
     detruireJeton(){
+        this.currentNode.occupe = false
         this.element.removeEventListener("click", this.selectionerJeton_lier)
 
         this.detruireElement()

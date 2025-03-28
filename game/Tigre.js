@@ -9,10 +9,8 @@ export default class Tigre extends Jeton {
         //this.element.addEventListener("click", this.selectionerTigre_lier)
     }
     selectionnerJetonSuperieur(tile){
-        console.log("rar")
         let jetonEnCours = tile.jetonOnTop;
         if (jetonEnCours.name == "chevre"){
-            console.log(jetonEnCours.jetonX + " chevre " + jetonEnCours.jetonY)
             // gauche
             if (jetonEnCours.jetonX == (this.jetonX-1) && jetonEnCours.jetonY == (this.jetonY)){
                 this.regardeSiCaseDeriereEstLibre(jetonEnCours ,-1, 0)
@@ -60,9 +58,9 @@ export default class Tigre extends Jeton {
            
     }
     capturerChevre(chevre,tileDerière){
-        console.log("miam")
         chevre.detruireJetonSupperieur();
         this.mouvementNormalVers(tileDerière)
+        this.gameWorld.incrementerScoreTigre();
     }
     detruireJetonSupperieur(){
         this.detruireJeton()

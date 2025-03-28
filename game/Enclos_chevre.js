@@ -38,6 +38,7 @@ export default class Enclos_chevre {
             document.getElementById("board_gazon").appendChild(newDiv)
             this.listeJeton.push(new Chevre(targetNode.x,targetNode.y,this.listeGazon, this.listeJeton , document.getElementById("chevre"+(this.nbrChevreEnJeu+1)), this.gameWorld));
             this.nbrChevreEnJeu++;
+            this.gameWorld.decrementerReserveChevre(this.nbrChevreEnJeu)
         } 
         //this.gameWorld.finirTour()
     }

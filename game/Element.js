@@ -7,8 +7,6 @@ export class Element {
             let img = document.createElement("img");
             img.src= "img/Placeholder_"+suposedName+".svg"
             html.appendChild(img)
-            console.log(document.getElementById(suposedPlace))
-            console.log(suposedPlace)
             document.getElementById(suposedPlace).appendChild(html)
             this.element = htmlElement
 
@@ -17,7 +15,8 @@ export class Element {
         
     }
     detruireElement() {
-        this.element.remove();
         console.log(this.element+" is to be destroyed")
+        this.element.remove();
+        
     }
 }
