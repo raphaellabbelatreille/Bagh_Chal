@@ -1,5 +1,4 @@
 import { Element } from "./Element.js";
-import { Tile_gazon } from "./Tile_gazon.js";
 
 export default class Jeton extends Element{
     /*public id:number = 0;
@@ -7,12 +6,12 @@ export default class Jeton extends Element{
     protected y:number = 0;*/
     constructor(x, y, BoardTile, listJeton, htmlElement,  gameWorld) {
         super(htmlElement);
+        this.type = "jeton"
         this.BoardTile = BoardTile 
         this.listeJeton = listJeton
         this.gameWorld = gameWorld
         this.possibleMove = new Array;
         this.MoveBinder = new Array;
-        this.creerjeton(x,y)
         
         
         this.debutHover_lier = this.debutHover.bind(this)
@@ -22,6 +21,8 @@ export default class Jeton extends Element{
         this.mouvementNormalVers_lier = this.mouvementNormalVers.bind(this)
         this.finirSelection_lier = this.finirSelection.bind(this)
         this.element.addEventListener("click", this.selectionerJeton_lier)
+
+        this.creerjeton(x,y)
 
     }
     creerjeton(x, y){
@@ -57,6 +58,7 @@ export default class Jeton extends Element{
     }
     selectionerJeton(){
         let juge = 0
+        console.log(this.currentNode.even)
         if (this.actif == true){
             this.finirSelection()
         } else {
@@ -64,7 +66,7 @@ export default class Jeton extends Element{
             this.actif = true;
             for(let index=0 ; index< this.BoardTile.length ; index++){
                 let tile = this.BoardTile[index]
-                if (this.currentNode.even){
+                if (this.currentNode.even == true){
                         if (tile.x >= (this.currentNode.x-1) && tile.x <= (this.currentNode.x+1) && tile.y >= (this.currentNode.y-1) && tile.y <= (this.currentNode.y+1) ){
                             if (tile.occupe){ 
                                 this.selectionnerJetonSuperieur(tile);
@@ -130,6 +132,11 @@ export default class Jeton extends Element{
         this.actif = false
         this.possibleMove = []
         this.MoveBinder = []
+    }
+
+    appelerAnimation(etatEmotif){
+        //etat emotif est égal à "idle", "stuck", "danger" (en danger ou est le danger)
+
     }
 
 

@@ -1,4 +1,5 @@
-import { Tile_gazon } from "./Tile_gazon.js";
+import Node_gazon from "./Node_gazon.js";
+
 
 
 export default class Board_gazon {
@@ -64,8 +65,7 @@ export default class Board_gazon {
                 newTile.classList = pairity
                 newTile.id = "row"+y+"col"+x; 
                 newRow.appendChild(newTile)
-                
-                this.listeGazon.push( new Tile_gazon(x , y, newTile));
+                this.listeGazon.push( new Node_gazon(x , y, newTile));
             }
         this.board.appendChild(newRow)
         }
@@ -73,5 +73,10 @@ export default class Board_gazon {
 
     getListeGazon(){
         return this.listeGazon;
+    }
+    detruire(){
+        for(let index = 0; index< this.listeGazon.length ; index++){
+            this.listeGazon[index].this.detruireGazon();
+        }
     }
 }

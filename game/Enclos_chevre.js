@@ -8,7 +8,7 @@ export default class Enclos_chevre {
         this.RESERVE_CHEVRE = reserve_chevre
         this.gameWorld = gameWorld;
         this.nbrChevreEnJeu = 0;
-        this.enleverTouteLesChevres_lier = this.enleverTouteLesChevres();
+        this.enleverTouteLesChevres_lier = this.enleverTouteLesChevres.bind(this);
         this.creationFunctionBind = new Array;
     }
 
@@ -36,7 +36,7 @@ export default class Enclos_chevre {
             newImg.src = "img/Placeholder_chevre.svg"
             newDiv.appendChild(newImg)
             document.getElementById("board_gazon").appendChild(newDiv)
-            this.listeJeton.push(new Chevre(targetNode.x,targetNode.y,this.listeGazon, this.listeJeton , document.getElementById("chevre"+(this.nbrChevreEnJeu+1)), this.gameWorld));
+            this.listeJeton.push(new Chevre(targetNode.x,targetNode.y,this.listeGazon, this.listeJeton ,newDiv, this.gameWorld));
             this.nbrChevreEnJeu++;
             this.gameWorld.decrementerReserveChevre(this.nbrChevreEnJeu)
         } 
@@ -65,6 +65,6 @@ export default class Enclos_chevre {
                 this.listeJeton[index].detruireJetonSupperieur();
             }   
         }
-        this.listeGazon
+        this.nbrChevreEnJeu= 0;
     }
 }

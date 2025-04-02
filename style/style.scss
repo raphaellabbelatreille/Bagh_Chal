@@ -1,3 +1,43 @@
+body {
+    background-color: 006039;
+    color:#B4B4B4
+}
+main {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-around;
+    section {
+        margin: auto;
+    }
+    @media (min-width:1000px) {
+        flex-direction: row;
+        .section_scoreBoard , .section_resume {
+            max-width: 300px
+        }
+    }
+}
+.post-it {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .tete {
+        display: flex;
+        flex-direction: row;
+        gap:10px
+    }
+    p {
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+}
+.banniere {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    text-decoration: underline;
+}
 .board {
     width: 500px;
     height: 500px;
@@ -21,7 +61,7 @@
         }
         
     }
-
+    
 }
 .jeton {
     z-index: 20;

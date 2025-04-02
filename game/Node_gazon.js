@@ -1,8 +1,9 @@
 import { Element } from './Element.js';
 
-export class Tile_gazon extends Element {
+export default class Node_gazon extends Element {
     constructor(x, y, htmlElement) {
         super(htmlElement);
+        this.name = "node_gazon"
         this.x = x;
         this.y = y;
         this.id = x + y*5;
@@ -26,5 +27,8 @@ export class Tile_gazon extends Element {
     quandJetonSort(){
         this.occupe = false;
         this.jetonOnTop = "";
+    }
+    detruireGazon(){
+        this.detruireElement();
     }
 }

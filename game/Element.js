@@ -1,14 +1,13 @@
 export class Element {
     constructor(htmlElement) {
-        /*if (document.contains(htmlElement)){
-        } else {
-            let html = document.createElement("div")
-            html.id = suposedId;
-            let img = document.createElement("img");
-            img.src= "img/Placeholder_"+suposedName+".svg"
-            html.appendChild(img)
-            document.getElementById(suposedPlace).appendChild(html)
-            this.element = htmlElement
+        /*if (!document.contains(this.htmlElement)){
+            let newDiv = document.createElement("div");
+            newDiv.id = this.id;
+            newDiv.className = this.type+" "+this.id ;
+            let newImg = document.createElement("img");
+            newImg.src = "img/Placeholder_chevre.svg"
+            newDiv.appendChild(newImg)
+            document.getElementById("board_gazon").appendChild(newDiv)
 
         }*/
         this.element = htmlElement;
@@ -17,6 +16,5 @@ export class Element {
     detruireElement() {
         console.log(this.element+" is to be destroyed")
         this.element.remove();
-        
     }
 }
