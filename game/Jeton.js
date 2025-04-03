@@ -58,7 +58,6 @@ export default class Jeton extends Element{
     }
     selectionerJeton(){
         let juge = 0
-        console.log(this.currentNode.even)
         if (this.actif == true){
             this.finirSelection()
         } else {
