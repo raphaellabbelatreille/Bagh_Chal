@@ -6,7 +6,7 @@ import Tigre from "./Tigre.js";
 
 export class Game {
     constructor() {
-        this.TAILLE = 500 //en px
+        this.TAILLE = 600 //en px
         this.LONGUEUR = 5;
         this.RESERVE_CHEVRE = 20//this.LONGUEUR*this.LONGUEUR-this.LONGUEUR
         this.DISTANCE_ENTRE_NODE = this.TAILLE / this.LONGUEUR;
