@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <title>La tactique des chèvres</title>
         <link rel="stylesheet" href="style/style.scss">
+        <script type="module" defer src="game/Game.js"></script>
     </head>
     <body>
         <section class="section_context">
@@ -23,14 +24,14 @@
                 société plus équilibrée et équitable.
                  </p>
         </section>
+
         <main>
             
             <section class="section_resume">
-                <div class="slider"> 
-                    <input id="switch_slider" class="switch_slider" type="checkbox" checked>
-                    <label for="switch_slider"><h2> Instruction </h2></label> 
-                </div>
-                
+                <input id="switch_slider" class="switch_slider" type="checkbox">
+                <label class="slider" for="switch_slider"> 
+                    <h2> Instruction </h2>
+                </label>
                 
                 <div class="instruction">
                     <div class="au_debut post-it">
@@ -74,9 +75,10 @@
                 </noscript>
                 <h2 class="banniere" id="banniere_tour">Tour des chèvres</h2>
                 <div class="scoreBoard">
-                    <p> <div id="indiquateur_tigres_imobilise">0</div>/4 tigres d'immobile</p>
-                    <p> <div id="indiquateur_tigres_scores">0</div>/5 chèvres de capturer</p>
-                    <p> <div id="indiquateur_chevres_reserves">20</div>/20 chèvres en réserves</p>
+                    <div><strong id="indiquateur_chevres_reserves">20</strong>/20 chèvres en réserves</div>
+                    <div> <strong id="indiquateur_tigres_imobilise">0</strong>/4 tigres d'immobile</div>
+                    <div> <strong id="indiquateur_tigres_scores">0</strong>/5 chèvres de capturer</div>
+                    
                 </div>
                 
                 <div class="board_gazon" id="board_gazon">
@@ -87,6 +89,8 @@
                 </div>
             </section>
         </main>
+        <footer>
+            <small>Fait par Raphaël Labbé-Latreille</small>
+        </footer>
     </body>
-    <script type="module" defer src="game/Game.js"></script>
 </html>
