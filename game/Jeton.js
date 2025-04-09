@@ -33,8 +33,8 @@ export default class Jeton extends Element{
                 this.currentNode = this.BoardTile[index]
             }
         }
-        this.element.style.width=this.gameWorld.GROSSEUR_DES_ELEMENTS+"px"
-        this.element.style.height=this.gameWorld.GROSSEUR_DES_ELEMENTS+"px"
+        this.element.style.width=(100/this.gameWorld.LONGUEUR)+"%"
+        this.element.style.height=(100/this.gameWorld.LONGUEUR)+"%"
         this.mouvementNormalVers(this.currentNode)
     }
 
@@ -117,8 +117,8 @@ export default class Jeton extends Element{
         this.currentNode.occupe = true;
         this.jetonX = e.x 
         this.jetonY = e.y 
-        this.element.style.top = this.variationAleatoire()+this.jetonY*(this.gameWorld.GROSSEUR_DES_ELEMENTS)+"px"
-        this.element.style.left = this.variationAleatoire()+this.jetonX*(this.gameWorld.GROSSEUR_DES_ELEMENTS)+"px"
+        this.element.style.top = this.jetonY*(this.gameWorld.TAILLE/this.gameWorld.LONGUEUR /this.gameWorld.TAILLE*100)+"%"//this.variationAleatoire()+this.jetonY*(this.gameWorld.GROSSEUR_DES_ELEMENTS)+"px"
+        this.element.style.left = this.jetonX*(this.gameWorld.TAILLE/this.gameWorld.LONGUEUR /this.gameWorld.TAILLE*100)+"%"
         this.gameWorld.finirTour();
 
     }
@@ -142,7 +142,7 @@ export default class Jeton extends Element{
         //let randomDirection = Math.round(Math.random()*3-1) 
         let randomNumber = this.gameWorld.chancePiece(10)
         //console.log(randomNumber+" "+ randomDirection)
-        return (randomNumber - 5)*5
+        return (randomNumber - 5)
     }
 
     detruireJeton(){

@@ -21,8 +21,11 @@ body {
         justify-content: space-around;
     }
     .board_gazon {
+        margin: auto;
         width: 600px;
+        max-width: 100vh;
         height: 600px;
+        max-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -33,18 +36,16 @@ body {
             flex-direction: row;
     
             justify-content: space-around;
-            div {
+            .node {
                 display: flex;
                 justify-content: space-around;
+                margin:auto;
                 img {
-                    width: 100px;
-                    height: 100px;
+                    width: 75%;
+                    height: 75%;
                 }
             }
-            background: radial-gradient()
-            
         }
-        
     }
 }
 .jeton {
@@ -53,15 +54,57 @@ body {
     display: flex;
     justify-content: space-around;
     img {
-        width: 50px;
+        margin: auto;
+        width: 40%;
+        height: 40%;
     }
 }
-/*@media (min-width:1000px) {
-    flex-direction: row;
-    .section_scoreBoard , .section_resume {
-        max-width: 300px
+
+.section_resume {
+    max-width: 800px;
+    border: 1px solid #FFF;
+    border-radius: 12px;
+    .switch_slider {
+        display: none;
     }
-}*/
+    .post-it{
+        .tete {
+            width:100%;
+            display:flex;
+            flex-direction:row ;
+            gap: 24px;
+            h2 {
+                width:100%;
+                max-width: 230px;
+            }
+        }
+    }
+    @media (min-width:1000px) {
+        border: none;
+        border-radius: 0px;
+        .slider{
+            background: #006039;
+            border-radius: 0px 12px 12px 0px;
+            border-top: 1px solid #FFF;
+            border-bottom: 1px solid #FFF;
+            border-right: 1px solid #FFF;
+        }
+        .instruction {
+            background: #006039;
+            border: 1px solid #FFF;
+             transform-origin: 0;
+            transform: translate(-100%, 0);
+        }
+       
+        
+        &:has(.switch_slider:checked){
+            .instruction {
+                transform: translate(0, 0);
+            }
+        }
+    }
+}
+
 .post-it {
     display: flex;
     gap: 10px;

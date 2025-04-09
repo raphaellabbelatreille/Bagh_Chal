@@ -24,40 +24,49 @@
                  </p>
         </section>
         <main>
+            
             <section class="section_resume">
-            <div class="au_debut post-it">
-                <div class="tete">
-                    <h2>Au début de la partie</h2>
+                <div class="slider"> 
+                    <input id="switch_slider" class="switch_slider" type="checkbox" checked>
+                    <label for="switch_slider"><h2> Instruction </h2></label> 
                 </div>
-                <p>Sur le plateau, il y a 4 tigres, chacun placé à chaque coin de celui si.</p>
-                <p>Il y a 20 chèvres mais ils ne sont pass sur le plateau. Ils sont caché en réserves</p>
-                <p>Un jeton qui fait un <strong>mouvement normal</strong> est un jeton qui se déplace de 1 noeud tout en suivant les lignes.</p>
-                <p>Les chèvres commencent en premier, suivi des tigres.</p>
-            </div>
-            <div class="au_chevre post-it">
-                <div class="tete">
-                    <img src="img/Placeholder_chevre.svg">
-                    <h2>Durant le tour des chêvres</h2>
+                
+                
+                <div class="instruction">
+                    <div class="au_debut post-it">
+                        <div class="tete">
+                            <h2>Au début de la partie</h2>
+                        </div>
+                        <p>Sur le plateau, il y a 4 tigres, chacun placé à chaque coin de celui si.</p>
+                        <p>Il y a 20 chèvres mais ils ne sont pass sur le plateau. Ils sont caché en réserves</p>
+                        <p>Un jeton qui fait un <strong>mouvement normal</strong> est un jeton qui se déplace de 1 noeud tout en suivant les lignes.</p>
+                        <p>Les chèvres commencent en premier, suivi des tigres.</p>
+                    </div>
+                    <div class="au_chevre post-it">
+                        <div class="tete">
+                            <img src="img/Placeholder_chevre.svg">
+                            <h2>Durant le tour des chêvres</h2>
+                        </div>
+                        <p>Durant le tour des chèvres, tu peux faire sortir une chèvres de la réserves. Pour ce faire, selectionnez un noeud vide non occupé.</p>
+                        <p>Tu ne peux pas déplacer de chèvres tant qu’il y en a en réserves. Si il n’y a plus de chèvres en réserves, tu doit déplacer une des chèvres en faisant un <strong>mouvement normal</strong>.</p>
+                    </div>
+                    <div class="au_tigre post-it">
+                        <div class="tete">
+                            <img src="img/placeholder_tigre.svg">
+                            <h2>Durant le tour des tigres</h2>
+                        </div>
+                        <p>Durant le tour des tigres, Les tigres peuvent se déplacé en faisant un <strong>mouvement normal</strong>.</p>
+                        <p>Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. Cette capture devient impossible si il y a un autre jeton ou le rebord du plateau à la destination.</p>
+                    </div>
+                    <div class="au_trophée post-it">
+                        <div class="tete">
+                            <img src="img/placeholder_tigre.svg">
+                            <h2>Comment gagné</h2>
+                        </div>
+                        <p>Les chèvre gagnent si les tigres se retrouvent incapables de bouger au début de leur tour.</p>
+                        <p>Les tigres gagnent après avoir capturé 5 chèvres.</p>
+                    </div>
                 </div>
-                <p>Durant le tour des chèvres, tu peux faire sortir une chèvres de la réserves. Pour ce faire, selectionnez un noeud vide non occupé.</p>
-                <p>Tu ne peux pas déplacer de chèvres tant qu’il y en a en réserves. Si il n’y a plus de chèvres en réserves, tu doit déplacer une des chèvres en faisant un <strong>mouvement normal</strong>.</p>
-            </div>
-            <div class="au_tigre post-it">
-                <div class="tete">
-                    <img src="img/placeholder_tigre.svg">
-                    <h2>Durant le tour des tigres</h2>
-                </div>
-                <p>Durant le tour des tigres, Les tigres peuvent se déplacé en faisant un <strong>mouvement normal</strong>.</p>
-                <p>Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. Cette capture devient impossible si il y a un autre jeton ou le rebord du plateau à la destination.</p>
-            </div>
-            <div class="au_trophée post-it">
-                <div class="tete">
-                    <img src="img/placeholder_tigre.svg">
-                    <h2>Comment gagné</h2>
-                </div>
-                <p>Les chèvre gagnent si les tigres se retrouvent incapables de bouger au début de leur tour.</p>
-                <p>Les tigres gagnent après avoir capturé 5 chèvres.</p>
-            </div>
             </section>
             <section class="section_game">
                 <noscript>
