@@ -65,7 +65,7 @@ export default class Board_gazon {
                 //node.height = this.TAILLE / this.LONGUEUR
                 //node.width = this.TAILLE / this.LONGUEUR
                 newTile.appendChild(node)
-                newTile.classList = pairity
+                newTile.classList = "node "+pairity
                 newTile.id = "row"+y+"col"+x; 
                 newTile.height = this.TAILLE / this.LONGUEUR
                 newTile.width = this.TAILLE / this.LONGUEUR
