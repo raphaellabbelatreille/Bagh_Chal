@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 101">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: #615d37;
+      }
+
+      .cls-1, .cls-4 {
+        font-size: 31.63px;
+      }
+
+      .cls-1, .cls-4, .cls-3, .cls-5, .cls-6, .cls-7 {
+        font-family: RobotoSlab-Regular, 'Roboto Slab';
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-8, .cls-4, .cls-6 {
+        fill: #e5e4a1;
+      }
+
+      .cls-3, .cls-5, .cls-6 {
+        font-size: 12px;
+      }
+
+      .cls-9, .cls-5, .cls-7 {
+        fill: #b7ba8b;
+      }
+
+      .cls-10 {
+        fill: #a59b56;
+      }
+
+      .cls-7 {
+        font-size: 31.48px;
+      }
+    </style>
+  </defs>
+  <g id="Euro_final">
+    <g>
+      <circle class="cls-2" cx="50" cy="51" r="50"/>
+      <circle class="cls-9" cx="50" cy="50" r="50"/>
+      <circle class="cls-8" cx="50" cy="50" r="48"/>
+      <circle class="cls-2" cx="50" cy="49" r="47"/>
+      <circle class="cls-10" cx="50" cy="50" r="46"/>
+      <g>
+        <text class="cls-3" transform="translate(48.05 73.64)"><tspan x="0" y="0">TIGRE</tspan></text>
+        <text class="cls-6" transform="translate(48.05 72.64)"><tspan x="0" y="0">TIGRE</tspan></text>
+        <text class="cls-5" transform="translate(48.05 73.14)"><tspan x="0" y="0">TIGRE</tspan></text>
+      </g>
+      <g>
+        <text class="cls-1" transform="translate(42.13 60.43)"><tspan x="0" y="0">UN</tspan></text>
+        <text class="cls-4" transform="translate(42.13 59.43)"><tspan x="0" y="0">UN</tspan></text>
+        <text class="cls-7" transform="translate(42.13 59.81)"><tspan x="0" y="0">UN</tspan></text>
+      </g>
+      <g>
+        <rect class="cls-8" x="8.39" y="38.35" width="23" height="5"/>
+        <rect class="cls-8" x="8.39" y="47.35" width="21" height="5"/>
+        <path class="cls-8" d="M43.73,65.83c-2.39,1.63-5.1,2.56-7.98,2.56-9.63,0-17.43-10.32-17.43-23.05s7.8-23.05,17.43-23.05c3.25,0,6.3,1.18,8.9,3.23l2.1-5.71c-3.3-2-7.04-3.14-11-3.14-13.35,0-24.17,12.84-24.17,28.67s10.82,28.67,24.17,28.67c4.24,0,8.22-1.3,11.69-3.57l-3.71-4.61Z"/>
+      </g>
+      <g>
+        <rect class="cls-2" x="8.39" y="40.19" width="23" height="5"/>
+        <rect class="cls-2" x="8.39" y="49.19" width="21" height="5"/>
+        <path class="cls-2" d="M43.9,67.33c-2.39,1.63-5.1,2.56-7.98,2.56-9.63,0-17.43-10.32-17.43-23.05s7.8-23.05,17.43-23.05c3.25,0,6.3,1.18,8.9,3.23l2.1-5.71c-3.3-2-7.04-3.14-11-3.14-13.35,0-24.17,12.84-24.17,28.67s10.82,28.67,24.17,28.67c4.24,0,8.22-1.3,11.69-3.57l-3.71-4.61Z"/>
+      </g>
+      <g>
+        <rect class="cls-9" x="8.39" y="39.35" width="23" height="5"/>
+        <rect class="cls-9" x="8.39" y="48.35" width="21" height="5"/>
+        <path class="cls-9" d="M43.9,66.49c-2.39,1.63-5.1,2.56-7.98,2.56-9.63,0-17.43-10.32-17.43-23.05s7.8-23.05,17.43-23.05c3.25,0,6.3,1.18,8.9,3.23l2.1-5.71c-3.3-2-7.04-3.14-11-3.14-13.35,0-24.17,12.84-24.17,28.67s10.82,28.67,24.17,28.67c4.24,0,8.22-1.3,11.69-3.57l-3.71-4.61Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

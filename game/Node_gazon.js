@@ -15,10 +15,11 @@ export default class Node_gazon extends Element {
         this.occupe = false;
     }
     souligneNode(){
-        this.element.style.border = "3px solid blue"
+        this.element.style.background = "radial-gradient(rgb(193, 193, 193) 0%, rgb(193, 193, 193,0) 50%)"
+        //this.element.style.filter = "blur(100)";
     }
     deSouligneNode(){
-        this.element.style.border = ""
+        this.element.style.background = ""
     }
     quandJetonRentre(jeton){
         this.occupe = false;

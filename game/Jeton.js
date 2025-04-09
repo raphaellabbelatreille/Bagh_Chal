@@ -33,6 +33,8 @@ export default class Jeton extends Element{
                 this.currentNode = this.BoardTile[index]
             }
         }
+        this.element.style.width=this.gameWorld.GROSSEUR_DES_ELEMENTS+"px"
+        this.element.style.height=this.gameWorld.GROSSEUR_DES_ELEMENTS+"px"
         this.mouvementNormalVers(this.currentNode)
     }
 
@@ -43,7 +45,6 @@ export default class Jeton extends Element{
     }
     hover(){
         this.timer = this.timer - 1
-
         if(this.timer <= 0){
             window.clearInterval(this.refMinuterieHover);
         }
@@ -116,8 +117,8 @@ export default class Jeton extends Element{
         this.currentNode.occupe = true;
         this.jetonX = e.x 
         this.jetonY = e.y 
-        this.element.style.top = this.jetonY*(this.gameWorld.DISTANCE_ENTRE_NODE)+"px"
-        this.element.style.left = this.jetonX*(this.gameWorld.DISTANCE_ENTRE_NODE)+"px"
+        this.element.style.top = this.variationAleatoire()+this.jetonY*(this.gameWorld.GROSSEUR_DES_ELEMENTS)+"px"
+        this.element.style.left = this.variationAleatoire()+this.jetonX*(this.gameWorld.GROSSEUR_DES_ELEMENTS)+"px"
         this.gameWorld.finirTour();
 
     }
@@ -137,7 +138,12 @@ export default class Jeton extends Element{
         //etat emotif est égal à "idle", "stuck", "danger" (en danger ou est le danger)
 
     }
-
+    variationAleatoire(){
+        //let randomDirection = Math.round(Math.random()*3-1) 
+        let randomNumber = this.gameWorld.chancePiece(10)
+        //console.log(randomNumber+" "+ randomDirection)
+        return (randomNumber - 5)*5
+    }
 
     detruireJeton(){
         this.currentNode.occupe = false

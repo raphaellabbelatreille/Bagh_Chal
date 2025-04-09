@@ -15,7 +15,7 @@ export default class Enclos_chevre {
 
     activerCreationChevre(){
         for (let index = 0; index < this.listeGazon.length; index++) {
-                this.creationFunctionBind.push(this.creerChevre.bind(this,this.listeGazon[index]))
+                this.creationFunctionBind.push(this.invoquerChevre.bind(this,this.listeGazon[index]))
                 this.listeGazon[index].element.addEventListener("click", this.creationFunctionBind[index] ) 
             
         }
@@ -26,7 +26,18 @@ export default class Enclos_chevre {
         }
         this.creationFunctionBind =  []
     }
-    creerChevre(targetNode){
+    creerChevre(){
+        for (let index = 0; index < this.RESERVE_CHEVRE; index++) {
+            let newDiv = document.createElement("div");
+            newDiv.id = "chevre"+(this.nbrChevreEnJeu+1);
+            newDiv.className = "jeton chevre" ;
+            let newImg = document.createElement("img");
+            newImg.src = "img/Placeholder_chevre.svg"
+            newDiv.appendChild(newImg)
+            document.getElementById("board_gazon").appendChild(newDiv)
+        }
+    }
+    invoquerChevre(targetNode){
         console.log(targetNode)
         if(targetNode.occupe == false && this.nbrChevreEnJeu < this.RESERVE_CHEVRE){
             let newDiv = document.createElement("div");

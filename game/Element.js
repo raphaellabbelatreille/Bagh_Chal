@@ -1,6 +1,7 @@
 export class Element {
     constructor(htmlElement) {
-        /*if (!document.contains(this.htmlElement)){
+        this.element = htmlElement;
+        /*if (htmlElement != null){
             let newDiv = document.createElement("div");
             newDiv.id = this.id;
             newDiv.className = this.type+" "+this.id ;
@@ -8,9 +9,11 @@ export class Element {
             newImg.src = "img/Placeholder_chevre.svg"
             newDiv.appendChild(newImg)
             document.getElementById("board_gazon").appendChild(newDiv)
-
+            this.element = newDiv
+        } else {
+            this.element = htmlElement;
         }*/
-        this.element = htmlElement;
+        
         
     }
     detruireElement() {

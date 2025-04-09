@@ -3,7 +3,6 @@
         <meta charset="UTF-8">
         <title>La tactique des chèvres</title>
         <link rel="stylesheet" href="style/style.scss">
-        <script type="module" src="game/Game.js"></script>
     </head>
     <body>
         <section class="section_context">
@@ -25,7 +24,7 @@
                  </p>
         </section>
         <main>
-        <section class="section_resume">
+            <section class="section_resume">
             <div class="au_debut post-it">
                 <div class="tete">
                     <h2>Au début de la partie</h2>
@@ -51,29 +50,6 @@
                 <p>Durant le tour des tigres, Les tigres peuvent se déplacé en faisant un <strong>mouvement normal</strong>.</p>
                 <p>Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. Cette capture devient impossible si il y a un autre jeton ou le rebord du plateau à la destination.</p>
             </div>
-        </section>
-        <section class="section_game">
-            <noscript>
-                Pour pouvoir jouer au jeu, veuillez activer le javascript dans votre naviguateur.
-              </noscript>
-            <h2 class="banniere" id="banniere_tour">Tour des chèvres</h2>
-            <div class="board" id="board_gazon">
-                
-            </div>
-            <div class="banniere">
-                <button id="btnRecommencer">Recommencer</button>
-            </div>
-        </section>
-        <section class="section_scoreBoard">ScoreBoard
-            <!--<div id="enclos" class="enclos">
-                <div id="chevre1" class="jeton chevre">
-                    <img src="img/Placeholder_chevre.svg">
-                </div>
-                <div id="chevre2" class="jeton chevre">
-                    <img src="img/Placeholder_chevre.svg">
-                </div>
-            </div>-->
-            <p> <div id="indiquateur_chevres_reserves">20</div>/20 chèvres en réserves</p>
             <div class="au_trophée post-it">
                 <div class="tete">
                     <img src="img/placeholder_tigre.svg">
@@ -82,10 +58,26 @@
                 <p>Les chèvre gagnent si les tigres se retrouvent incapables de bouger au début de leur tour.</p>
                 <p>Les tigres gagnent après avoir capturé 5 chèvres.</p>
             </div>
-             <p> <div id="indiquateur_tigres_imobilise">0</div>/4 tigres d'immobile</p>
-            <p> <div id="indiquateur_tigres_scores">0</div>/5 chèvres de capturer</p>
-           
-        </section>
+            </section>
+            <section class="section_game">
+                <noscript>
+                    Pour pouvoir jouer au jeu, veuillez activer le javascript de votre naviguateur.
+                </noscript>
+                <h2 class="banniere" id="banniere_tour">Tour des chèvres</h2>
+                <div class="scoreBoard">
+                    <p> <div id="indiquateur_tigres_imobilise">0</div>/4 tigres d'immobile</p>
+                    <p> <div id="indiquateur_tigres_scores">0</div>/5 chèvres de capturer</p>
+                    <p> <div id="indiquateur_chevres_reserves">20</div>/20 chèvres en réserves</p>
+                </div>
+                
+                <div class="board_gazon" id="board_gazon">
+                    
+                </div>
+                <div class="banniere">
+                    <button id="btnRecommencer">Recommencer la partie</button>
+                </div>
+            </section>
         </main>
     </body>
+    <script type="module" defer src="game/Game.js"></script>
 </html>

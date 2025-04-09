@@ -6,13 +6,12 @@ import Tigre from "./Tigre.js";
 
 export class Game {
     constructor() {
-        this.TAILLE = 600 //en px
+        this.refBoard = document.getElementById("board_gazon");
+        this.TAILLE = 900;
         this.LONGUEUR = 5;
         this.RESERVE_CHEVRE = 20//this.LONGUEUR*this.LONGUEUR-this.LONGUEUR
-        this.DISTANCE_ENTRE_NODE = this.TAILLE / this.LONGUEUR;
+        this.GROSSEUR_DES_ELEMENTS = this.TAILLE / this.LONGUEUR;
 
-        this.refBoard = document.getElementById("board_gazon");
-        //this.refBoard.style.width = toString(this.TAILLE+"px");
         this.refBoard.style.width = this.TAILLE+"px"
         this.refBoard.style.height = this.TAILLE+"px"
         this.refBanniere =document.getElementById("banniere_tour")
@@ -21,7 +20,7 @@ export class Game {
         this.refBtnRecommencer.addEventListener("click", this.reinitialiserPartie_lier)
 
 
-        this.board = new Board_gazon(this.LONGUEUR)
+        this.board = new Board_gazon(this.TAILLE, this.LONGUEUR )
         this.listeGazon = this.board.getListeGazon()
         this.listeJeton = new Array();
         this.enclosChevre = new Enclos_chevre(this.listeGazon, this.listeJeton , this.RESERVE_CHEVRE, this)
@@ -47,24 +46,39 @@ export class Game {
 
     creerTigre(){
         for (let indexTigre = 1 ; indexTigre <= 4 ;indexTigre++  ){
+            let x=0;
+            let y=0;
+            let nameFile ="";
+            switch (indexTigre) {
+                case 1: 
+                    x = 0; y = 0; 
+                    nameFile = "Dollar"
+                    break;
+                case 2: 
+                    x = 0; y = this.LONGUEUR-1;
+                    nameFile = "Yen";
+                    break;
+                case 3: 
+                    x = this.LONGUEUR-1; y = 0;
+                    nameFile = "Euro";
+                    break;
+                case 4: 
+                    x = this.LONGUEUR-1; y = this.LONGUEUR-1; 
+                    nameFile = "Bitcoin";
+                    break;
+            
+                default:
+                    break;
+            }
             let newDiv = document.createElement("div");
             newDiv.id = "tigre"+indexTigre;
             newDiv.className = "jeton tigre" ;
             let newImg = document.createElement("img");
             newImg.src = "img/Placeholder_tigre.svg"
+            newImg.src = "img/Tigre/"+nameFile+".svg"
             newDiv.appendChild(newImg)
             document.getElementById("board_gazon").appendChild(newDiv)
-            let x=0;
-            let y=0;
-            switch (indexTigre) {
-                case 1: x = 0; y = 0; break;
-                case 2: x = 0; y = this.LONGUEUR-1; break;
-                case 3: x = this.LONGUEUR-1; y = 0; break;
-                case 4: x = this.LONGUEUR-1; y = this.LONGUEUR-1; break;
             
-                default:
-                    break;
-            }
             this.listeJeton.push(new Tigre(x,y,this.listeGazon, this.listeJeton ,newDiv, this))
         }
     }
@@ -144,8 +158,15 @@ export class Game {
     decrementerReserveChevre(nbrChevreEnJeu){
         this.refReservesChevre.textContent = this.RESERVE_CHEVRE - nbrChevreEnJeu
     }
-
+    chancePiece(nombreDePieceLance){
+        let resultat = 0;
+        for (let index=0; index < nombreDePieceLance ; index++){
+            resultat += Math.round(Math.random()*1)
+        }
+        return resultat
+    }
 }
+
 
 
 let game = new Game();
