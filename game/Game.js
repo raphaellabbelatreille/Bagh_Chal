@@ -132,14 +132,15 @@ export class Game {
         }
     }
     verifierSiTigreSontCoincé(){
-        let jugeUltime = 0;
+        let compteurDeTigreCoincé = 0;
         for (let indexTigre = 0; indexTigre < this.listeJeton.length; indexTigre++) {
             if ( this.listeJeton[indexTigre].name == "tigre"){
-                jugeUltime += this.listeJeton[indexTigre].selectionerJeton()
+                compteurDeTigreCoincé += this.listeJeton[indexTigre].selectionerJeton();
                 this.listeJeton[indexTigre].finirSelection();
             }   
         }
-        return jugeUltime
+        document.getElementById("indiquateur_tigres_imobilise").innerText = compteurDeTigreCoincé;
+        return compteurDeTigreCoincé
     }
     //Quand un jeton est selectioner (et selectionnable), déactive la selection des autres.
     selectionerJetonGlobal() {

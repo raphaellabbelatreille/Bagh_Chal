@@ -60,7 +60,7 @@ export default class Jeton extends Element{
         this.currentNode.deSouligneNode();
     }
     selectionerJeton(){
-        let juge = 0;
+        let estCeQueJetonCoince = 0;
         //Appeler finir Selction des autres tigres ou chevres;
         this.gameWorld.selectionerJetonGlobal();
         if (this.actif == true){
@@ -97,15 +97,15 @@ export default class Jeton extends Element{
                 console.log("ce jeton")
                 console.log(this.element);
                 console.log("est coincé")
-                juge =1
+                estCeQueJetonCoince = 1
             } else {
                 for (let index = 0 ; index< this.possibleMove.length ; index++){
                     this.possibleMove[index].element.addEventListener("click", this.MoveBinder[index])
                     this.possibleMove[index].souligneNode()
                 }
-            
+                
             }
-            return juge
+            return estCeQueJetonCoince
         }
     creerListeDeMove(){
         for (let index = 0 ; index< this.possibleMove.length ; index++){
