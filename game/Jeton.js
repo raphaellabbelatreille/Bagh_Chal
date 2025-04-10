@@ -53,16 +53,21 @@ export default class Jeton extends Element{
 
     activerSelection(){
         this.element.addEventListener("click", this.selectionerJeton_lier)
+        this.currentNode.souligneNode(50);
     }
     deactiverSelection(){
-        this.element.removeEventListener("click", this.selectionerJeton_lier)
+        this.element.removeEventListener("click", this.selectionerJeton_lier);
+        this.currentNode.deSouligneNode();
     }
     selectionerJeton(){
-        let juge = 0
+        let juge = 0;
+        //Appeler finir Selction des autres tigres ou chevres;
+        this.gameWorld.selectionerJetonGlobal();
         if (this.actif == true){
             this.finirSelection()
         } else {
             this.currentNode.element.addEventListener("click", this.finirSelection_lier)
+            this.currentNode.souligneNode(70);
             this.actif = true;
             for(let index=0 ; index< this.BoardTile.length ; index++){
                 let tile = this.BoardTile[index]
@@ -132,6 +137,7 @@ export default class Jeton extends Element{
         this.actif = false
         this.possibleMove = []
         this.MoveBinder = []
+        this.currentNode.souligneNode(50);
     }
 
     appelerAnimation(etatEmotif){

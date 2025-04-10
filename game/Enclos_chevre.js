@@ -19,7 +19,9 @@ export default class Enclos_chevre {
             this.listeGazon[index].element.addEventListener("click", this.creationFunctionBind[index] )
             if (this.listeGazon[index].occupe == false){
                 this.listeGazon[index].souligneNode(30)
-            }   
+            }   else {
+                this.listeGazon[index].deSouligneNode()
+            }
         }
     }
     deactiverCreationChevre(){

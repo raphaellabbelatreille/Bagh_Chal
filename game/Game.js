@@ -87,6 +87,9 @@ export class Game {
             this.listeJeton[index].deactiverSelection();
             this.listeJeton[index].finirSelection();
         }
+        for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
+            this.listeGazon[indexGaz].deSouligneNode();
+        }
         this.enclosChevre.deactiverSelectionChevre();
         this.enclosChevre.deactiverCreationChevre();
         if (!this.verifierConditionsVictoire() ){
@@ -137,6 +140,12 @@ export class Game {
             }   
         }
         return jugeUltime
+    }
+    //Quand un jeton est selectioner (et selectionnable), déactive la selection des autres.
+    selectionerJetonGlobal() {
+        for (let index= 0; index<this.listeJeton.length ; index++){
+            this.listeJeton[index].finirSelection();
+        }
     }
 
     initialiserScore(){
