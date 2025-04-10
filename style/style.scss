@@ -25,20 +25,19 @@ h2 {
     margin:auto;
 }
 main{
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap:50px;
     .section_resume {
-        width: 100%;
         max-width: 800px;
         margin: auto;
-        .switch_slider {
+        .switch_slider, .spaceur, .arrow {
             display: none;
-            padding: 12px;
         }
-        .slider, .instruction {
+        .containeur_resume, .spaceur {
             border: 1px solid #FFF;
             border-radius: 12px;
             background-color: #006039;
@@ -136,15 +135,23 @@ main{
     
     @media (min-width:1000px) {
         flex-direction: row;
+        gap:0px;
         .section_resume {
-            width:400px;
             position: absolute;
+            top: 100px;
             left:0px;
-            border: none;
             transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-            transform: translate(-100%, 0);
-            .slider, .instruction{
-                padding-left: 30px;
+            //transform: translate(-100%, 0);
+            display: flex;
+            flex-direction: row;
+            gap:-3px;
+            * {
+                transform-origin: 0% 0%;
+                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+            }
+            .spaceur,.containeur_resume{
+                background-color: #006039;
+                border-left :none;
                 border-radius: 0px 12px 12px 0px;
                 border-top: 1px solid #FFF;
                 border-bottom: 1px solid #FFF;
@@ -152,27 +159,57 @@ main{
                 transform-origin: 0;
                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
             }
-            .slider{
-                z-index: 32;
-                width:150px;
-                transform: translate(400px, 110%);
-
+            .spaceur {
+                display: block;
+                width: 45px;
+                min-height: 400px;
             }
-            .instruction {
+            .containeur_resume {
+                transform-origin: 0;
+                margin: 10px 0px 10px -2px;
+                height: fit-content;
+                .slider{
+                    display: flex;
+                    justify-content: center;
+                    gap:12px;
+                    //width:150px;
+                    height: 45px;
+                    h2, .arrow {
+                        margin-top: auto;
+                        margin-bottom: auto;
+                    }
+                    .arrow {   
+                        transform-origin: 50% 50%;             
+                        display: block;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .instruction {
+                    display: none;
+                }
             }
+            
         }
         .section_game {
             //width:100%;
         }
         &:has(.switch_slider:checked){
             .section_resume{
+                top: 0px;
                 position: relative;
-                transform: translate(0, 0);
-                .slider {
-                    width:100%;
-                }
-                .instruction, .slider {
-                    transform: translate(0, 0);
+                .containeur_resume {
+                    width:400px;
+                    .slider {
+                        width:100%;
+                        .arrow {
+                            transform: rotate(180deg);
+                        }
+                    }
+                    .instruction {
+                        
+                        display: block;
+                    }
                 }
             }
             .section_game {
