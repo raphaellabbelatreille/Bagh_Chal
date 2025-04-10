@@ -15,14 +15,17 @@ export default class Enclos_chevre {
 
     activerCreationChevre(){
         for (let index = 0; index < this.listeGazon.length; index++) {
-                this.creationFunctionBind.push(this.invoquerChevre.bind(this,this.listeGazon[index]))
-                this.listeGazon[index].element.addEventListener("click", this.creationFunctionBind[index] ) 
-            
+            this.creationFunctionBind.push(this.invoquerChevre.bind(this,this.listeGazon[index]))
+            this.listeGazon[index].element.addEventListener("click", this.creationFunctionBind[index] )
+            if (this.listeGazon[index].occupe == false){
+                this.listeGazon[index].souligneNode(30)
+            }   
         }
     }
     deactiverCreationChevre(){
         for (let index = 0; index < this.listeGazon.length; index++) {
             this.listeGazon[index].element.removeEventListener("click", this.creationFunctionBind[index] ) 
+            this.listeGazon[index].deSouligneNode()
         }
         this.creationFunctionBind =  []
     }

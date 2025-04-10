@@ -14,8 +14,11 @@ export default class Node_gazon extends Element {
         }
         this.occupe = false;
     }
-    souligneNode(){
-        this.element.style.background = "radial-gradient(rgb(193, 193, 193) 0%, rgb(193, 193, 193,0) 50%)"
+    souligneNode(importance){
+        if (importance == null){
+            importance = 50
+        }
+        this.element.style.background = "radial-gradient(rgb(193, 193, 193, "+importance+"%) 0%, rgb(193, 193, 193,0) "+importance+"%)"
         //this.element.style.filter = "blur(100)";
     }
     deSouligneNode(){
