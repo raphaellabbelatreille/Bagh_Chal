@@ -18,11 +18,19 @@ export default class Node_gazon extends Element {
         if (importance == null){
             importance = 50
         }
+        if (importance >= 70){
+            this.element.style.border="2px dashed #FEE180";
+
+        } else {
+            this.element.style.border="";
+
+        }
         this.element.style.background = "radial-gradient(rgb(193, 193, 193, "+importance+"%) 0%, rgb(193, 193, 193,0) "+importance+"%)"
         //this.element.style.filter = "blur(100)";
     }
     deSouligneNode(){
-        this.element.style.background = ""
+        this.element.style.background = "";
+        this.element.style.border = "";
     }
     quandJetonRentre(jeton){
         this.occupe = false;
