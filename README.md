@@ -13,6 +13,6 @@ entre les forces capitalistes et la résistance solidaire d’une communauté.
 
 # La cliente 
 La Guilde de la potière jalouse
-##Représentante du client
+## Représentante du client
 Ève Février (editionslapetiteourse@gmail.com)
 
