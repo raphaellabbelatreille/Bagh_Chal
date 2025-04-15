@@ -16,6 +16,11 @@ h1 {
 h2 {
     font-size: 24px;
 }
+p {
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+
 
 .btn_bulle {
     appearance: none;
@@ -82,20 +87,7 @@ main{
                     gap: 5px;
                     flex-direction: column;
                 
-                    .tete {
-                        margin: auto;
-                        display:flex;
-                        flex-direction:row ;
-                        gap: 24px;
-                        h2 {
-                            width:100%;
-                            max-width: 230px;
-                        }
-                    }
-                    p {
-                        margin-block-start: 0px;
-                        margin-block-end: 0px;
-                    }
+                    
                 }
             }
         }
@@ -254,6 +246,21 @@ main{
     text-decoration: underline;
 }
 
+.tete {
+    margin: auto;
+    display:flex;
+    flex-direction:row ;
+    gap: 24px;
+    h2 {
+        width:100%;
+        max-width: 230px;
+    }
+    img {
+        min-width: 50px;
+    }  
+}
+
+    
 footer {
     display: flex;
     flex-direction: column;
