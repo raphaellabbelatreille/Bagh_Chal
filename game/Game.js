@@ -23,7 +23,7 @@ export class Game {
         this.board = new Board_gazon(this.TAILLE, this.LONGUEUR )
         this.listeGazon = this.board.getListeGazon()
         this.listeJeton = new Array();
-        this.enclosChevre = new Enclos_chevre(this.listeGazon, this.listeJeton , this.RESERVE_CHEVRE, this)
+        this.enclosChevre = new Enclos_chevre(this.RESERVE_CHEVRE, this)
 
         this.commencerPartie()
         
@@ -74,7 +74,6 @@ export class Game {
             newDiv.id = "tigre"+indexTigre;
             newDiv.className = "jeton tigre" ;
             let newImg = document.createElement("img");
-            newImg.src = "img/Placeholder_tigre.svg"
             newImg.src = "img/Tigre/"+nameFile+".svg"
             newDiv.appendChild(newImg)
             document.getElementById("board_gazon").appendChild(newDiv)
@@ -83,16 +82,16 @@ export class Game {
         }
     }
     finirTour(){
-        for (let index= 0; index<this.listeJeton.length ; index++){
-            this.listeJeton[index].deactiverSelection();
-            this.listeJeton[index].finirSelection();
-        }
-        for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
-            this.listeGazon[indexGaz].deSouligneNode();
-        }
-        this.enclosChevre.deactiverSelectionChevre();
-        this.enclosChevre.deactiverCreationChevre();
         if (!this.verifierConditionsVictoire() ){
+            this.enclosChevre.deactiverSelectionChevre();
+            this.enclosChevre.deactiverCreationChevre();
+            for (let index= 0; index<this.listeJeton.length ; index++){
+                this.listeJeton[index].finirSelection();
+                this.listeJeton[index].deactiverSelection();
+            }
+            for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
+                this.listeGazon[indexGaz].deSouligneNode();
+            }
             switch(this.tourEnCours){
                 case "chèvre": this.debutTour("tigre"); 
                 break;
@@ -121,10 +120,12 @@ export class Game {
                 break;
             default: break;
         }
+        console.log(this.tourEnCours)
         this.refBanniere.textContent="Tour des "+this.tourEnCours+"s"
     }
     verifierConditionsVictoire(){
-        if (this.verifierSiTigreSontCoincé() == 4){
+        let blnJugeVictoire = true;
+        if (this.verifierSiTigreSontCoincé() >= 4){
             console.log("les chevres ont gagné")
         }
         if (this.scoreChevreCapturer >= 5){
@@ -132,20 +133,27 @@ export class Game {
         }
     }
     verifierSiTigreSontCoincé(){
+        console.log("verifiTigre")
         let compteurDeTigreCoincé = 0;
         for (let indexTigre = 0; indexTigre < this.listeJeton.length; indexTigre++) {
             if ( this.listeJeton[indexTigre].name == "tigre"){
                 compteurDeTigreCoincé += this.listeJeton[indexTigre].selectionerJeton();
                 this.listeJeton[indexTigre].finirSelection();
+                this.listeJeton[indexTigre].deactiverSelection();
             }   
         }
         document.getElementById("indiquateur_tigres_imobilise").innerText = compteurDeTigreCoincé;
         return compteurDeTigreCoincé
     }
     //Quand un jeton est selectioner (et selectionnable), déactive la selection des autres.
-    selectionerJetonGlobal() {
+    selectionerJetonGlobal(name) {
+        console.log(this.listeJeton)
+        console.log("selectionGlobal des "+name)
         for (let index= 0; index<this.listeJeton.length ; index++){
-            this.listeJeton[index].finirSelection();
+            if (this.listeJeton[index].name == name){
+                this.listeJeton[index].finirSelection();
+            }
+            
         }
     }
 
@@ -168,13 +176,13 @@ export class Game {
     decrementerReserveChevre(nbrChevreEnJeu){
         this.refReservesChevre.textContent = this.RESERVE_CHEVRE - nbrChevreEnJeu
     }
-    chancePiece(nombreDePieceLance){
+    /*chancePiece(nombreDePieceLance){
         let resultat = 0;
         for (let index=0; index < nombreDePieceLance ; index++){
             resultat += Math.round(Math.random()*1)
         }
         return resultat
-    }
+    }*/
 }
 
 
