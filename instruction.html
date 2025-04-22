@@ -25,64 +25,92 @@
                  </p>
         </section>
 
-        <small>
-            Même si ces règles sont fait dans la perspective du jeu présente dans la page précédente, il n'y a rien qui vou empêche de jouer à ce jeux sans appareil électronique.
-            Par exemple, vous pourriez dessiner le plateau sur une feuille de papier et utiliser des pièces de monnaie et des boutons pour représenter les tigres et les chevres respectivement.
-        </small>
+        <a class="btn_bulle" href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <path d="M6.07075 7.29167L8.71242 9.93229L7.2395 11.4062L2.08325 6.25L7.2395 1.09375L8.71242 2.56771L6.07075 5.20833H13.5416C15.7517 5.20833 17.8713 6.08631 19.4341 7.64911C20.9969 9.21191 21.8749 11.3315 21.8749 13.5417C21.8749 15.7518 20.9969 17.8714 19.4341 19.4342C17.8713 20.997 15.7517 21.875 13.5416 21.875H4.16659V19.7917H13.5416C15.1992 19.7917 16.7889 19.1332 17.961 17.9611C19.1331 16.789 19.7916 15.1993 19.7916 13.5417C19.7916 11.8841 19.1331 10.2944 17.961 9.12225C16.7889 7.95015 15.1992 7.29167 13.5416 7.29167H6.07075Z" fill="white"/>
+                </svg>
+            <span>Revenir au jeu</span>
+        </a>
+        <section class="section_titre">
+            <h1> Instruction : </h1>
+            <small>
+                Même si ces règles sont fait dans la perspective du jeu présente dans la page précédente, il n'y a rien qui vou empêche de jouer à ce jeux sans appareil électronique.
+                Par exemple, vous pourriez dessiner le plateau sur une feuille de papier et utiliser des pièces de monnaie et des boutons pour représenter les tigres et les chevres respectivement.
+            </small>
+        </section>
+        
 
-        <section class="Pour_commencer">
-            <div class="Sur le plateau">
-                <h3>Sur le plateau et les noeuds</h3>
-                <p>Le plateu est composé de 25 noeuds placé en grille de 5 noeuds de haut et 5 noeuds de long.</p>
-                <p> 
-                    Les noeuds ont visuellement deux parties, le noyau et les traits qui sont placé autours:
-                    <ol>
-                        <li>
-                            Le noyau du noeuds est le cercle au centre de chaque. Quand il sera demandé de placer un jeton sur un noeud, le jeton devrait être placé au centre du noyau. 
-                            *À aucun moment il peut y avoir plus qu'un jeton sur le noyau.
-                        </li>
-                        <li>
-                            Les traits qui sont placé autours indiquent dans quelle direction les jetons qui sont sur leur noyau peuvent se déplacé. 
-                            Sur le plateau, il est possible de voir que certains noeuds n'ont pas le même nombre de traits, notament ceux sur les rebords mais aussi chaque noeuds pair (le deuxième, le quatrième,... et ainsi de suite).
-                            Plus tard, il sera question de déplacé un jeton d'un noeud à un autre. Si le noeud de départ et de fin n'ont pas les deux un trait qui pointent vers l'un et l'autre, alors l'action en question est impossible.
-                        </li>
-                    </ol> 
+        <section class="section_plateau">
+            <h3>Sur le plateau et les noeuds</h3>
+            <p>Le plateau est composé de 25 noeuds placés en grille de 5 noeuds de haut et 5 noeuds de long.
+                Les noeuds ont visuellement deux parties, le noyau et les traits qui sont placé autours:
+            </p>
+            <ol>
+                <li>
+                    <img src="">
+                    <p>Le noyau du noeuds est le cercle au centre de chaque. Quand il sera demandé de placer un jeton sur un noeud, le jeton devrait être placé au centre du noyau. </p>
+                    <small>*À aucun moment il peut y avoir plus qu'un jeton sur le noyau.</small>
+                </li>
+                <li>
+                    <img src="">
+                    <p>Les traits qui sont placé autours indiquent quelles noeuds est relié à lequelle.</p>
+                </li>
+            </ol> 
 
-                </p>
+            <img src>
+        </section>
+        <section class="section_debut">
+            <div class="tete">
+                <img src="img/Placeholder_chevre.svg">
+                <h2>Au début de la partie</h2>
             </div>
-            <p>Avant de commencer à jouer, il vous faudra 4 jetons pour représenter les tigres et 20 jetons qui représenterons les chèvres.</p>
-            <p>Un joueur jouera les tigres tandis que l'autre jouera les chèvres.</p>
-            <p>Le joueur jouant les chèvres commencent en premier, suivi du joueur jouant les tigres. La partie continuera en alternant les tours des deux joueurs jusqu'à ce qu'un des joueur gagne</p>
+            <ul>
+                <li>les 20 chèvres sont placées en réserves.</li>
+                <li>les 4 tigres sont, chacun, placés dans un coin différent du plateau.</li>
+            </ul>
+            <p> 
+                Le joueur jouant les chèvres joue en premier, suivi du joueur aux tigres.
+                La partie continuera en alternant les tours des deux joueurs jusqu'à ce que l'un des joueurs gagne.
+            </p>
+        </section>
+        <section class="section_deplacement">
+            <div class="tete">
+                <img src="img/Placeholder_chevre.svg">
+                <h2>Comment déplacé un jeton?</h2>
+            </div>
+             <p> 
+                Plusieurs fois durant la partie, il sera demandé de déplacé un jeton sur un autre noeuds.
+                 Pour pouvoir déplacé un jeton, il faut que:
+            </p>
+            <ul>
+                <li>le jeton doit se déplacé en suivant la direction d’une des lignes du noeud sur lequelle il est.</li>
+                <li>le jeton ne peut pas finir son mouvement hors du plateau.</li>
+                <li>le jeton doit finir sur un noeud qui est vide.</li>
+            </ul>
+           
         </section>
            
-        <section class="au_chevre">
+        <section class="section_chevre au_chevre">
             <div class="tete">
                 <img src="img/Placeholder_chevre.svg">
                 <h2>Durant le tour des chêvres</h2>
             </div>
-            <div class="avant_de_jouer">
-                Au début de la partie, toute les 20 chèvres seront placé en réserves.  
-            </div>
-            <div class="durant_le_tour">
-                <p>
-                    À chaque tour, le joueur devra placé une chèvre de la réserve sur le plateau. 
-                    Le joueur peut le placer sur n'importe lequelle des noeuds vides sur le plateau.
-                    Les noeuds admissibles seront legèrement illuminé pour plus de clarté.
-                </p>
-                <p>
-                    Si jamais il n'y a plus de chèvre dans la réserves, ce qui devrait arriver lors du 21ème tour du joueur des chêvres, 
-                    alors le joueur pourra déplacer une des chèvres qui est déjà présentent sur le plateau.
-                    Tu ne peux pas déplacer de chèvres tant qu’il y en a en réserves. Si il n’y a plus de chèvres en réserves, tu doit déplacer une des chèvres en faisant un <strong>mouvement normal</strong>.
-                </p>            
-                <p>Il va de soi que les chèvres ne reviennent jamais dans la réserve même lorsque qu'ils sont éléminer par un des tigres.</p>
-            </div>
+            <p> 
+                le joueur devra placé une chèvre de la réserve sur le plateau. 
+                Le joueur peut le placer sur n'importe lequelle des noeuds vides sur le plateau. 
+                Les noeuds admissibles seront legèrement illuminé pour plus de clarté.
+            </p>
+            <p>
+                Si jamais il n'y a plus de chèvre dans la réserves (ce qui devrait arriver lors du 21ème tour du joueur des chêvres) alors le joueur devra déplacer une de ses chèvres (qui est déjà présent sur le plateau) de un noeud. 
+            </p>
+            <p>Après avoir placé une chèvre sur le plateau ou déplacé une des chèvres, le tour finit.</p>
             <div class="pour_gagner">
-                <p>Le but des chèvres est de bloquer les tigres de facon que les tigres ne peuvent plus bouger au début de leurs tours avant que les tigres aillent éléminer 5 chèvres.</p>
+                <p>Le but des chèvres est de bloquer les tigres de facon que les tigres ne peuvent plus bouger au début de leurs tours tout en faisant attention que les tigres n’éléminent pas 5 chèvres.</p>
             </div>
         </section>
-        <section class="au_tigre">
+        <section class="section_tigre au_tigre">
             <div class="tete">
-                <h2>Durant le tour des tigres</h2>
+                <h2>Durant le tour des Tigres</h2>
                 <img src="img/Tigre/Bitcoin.svg">
                 <img src="img/Tigre/Dollar.svg">
                 <img src="img/Tigre/Euro.svg">
@@ -90,34 +118,38 @@
             </div>
             <div class="avant_de_jouer">
                 Avant de commencer à jouer, les 4 jetons de tigres sont placé sur les noeuds qui sont dans chaque coin du plateau. 
-                Ces 4 tigres seront représenter chacun d'une sorte de monnaie différente. Cela n'a aucune importance sur le jeu.
+                À chaque tour, le joueur des tigres devra déplacé un de ses tigres.
             </div>
-            <div class="durant_le_tour">
                 <p>À chaque tour, le joueur des tigres devra déplacé un de ses tigres.</p>
                 <p>
                     Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. 
-                    Pour vérifier si une capture est possible, vous n'avez qu'a déplacé le tigre de deux noeuds dans la direction de la chevre ciblé.
-                    Si le tigre finit sur un autre jeton (comme une chèvre ou un autre tigre), ou que le tigre joué finirait à l'extérieur du plateau, le mouvement est alors impossible à faire.
-                    Si la capture est possible, le tigre n'a qu'a être déplacé de deux noeud (comme à l'étape précédente) et à enlever la chèvre ciblé du jeu. 
-                    Vous avez maintenant éleminer une chèvre.
+                    Si l’espace qui est de l’autre côté de la chèvre désiré est disponible (il n’y a pas d’autre chêvre ou tigre et ce n’est pas en dehors du plateau). 
+                    alors tu peut capturer la chèvre et déplacé le tigre sur le noeud après la chèvre. 
+                    La chèvre est alors enlever du jeu et du plateau (il ne s’en va pas en réserve).
                 </p>
-                <p> Après avoir déplacé un tigre ou après avoir capturer une chèvre, le tour prends fin et cela revient au tour des chêvres.</p>
+                <p> Après avoir déplacé un tigre ou après avoir capturer une chèvre, le tour finit.</p>
             <div class="pour_gagner">
                 <p>
-                    Les tigres gagnent au moment qu'ils ont réussi à éleminer un total de 5 chèvres mais ils doivent faire attention à ne pas être bloqué par les chêvres.
+                    Les tigres gagnent au moment qu'ils ont réussi à éleminer un total de 5 chèvres mais ils doivent faire attention à ne pas être bloqué par les chêvres. 
                     Les tigres gagnent aussi si le joueur des chèvres ne peut rien faire lors de son tour.
                 </p>
             </div>
         </section>
 
 
-        <section class="au_trophée post-it">
-            
+        <section class="section_trophée">
+            <div class="tete">
+                <img src="img/Tigre/Bitcoin.svg">
+                <h2>Comment gagner</h2>
+            </div>
+            <small>*Cette section sert de rappel à comment les joueurs peuvent gagner.</small>
+            <p>Le joueur qui joue les tigres gagne après avoir capturé 5 chèvres.</p>
+            <p>Si l’un des joueurs se retrouvent incapable d’agir au début de son tour, alors le joueur opposé gagne.</p>
         </section>
 
         <a class="btn_bulle" href="index.html">
-            <svg class="svg_bulle" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                <path d="M11.926 8.49999C11.926 8.62777 11.9062 8.74756 11.8666 8.85936C11.827 8.97117 11.759 9.07499 11.6625 9.17082L8.21248 12.6208C8.02082 12.8125 7.7972 12.9045 7.54165 12.8968C7.28609 12.8892 7.06248 12.7972 6.87082 12.6208C6.67915 12.4292 6.57948 12.2014 6.57182 11.9375C6.56415 11.6737 6.65583 11.4462 6.84686 11.2552L8.64373 9.45832H1.79165C1.52012 9.45832 1.29268 9.36632 1.10932 9.18232C0.925955 8.99832 0.833955 8.77088 0.833316 8.49999C0.832677 8.2291 0.924678 8.00134 1.10932 7.8167C1.29396 7.63206 1.5214 7.54038 1.79165 7.54166H8.64373L6.84686 5.74478C6.65519 5.55311 6.56319 5.32535 6.57086 5.06149C6.57853 4.79763 6.67851 4.57018 6.87082 4.37916C7.06248 4.20346 7.28609 4.11146 7.54165 4.10316C7.7972 4.09485 8.02082 4.18685 8.21248 4.37916L11.6625 7.82916C11.7583 7.92499 11.8264 8.02881 11.8666 8.14061C11.9069 8.25242 11.9267 8.37221 11.926 8.49999ZM16.1666 14.25C16.1666 14.7771 15.9791 15.2281 15.6041 15.6032C15.2291 15.9782 14.7777 16.166 14.25 16.1667H12.3333C12.0618 16.1667 11.8343 16.0747 11.651 15.8907C11.4676 15.7067 11.3756 15.4792 11.375 15.2083C11.3743 14.9374 11.4663 14.7097 11.651 14.525C11.8356 14.3404 12.0631 14.2487 12.3333 14.25H14.25V2.74999H12.3333C12.0618 2.74999 11.8343 2.65799 11.651 2.47399C11.4676 2.28999 11.3756 2.06254 11.375 1.79166C11.3743 1.52077 11.4663 1.293 11.651 1.10837C11.8356 0.923726 12.0631 0.832045 12.3333 0.833323H14.25C14.7771 0.833323 15.2284 1.02084 15.6041 1.39586C15.9798 1.77089 16.1673 2.22227 16.1666 2.74999V14.25Z" fill="white"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <path d="M6.07075 7.29167L8.71242 9.93229L7.2395 11.4062L2.08325 6.25L7.2395 1.09375L8.71242 2.56771L6.07075 5.20833H13.5416C15.7517 5.20833 17.8713 6.08631 19.4341 7.64911C20.9969 9.21191 21.8749 11.3315 21.8749 13.5417C21.8749 15.7518 20.9969 17.8714 19.4341 19.4342C17.8713 20.997 15.7517 21.875 13.5416 21.875H4.16659V19.7917H13.5416C15.1992 19.7917 16.7889 19.1332 17.961 17.9611C19.1331 16.789 19.7916 15.1993 19.7916 13.5417C19.7916 11.8841 19.1331 10.2944 17.961 9.12225C16.7889 7.95015 15.1992 7.29167 13.5416 7.29167H6.07075Z" fill="white"/>
             </svg>
             <span>Revenir au jeu</span>
         </a>

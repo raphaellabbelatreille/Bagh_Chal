@@ -19,7 +19,7 @@ export default class Node_gazon extends Element {
             importance = 50
         }
         if (importance >= 70){
-            this.element.style.border="2px dashed #FEE180";
+            this.element.classList.add("bordered");
 
         } else {
             this.element.style.border="";
@@ -30,7 +30,7 @@ export default class Node_gazon extends Element {
     }
     deSouligneNode(){
         this.element.style.background = "";
-        this.element.style.border = "";
+        this.element.classList.remove("bordered");
     }
     quandJetonRentre(jeton){
         this.occupe = false;
