@@ -31,122 +31,166 @@
                 </svg>
             <span>Revenir au jeu</span>
         </a>
-        <section class="section_titre">
-            <h1> Instruction : </h1>
-            <small>
-                Même si ces règles sont fait dans la perspective du jeu présente dans la page précédente, il n'y a rien qui vou empêche de jouer à ce jeux sans appareil électronique.
-                Par exemple, vous pourriez dessiner le plateau sur une feuille de papier et utiliser des pièces de monnaie et des boutons pour représenter les tigres et les chevres respectivement.
-            </small>
-        </section>
-        
+        <main class="page_instruction">
+            <section class="section_titre">
+                <h1> Instruction : </h1>
+                <small>
+                    Même si ces règles été créer pour l'utilisation du jeu présenté dans la page précédente, il n'y a rien qui vou empêche de jouer à ce jeux autrement.
+                    Par exemple, vous pourriez dessiner le plateau sur une feuille de papier et utiliser des pièces de monnaie et des boutons pour représenter les tigres et les chevres respectivement.
+                </small>
+            </section>
+            
 
-        <section class="section_plateau">
-            <h3>Sur le plateau et les noeuds</h3>
-            <p>Le plateau est composé de 25 noeuds placés en grille de 5 noeuds de haut et 5 noeuds de long.
-                Les noeuds ont visuellement deux parties, le noyau et les traits qui sont placé autours:
-            </p>
-            <ol>
-                <li>
-                    <img src="">
-                    <p>Le noyau du noeuds est le cercle au centre de chaque. Quand il sera demandé de placer un jeton sur un noeud, le jeton devrait être placé au centre du noyau. </p>
-                    <small>*À aucun moment il peut y avoir plus qu'un jeton sur le noyau.</small>
-                </li>
-                <li>
-                    <img src="">
-                    <p>Les traits qui sont placé autours indiquent quelles noeuds est relié à lequelle.</p>
-                </li>
-            </ol> 
+            <section class="section_plateau">
+                <div class="containeur_gauche">
+                    <h2>Sur le plateau et les noeuds</h2>
+                    <p>Le plateau est composé de 25 noeuds placés en grille de 5 noeuds de haut et 5 noeuds de long.
+                        Les noeuds ont visuellement deux parties, le noyau et les traits qui sont placé autours:
+                    </p>
+                    <ol>
+                        <li>
+                            <svg class="demo" width="63" height="64" viewBox="0 0 63 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1.5" y="2" width="60" height="60" rx="30" stroke="#B4B4B4" stroke-width="3" stroke-miterlimit="2.84417" stroke-linecap="round"/>
+                                <rect x="3.5" y="4" width="56" height="56" rx="28" stroke="#B4B4B4" stroke-width="5" stroke-dasharray="1 18"/>
+                                <rect x="5.5" y="6" width="52" height="52" rx="26" stroke="#B4B4B4"/>
+                            </svg>
 
-            <img src>
-        </section>
-        <section class="section_debut">
-            <div class="tete">
-                <img src="img/Placeholder_chevre.svg">
-                <h2>Au début de la partie</h2>
-            </div>
-            <ul>
-                <li>les 20 chèvres sont placées en réserves.</li>
-                <li>les 4 tigres sont, chacun, placés dans un coin différent du plateau.</li>
-            </ul>
-            <p> 
-                Le joueur jouant les chèvres joue en premier, suivi du joueur aux tigres.
-                La partie continuera en alternant les tours des deux joueurs jusqu'à ce que l'un des joueurs gagne.
-            </p>
-        </section>
-        <section class="section_deplacement">
-            <div class="tete">
-                <img src="img/Placeholder_chevre.svg">
-                <h2>Comment déplacé un jeton?</h2>
-            </div>
-             <p> 
-                Plusieurs fois durant la partie, il sera demandé de déplacé un jeton sur un autre noeuds.
-                 Pour pouvoir déplacé un jeton, il faut que:
-            </p>
-            <ul>
-                <li>le jeton doit se déplacé en suivant la direction d’une des lignes du noeud sur lequelle il est.</li>
-                <li>le jeton ne peut pas finir son mouvement hors du plateau.</li>
-                <li>le jeton doit finir sur un noeud qui est vide.</li>
-            </ul>
-           
-        </section>
-           
-        <section class="section_chevre au_chevre">
-            <div class="tete">
-                <img src="img/Placeholder_chevre.svg">
-                <h2>Durant le tour des chêvres</h2>
-            </div>
-            <p> 
-                le joueur devra placé une chèvre de la réserve sur le plateau. 
-                Le joueur peut le placer sur n'importe lequelle des noeuds vides sur le plateau. 
-                Les noeuds admissibles seront legèrement illuminé pour plus de clarté.
-            </p>
-            <p>
-                Si jamais il n'y a plus de chèvre dans la réserves (ce qui devrait arriver lors du 21ème tour du joueur des chêvres) alors le joueur devra déplacer une de ses chèvres (qui est déjà présent sur le plateau) de un noeud. 
-            </p>
-            <p>Après avoir placé une chèvre sur le plateau ou déplacé une des chèvres, le tour finit.</p>
-            <div class="pour_gagner">
-                <p>Le but des chèvres est de bloquer les tigres de facon que les tigres ne peuvent plus bouger au début de leurs tours tout en faisant attention que les tigres n’éléminent pas 5 chèvres.</p>
-            </div>
-        </section>
-        <section class="section_tigre au_tigre">
-            <div class="tete">
-                <h2>Durant le tour des Tigres</h2>
-                <img src="img/Tigre/Bitcoin.svg">
-                <img src="img/Tigre/Dollar.svg">
-                <img src="img/Tigre/Euro.svg">
-                <img src="img/Tigre/Yen.svg">
-            </div>
-            <div class="avant_de_jouer">
-                Avant de commencer à jouer, les 4 jetons de tigres sont placé sur les noeuds qui sont dans chaque coin du plateau. 
-                À chaque tour, le joueur des tigres devra déplacé un de ses tigres.
-            </div>
-                <p>À chaque tour, le joueur des tigres devra déplacé un de ses tigres.</p>
-                <p>
-                    Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. 
-                    Si l’espace qui est de l’autre côté de la chèvre désiré est disponible (il n’y a pas d’autre chêvre ou tigre et ce n’est pas en dehors du plateau). 
-                    alors tu peut capturer la chèvre et déplacé le tigre sur le noeud après la chèvre. 
-                    La chèvre est alors enlever du jeu et du plateau (il ne s’en va pas en réserve).
+                            <p>
+                                Le noyau du noeuds est le cercle au centre de chaque. Quand il sera demandé de placer un jeton sur un noeud, le jeton devrait être placé au centre du noyau. 
+                                <small>*À aucun moment il peut y avoir plus qu'un jeton sur le noyau.</small>
+                            </p>
+                            
+                        </li>
+                        <li>
+                            <p>Les traits qui sont placé autours indiquent quelles noeuds est relié à lequelle.</p>
+                            <svg class="demo" width="135" height="134" viewBox="0 0 135 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_d_142_2433)">
+                                <g opacity="0.5">
+                                <path d="M25.8579 25.3579L40 39.5" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M109.142 25.3579L95 39.5" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M25.8579 108.642L40 94.5" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M109.142 108.642L95 94.5" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                </g>
+                                <g opacity="0.5">
+                                <path d="M67.5 9L67.5 29" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M9.5 67L29.5 67" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M125.5 67L105.5 67" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M67.5 125L67.5 105" stroke="#B4B4B4" stroke-width="4" stroke-linecap="round"/>
+                                </g>
+                                <rect x="42.5" y="42" width="50" height="50" rx="25" stroke="#B4B4B4" stroke-width="3" stroke-miterlimit="2.84417" stroke-linecap="round"/>
+                                <rect x="44.5" y="44" width="46" height="46" rx="23" stroke="#B4B4B4" stroke-width="5" stroke-dasharray="1 18"/>
+                                <rect x="46.5" y="46" width="42" height="42" rx="21" stroke="#B4B4B4"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_d_142_2433" x="0.5" y="0" width="134" height="134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset/>
+                                <feGaussianBlur stdDeviation="1"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.705882 0 0 0 0 0.705882 0 0 0 0 0.705882 0 0 0 1 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_142_2433"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_142_2433" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                                
+                            
+                        </li>
+                    </ol> 
+                </div>
+                
+
+                <img class="plateau" src="img/plateau.png">
+            </section>
+            <section class="section_debut">
+                <div class="tete">
+                    <img src="img/Placeholder_chevre.svg">
+                    <h2>Au début de la partie</h2>
+                </div>
+                <ul>
+                    <li>les 20 chèvres sont placées en réserves.</li>
+                    <li>les 4 tigres sont, chacun, placés dans un coin différent du plateau.</li>
+                </ul>
+                <p> 
+                    Le joueur jouant les chèvres joue en premier, suivi du joueur aux tigres.
+                    La partie continuera en alternant les tours des deux joueurs jusqu'à ce que l'un des joueurs gagne.
                 </p>
-                <p> Après avoir déplacé un tigre ou après avoir capturer une chèvre, le tour finit.</p>
-            <div class="pour_gagner">
-                <p>
-                    Les tigres gagnent au moment qu'ils ont réussi à éleminer un total de 5 chèvres mais ils doivent faire attention à ne pas être bloqué par les chêvres. 
-                    Les tigres gagnent aussi si le joueur des chèvres ne peut rien faire lors de son tour.
+            </section>
+            <section class="section_deplacement">
+                <div class="tete">
+                    <img src="img/Placeholder_chevre.svg">
+                    <h2>Comment déplacé un jeton?</h2>
+                </div>
+                <p> 
+                    Plusieurs fois durant la partie, il sera demandé de déplacé un jeton sur un autre noeuds.
+                    Pour pouvoir déplacé un jeton, il faut que:
                 </p>
+                <ul>
+                    <li>le jeton doit se déplacé en suivant la direction d’une des lignes du noeud sur lequelle il est.</li>
+                    <li>le jeton ne peut pas finir son mouvement hors du plateau.</li>
+                    <li>le jeton doit finir sur un noeud qui est vide.</li>
+                </ul>
+            
+            </section>
+            <div class="containeur_animaux">
+                <section class="section_chevre au_chevre">
+                    <div class="tete">
+                        <img src="img/Placeholder_chevre.svg">
+                        <h2>Durant le tour des chêvres</h2>
+                    </div>
+                    <p> 
+                        le joueur devra placé une chèvre de la réserve sur le plateau. 
+                        Le joueur peut le placer sur n'importe lequelle des noeuds vides sur le plateau. 
+                        Les noeuds admissibles seront legèrement illuminé pour plus de clarté.
+                    </p>
+                    <p>
+                        Si jamais il n'y a plus de chèvre dans la réserves (ce qui devrait arriver lors du 21ème tour du joueur des chêvres) alors le joueur devra déplacer une de ses chèvres (qui est déjà présent sur le plateau) de un noeud. 
+                    </p>
+                    <p>Après avoir placé une chèvre sur le plateau ou déplacé une des chèvres, le tour finit.</p>
+                    <div class="pour_gagner">
+                        <p>Le but des chèvres est de bloquer les tigres de facon que les tigres ne peuvent plus bouger au début de leurs tours tout en faisant attention que les tigres n’éléminent pas 5 chèvres.</p>
+                    </div>
+                </section>
+                <section class="section_tigre au_tigre">
+                    <div class="tete">
+                        <h2>Durant le tour des Tigres</h2>
+                        <img src="img/Tigre/Bitcoin.svg">
+                        <img src="img/Tigre/Dollar.svg">
+                        <img src="img/Tigre/Euro.svg">
+                        <img src="img/Tigre/Yen.svg">
+                    </div>
+                    <div class="avant_de_jouer">
+                        Avant de commencer à jouer, les 4 jetons de tigres sont placé sur les noeuds qui sont dans chaque coin du plateau. 
+                        À chaque tour, le joueur des tigres devra déplacé un de ses tigres.
+                    </div>
+                        <p>À chaque tour, le joueur des tigres devra déplacé un de ses tigres.</p>
+                        <p>
+                            Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. 
+                            Si l’espace qui est de l’autre côté de la chèvre désiré est disponible (il n’y a pas d’autre chêvre ou tigre et ce n’est pas en dehors du plateau). 
+                            alors tu peut capturer la chèvre et déplacé le tigre sur le noeud après la chèvre. 
+                            La chèvre est alors enlever du jeu et du plateau (il ne s’en va pas en réserve).
+                        </p>
+                        <p> Après avoir déplacé un tigre ou après avoir capturer une chèvre, le tour finit.</p>
+                    <div class="pour_gagner">
+                        <p>
+                            Les tigres gagnent au moment qu'ils ont réussi à éleminer un total de 5 chèvres mais ils doivent faire attention à ne pas être bloqué par les chêvres. 
+                            Les tigres gagnent aussi si le joueur des chèvres ne peut rien faire lors de son tour.
+                        </p>
+                    </div>
+                </section>
             </div>
-        </section>
 
-
-        <section class="section_trophée">
-            <div class="tete">
-                <img src="img/Tigre/Bitcoin.svg">
-                <h2>Comment gagner</h2>
-            </div>
-            <small>*Cette section sert de rappel à comment les joueurs peuvent gagner.</small>
-            <p>Le joueur qui joue les tigres gagne après avoir capturé 5 chèvres.</p>
-            <p>Si l’un des joueurs se retrouvent incapable d’agir au début de son tour, alors le joueur opposé gagne.</p>
-        </section>
-
+            <section class="section_trophée">
+                <div class="tete">
+                    <img src="img/Tigre/Bitcoin.svg">
+                    <h2>Comment gagner</h2>
+                </div>
+                <!--<small>*Cette section sert de rappel à comment les joueurs peuvent gagner.</small>-->
+                <p>Le joueur qui joue les tigres gagne après avoir capturé 5 chèvres.</p>
+                <p>Si l’un des joueurs se retrouvent incapable d’agir au début de son tour, alors le joueur opposé gagne.</p>
+            </section>
+        </main>
         <a class="btn_bulle" href="index.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                 <path d="M6.07075 7.29167L8.71242 9.93229L7.2395 11.4062L2.08325 6.25L7.2395 1.09375L8.71242 2.56771L6.07075 5.20833H13.5416C15.7517 5.20833 17.8713 6.08631 19.4341 7.64911C20.9969 9.21191 21.8749 11.3315 21.8749 13.5417C21.8749 15.7518 20.9969 17.8714 19.4341 19.4342C17.8713 20.997 15.7517 21.875 13.5416 21.875H4.16659V19.7917H13.5416C15.1992 19.7917 16.7889 19.1332 17.961 17.9611C19.1331 16.789 19.7916 15.1993 19.7916 13.5417C19.7916 11.8841 19.1331 10.2944 17.961 9.12225C16.7889 7.95015 15.1992 7.29167 13.5416 7.29167H6.07075Z" fill="white"/>

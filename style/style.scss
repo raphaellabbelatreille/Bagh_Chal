@@ -1,8 +1,9 @@
 @charset "UTF-8";
 /* VARIABLES */
 :root {
-    --couleurFondDEcran: #006039;
-    --couleurNode: #B4B4B4;
+    --couleurFondDEcran:#006039;
+    --couleurFondBoard:#352E29;
+    --couleurNode: #B4B4B4; // ##829942;
     --couleurFondBulle : #616161;
     --couleurTexte : white;
     --couleurCursor : #FEE180; //#FEE180
@@ -12,12 +13,12 @@
 body {
     background: var(--couleurFondDEcran);
     color: var(--couleurTexte);
-    font-family: "Instrument Sans";
+    font-family: "Instrument Sans", sans-serif;
     font-size: 16px;
     margin: 0px;
 }
 h1, h2 {
-    font-family: Itim;
+    font-family: "Itim", cursive;
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
@@ -42,7 +43,7 @@ p {
     gap: 10px;
 
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px solid var(--couleurTexte);
     background-color: var(--couleurFondBulle) ;
     box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.50);
 
@@ -59,12 +60,13 @@ p {
     width:80%;
     margin:auto;
 }
-main{
+main.page_jeu{
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    align-items: center;
     gap:50px;
     .section_resume {
         max-width: 800px;
@@ -73,7 +75,7 @@ main{
             display: none;
         }
         .containeur_resume, .spaceur {
-            border: 1px solid white;
+            border: 1px solid var(--couleurTexte);
             border-radius: 12px;
             background-color: var(--couleurFondDEcran);
             padding: 12px;
@@ -126,6 +128,11 @@ main{
             flex-direction: column;
             justify-content: space-around;
             position: relative;
+            margin-top: 1em;
+
+            border-radius: 12px;
+            //border: 4px solid var(--couleurFondBoard);
+            background: var(--couleurFondBoard);
             .row {
                 
                 display: flex;
@@ -262,13 +269,83 @@ main{
 }
 
 /* INSTRUCTION */ 
-.section_chevre, .section_tigre, .section_plateau, .section_trophée, .section_titre, .section_deplacement, .section_debut {
-    border: 2px solid white;
-    border-radius: 12px;
-    background-color: var(--couleurFondDEcran);
-    padding: 12px;
+ main.page_instruction, .section_titre , .section_chevre, .section_tigre, .section_plateau, .section_trophée, .section_deplacement, .section_debut, .section_plateau {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    justify-content: center;
+    align-items: baseline;
+}
+main.page_instruction, .section_titre {
+    gap: 40px;
+    align-items: center;
+}
+main.page_instruction {
+    padding: 0px 40px;
+    
 }
 
+.section_chevre, .section_tigre, .section_plateau, .section_trophée, .section_deplacement, .section_debut {
+    gap:12px;
+    border: 2px solid var(--couleurTexte);
+    border-radius: 12px;
+    background-color: var(--couleurFondDEcran);
+    padding: 20px;
+}
+.section_plateau {
+    align-items: center;
+    .containeur_gauche {
+        display: flex;
+        max-width: 600px;
+       flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        ol {
+            margin: 0px;
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap:10px;
+                .demo {
+                    width: 120px;
+                    max-height: 120px;
+                }
+            }
+        }
+    }
+    .plateau {
+        max-width: 450px;
+        max-height: 450px;
+    }
+    @media (min-width:1000px) {
+        flex-direction: row;
+        .containeur_gauche {
+            
+        }
+    }
+}
+.section_debut , .section_deplacement {
+    max-width: 1000px;
+}
+
+.containeur_animaux {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    @media (min-width:1000px) {
+        section {
+        width: 40%;
+        max-width: 600px;
+        height: fit-content;
+    }
+    }
+    
+}
 .tete {
     margin: auto;
     display:flex;
