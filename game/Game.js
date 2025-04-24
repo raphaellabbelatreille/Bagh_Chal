@@ -45,6 +45,7 @@ export class Game {
     }
 
     creerTigre(){
+        //console.log("Création des tigres: ")
         for (let indexTigre = 1 ; indexTigre <= 4 ;indexTigre++  ){
             let x=0;
             let y=0;
@@ -79,6 +80,7 @@ export class Game {
             document.getElementById("board_gazon").appendChild(newDiv)
             
             this.listeJeton.push(new Tigre(x,y,this.listeGazon, this.listeJeton ,newDiv, this))
+            //console.log("Nom du nouveau tigre :"+ nameFile)
         }
     }
     finirTour(){
@@ -114,26 +116,33 @@ export class Game {
             case "tigre":
                 for (let indexTigre = 0; indexTigre < this.listeJeton.length; indexTigre++) {
                     if ( this.listeJeton[indexTigre].name == "tigre"){
+                        //console.log("un tigre")
                         this.listeJeton[indexTigre].activerSelection();
-                    }   
+                    }   else {
+                        this.listeJeton[indexTigre].deactiverSelection();
+                    }
                 }
                 break;
             default: break;
         }
-        console.log(this.tourEnCours)
+        //console.log("Au tour des "+this.tourEnCours)
         this.refBanniere.textContent="Tour des "+this.tourEnCours+"s"
     }
     verifierConditionsVictoire(){
         let blnJugeVictoire = true;
-        if (this.verifierSiTigreSontCoincé() >= 4){
-            console.log("les chevres ont gagné")
+        if (this.tourEnCours == "chevre"){
+            if (this.verifierSiTigreSontCoincé() >= 4){
+                console.log("les chevres ont gagné")
+            }
         }
-        if (this.scoreChevreCapturer >= 5){
-            console.log("les tigres ont gagné")
+        if (this.tourEnCours == "tigre"){
+            if (this.scoreChevreCapturer >= 5){
+                console.log("les tigres ont gagné")
+            }
         }
     }
     verifierSiTigreSontCoincé(){
-        console.log("verifiTigre")
+        //console.log("verification si les tigres sont coincé :")
         let compteurDeTigreCoincé = 0;
         for (let indexTigre = 0; indexTigre < this.listeJeton.length; indexTigre++) {
             if ( this.listeJeton[indexTigre].name == "tigre"){
@@ -143,15 +152,20 @@ export class Game {
             }   
         }
         document.getElementById("indiquateur_tigres_imobilise").innerText = compteurDeTigreCoincé;
+        //console.log("verification des tigres Terminer")
         return compteurDeTigreCoincé
     }
     //Quand un jeton est selectioner (et selectionnable), déactive la selection des autres.
     selectionerJetonGlobal(name) {
-        console.log(this.listeJeton)
-        console.log("selectionGlobal des "+name)
+        //console.log("selectionGlobal des "+name)
         for (let index= 0; index<this.listeJeton.length ; index++){
             if (this.listeJeton[index].name == name){
+                //console.log("un "+name)
                 this.listeJeton[index].finirSelection();
+            } else {
+                //console.log("pas un "+name)
+
+                this.listeJeton[index].deactiverSelection();
             }
             
         }

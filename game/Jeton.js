@@ -52,7 +52,6 @@ export default class Jeton extends Element{
 
 
     activerSelection(){
-        console.log(this.name+ " activé")
         this.element.addEventListener("click", this.selectionerJeton_lier)
         this.currentNode.souligneNode(50);
     }
@@ -98,9 +97,6 @@ export default class Jeton extends Element{
                 }    
             }
             if (this.possibleMove.length == 0){
-                console.log("ce jeton")
-                console.log(this.element);
-                console.log("est coincé")
                 estCeQueJetonCoince = 1
             } else {
                 for (let index = 0 ; index< this.possibleMove.length ; index++){
@@ -133,13 +129,12 @@ export default class Jeton extends Element{
     }
 
     finirSelection(){
-        console.log("finirSelection "+ this.name)
         this.currentNode.element.removeEventListener("click", this.finirSelection_lier)
         for(let index=0 ; index < this.possibleMove.length ; index++){
             this.possibleMove[index].element.removeEventListener("click", this.MoveBinder[index])
             this.possibleMove[index].deSouligneNode();
         }
-        this.actif = false
+        this.actif = false;
         this.possibleMove = []
         this.MoveBinder = []
         this.currentNode.souligneNode(50);
