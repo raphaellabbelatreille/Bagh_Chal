@@ -3,7 +3,7 @@
         <meta charset="UTF-8">
         <title>Instructions
             -La tactique des chèvres</title>
-        <link rel="stylesheet" href="style/style.scss">
+        <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
         <section class="section_context">
@@ -41,10 +41,43 @@
             </section>
             
 
+            
+            <div class="containeur_commencement">
+                <section class="section_debut">
+                    <div class="tete">
+                        <img src="img/Placeholder_chevre.svg">
+                        <h2>Au début de la partie</h2>
+                    </div>
+                    <ul>
+                        <li>les 20 chèvres sont placées en réserves hors du plateau.</li>
+                        <li>les 4 jetons de tigres sont placé sur les noeuds situé à chaque coin du plateau. </li>
+                    </ul>
+                    <p> 
+                        Les chèvres jouent en premier, suivi des tigres.
+                        La partie continuera en alternant les tours des deux joueurs jusqu'à ce que l'un des joueurs gagne.
+                    </p>
+                </section>
+                <section class="section_deplacement">
+                    <div class="tete">
+                        <img src="img/Placeholder_chevre.svg">
+                        <h2>Comment déplacé un jeton?</h2>
+                    </div>
+                    <p> 
+                        Plusieurs fois durant la partie, il sera demandé de déplacé un jeton sur un autre noeuds.
+                        Un jeton peut se déplacé sur n'importe quelle noeuds adjacents si:
+                    </p>
+                    <ul>
+                        <li>il suit les traits entre le noeuds de départ et de fin. </li>
+                        <li>le noeud en question est vide.</li>
+                    </ul>
+                
+                </section>
+            </div>
             <section class="section_plateau">
                 <div class="containeur_gauche">
                     <h2>Sur le plateau et les noeuds</h2>
-                    <p>Le plateau est composé de 25 noeuds placés en grille de 5 noeuds de haut et 5 noeuds de long.
+                    <p>
+                        Le plateau est composé de 25 noeuds placés en grille de 5 par 5.
                         Les noeuds ont visuellement deux parties, le noyau et les traits qui sont placé autours:
                     </p>
                     <ol>
@@ -56,13 +89,13 @@
                             </svg>
 
                             <p>
-                                Le noyau du noeuds est le cercle au centre de chaque. Quand il sera demandé de placer un jeton sur un noeud, le jeton devrait être placé au centre du noyau. 
+                                Le noyau du noeuds est le cercle au centre de chaque. Si un jeton est placé sur un noeud, il sera placé sur ce cercle. 
                                 <small>*À aucun moment il peut y avoir plus qu'un jeton sur le noyau.</small>
                             </p>
                             
                         </li>
                         <li>
-                            <p>Les traits qui sont placé autours indiquent quelles noeuds est relié à lequelle.</p>
+                            <p>Les traits qui sont placé autours indiquent quelles noeuds est relié à lequelle. Ils déterminent dans quelle direction les noeuds peuvent se déplacer.</p>
                             <svg class="demo" width="135" height="134" viewBox="0 0 135 134" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_d_142_2433)">
                                 <g opacity="0.5">
@@ -94,44 +127,12 @@
                                 </filter>
                                 </defs>
                             </svg>
-                                
-                            
                         </li>
                     </ol> 
                 </div>
                 
 
                 <img class="plateau" src="img/plateau.png">
-            </section>
-            <section class="section_debut">
-                <div class="tete">
-                    <img src="img/Placeholder_chevre.svg">
-                    <h2>Au début de la partie</h2>
-                </div>
-                <ul>
-                    <li>les 20 chèvres sont placées en réserves.</li>
-                    <li>les 4 tigres sont, chacun, placés dans un coin différent du plateau.</li>
-                </ul>
-                <p> 
-                    Le joueur jouant les chèvres joue en premier, suivi du joueur aux tigres.
-                    La partie continuera en alternant les tours des deux joueurs jusqu'à ce que l'un des joueurs gagne.
-                </p>
-            </section>
-            <section class="section_deplacement">
-                <div class="tete">
-                    <img src="img/Placeholder_chevre.svg">
-                    <h2>Comment déplacé un jeton?</h2>
-                </div>
-                <p> 
-                    Plusieurs fois durant la partie, il sera demandé de déplacé un jeton sur un autre noeuds.
-                    Pour pouvoir déplacé un jeton, il faut que:
-                </p>
-                <ul>
-                    <li>le jeton doit se déplacé en suivant la direction d’une des lignes du noeud sur lequelle il est.</li>
-                    <li>le jeton ne peut pas finir son mouvement hors du plateau.</li>
-                    <li>le jeton doit finir sur un noeud qui est vide.</li>
-                </ul>
-            
             </section>
             <div class="containeur_animaux">
                 <section class="section_chevre au_chevre">
@@ -140,16 +141,17 @@
                         <h2>Durant le tour des chêvres</h2>
                     </div>
                     <p> 
-                        le joueur devra placé une chèvre de la réserve sur le plateau. 
-                        Le joueur peut le placer sur n'importe lequelle des noeuds vides sur le plateau. 
-                        Les noeuds admissibles seront legèrement illuminé pour plus de clarté.
+                        Pour les 20 premiers tours des chêvres, il sera impossible de déplacé les chèvres qui sont sur le plateau. 
+                        À la place, le joueur devra placé une des chèvres de sa réserve sur le plateau. 
+                        Cette chêvre peut être placé sur n'importe lequelle des noeuds vides sur le plateau. 
                     </p>
+                    <!--<small>Les noeuds admissibles seront legèrement illuminé pour plus de clarté.</small>-->
                     <p>
-                        Si jamais il n'y a plus de chèvre dans la réserves (ce qui devrait arriver lors du 21ème tour du joueur des chêvres) alors le joueur devra déplacer une de ses chèvres (qui est déjà présent sur le plateau) de un noeud. 
+                        Si, au début du tour, il n'y a plus de chèvres dans la réserve, alors le joueur pourra déplacé une de ses chèvres d'un noeuds.  
                     </p>
                     <p>Après avoir placé une chèvre sur le plateau ou déplacé une des chèvres, le tour finit.</p>
                     <div class="pour_gagner">
-                        <p>Le but des chèvres est de bloquer les tigres de facon que les tigres ne peuvent plus bouger au début de leurs tours tout en faisant attention que les tigres n’éléminent pas 5 chèvres.</p>
+                        <p>Le but des chèvres est d'immobiliser tout les tigres avant que ceux si ne capture 5 chèvres</p>
                     </div>
                 </section>
                 <section class="section_tigre au_tigre">
@@ -160,18 +162,17 @@
                         <img src="img/Tigre/Euro.svg">
                         <img src="img/Tigre/Yen.svg">
                     </div>
-                    <div class="avant_de_jouer">
-                        Avant de commencer à jouer, les 4 jetons de tigres sont placé sur les noeuds qui sont dans chaque coin du plateau. 
-                        À chaque tour, le joueur des tigres devra déplacé un de ses tigres.
-                    </div>
-                        <p>À chaque tour, le joueur des tigres devra déplacé un de ses tigres.</p>
-                        <p>
-                            Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. 
-                            Si l’espace qui est de l’autre côté de la chèvre désiré est disponible (il n’y a pas d’autre chêvre ou tigre et ce n’est pas en dehors du plateau). 
-                            alors tu peut capturer la chèvre et déplacé le tigre sur le noeud après la chèvre. 
-                            La chèvre est alors enlever du jeu et du plateau (il ne s’en va pas en réserve).
-                        </p>
-                        <p> Après avoir déplacé un tigre ou après avoir capturer une chèvre, le tour finit.</p>
+                    <!--<div class="avant_de_jouer">
+                        Au début de la partie, les 4 jetons de tigres seront placé sur les noeuds qui sont dans chaque coin du plateau. 
+                    </div>-->
+                    <p>À chaque tour, le joueur qui joue les tigres devra déplacé un de ses tigres sur un des noeuds adjacents.</p>
+                    <p>
+                        Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. 
+                        Si l’espace qui est de l’autre côté de la chèvre désiré est disponible (il n’y a pas d’autre chêvre ou tigre et ce n’est pas en dehors du plateau). 
+                        alors tu peut capturer la chèvre et déplacé le tigre sur le noeud après la chèvre. 
+                        La chèvre est alors enlever du jeu et du plateau (il ne s’en va pas en réserve).
+                    </p>
+                    <p> Après avoir déplacé un tigre, même lors d'une capture, son tour finit.</p>
                     <div class="pour_gagner">
                         <p>
                             Les tigres gagnent au moment qu'ils ont réussi à éleminer un total de 5 chèvres mais ils doivent faire attention à ne pas être bloqué par les chêvres. 
@@ -187,7 +188,7 @@
                     <h2>Comment gagner</h2>
                 </div>
                 <!--<small>*Cette section sert de rappel à comment les joueurs peuvent gagner.</small>-->
-                <p>Le joueur qui joue les tigres gagne après avoir capturé 5 chèvres.</p>
+                <p>Le joueur qui joue les tigres gagne si il arrive à capturer 5 chèvres.</p>
                 <p>Si l’un des joueurs se retrouvent incapable d’agir au début de son tour, alors le joueur opposé gagne.</p>
             </section>
         </main>
