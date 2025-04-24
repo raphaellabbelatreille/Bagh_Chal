@@ -41,7 +41,7 @@ export class Game {
         this.creerTigre();
         this.tourEnCours = "tigre";
         this.initialiserScore()
-        this.finirTour() //Ceci s'assure de tout déactiver les fonctions avant de commencer.
+        this.finirTour("tigre") //Ceci s'assure de tout déactiver les fonctions avant de commencer.
     }
 
     creerTigre(){
@@ -83,24 +83,28 @@ export class Game {
             //console.log("Nom du nouveau tigre :"+ nameFile)
         }
     }
-    finirTour(){
-        if (!this.verifierConditionsVictoire() ){
-            this.enclosChevre.deactiverSelectionChevre();
-            this.enclosChevre.deactiverCreationChevre();
-            for (let index= 0; index<this.listeJeton.length ; index++){
-                this.listeJeton[index].finirSelection();
-                this.listeJeton[index].deactiverSelection();
-            }
-            for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
-                this.listeGazon[indexGaz].deSouligneNode();
-            }
-            switch(this.tourEnCours){
-                case "chèvre": this.debutTour("tigre"); 
-                break;
-                case "tigre": this.debutTour("chèvre"); 
-                break;
+    finirTour(name){
+        if (this.tourEnCours == name){
+            if (!this.verifierConditionsVictoire() ){
+                this.enclosChevre.deactiverSelectionChevre();
+                this.enclosChevre.deactiverCreationChevre();
+                for (let index= 0; index<this.listeJeton.length ; index++){
+                    this.listeJeton[index].finirSelection();
+                    this.listeJeton[index].deactiverSelection();
+                }
+                for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
+                    this.listeGazon[indexGaz].deSouligneNode();
+                }
+                
+                switch(this.tourEnCours){
+                    case "chèvre": this.debutTour("tigre"); 
+                    break;
+                    case "tigre": this.debutTour("chèvre"); 
+                    break;
+                }
             }
         }
+        
     }
     debutTour(animal){
         this.tourEnCours = animal
@@ -130,7 +134,7 @@ export class Game {
     }
     verifierConditionsVictoire(){
         let blnJugeVictoire = true;
-        if (this.tourEnCours == "chevre"){
+        if (this.tourEnCours == "chèvre"){
             if (this.verifierSiTigreSontCoincé() >= 4){
                 console.log("les chevres ont gagné")
             }

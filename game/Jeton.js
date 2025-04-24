@@ -31,11 +31,16 @@ export default class Jeton extends Element{
         for(let index=0 ; index< this.BoardTile.length ; index++){
             if (this.BoardTile[index].x == this.jetonX && this.BoardTile[index].y == this.jetonY){
                 this.currentNode = this.BoardTile[index]
+                this.currentNode.jetonOnTop = this;
+                this.currentNode.occupe = true;
+                this.jetonX = this.currentNode.x 
+                this.jetonY = this.currentNode.y 
+                this.element.style.top = this.jetonY*(this.gameWorld.TAILLE/this.gameWorld.LONGUEUR /this.gameWorld.TAILLE*100)+"%"//this.variationAleatoire()+this.jetonY*(this.gameWorld.GROSSEUR_DES_ELEMENTS)+"px"
+                this.element.style.left = this.jetonX*(this.gameWorld.TAILLE/this.gameWorld.LONGUEUR /this.gameWorld.TAILLE*100)+"%"
             }
         }
-        this.element.style.width=(100/this.gameWorld.LONGUEUR)+"%"
-        this.element.style.height=(100/this.gameWorld.LONGUEUR)+"%"
-        this.mouvementNormalVers(this.currentNode)
+        this.element.style.width=(100/this.gameWorld.LONGUEUR)+"%";
+        this.element.style.height=(100/this.gameWorld.LONGUEUR)+"%";
     }
 
     debutHover(){
@@ -124,7 +129,7 @@ export default class Jeton extends Element{
         this.jetonY = e.y 
         this.element.style.top = this.jetonY*(this.gameWorld.TAILLE/this.gameWorld.LONGUEUR /this.gameWorld.TAILLE*100)+"%"//this.variationAleatoire()+this.jetonY*(this.gameWorld.GROSSEUR_DES_ELEMENTS)+"px"
         this.element.style.left = this.jetonX*(this.gameWorld.TAILLE/this.gameWorld.LONGUEUR /this.gameWorld.TAILLE*100)+"%"
-        this.gameWorld.finirTour();
+        this.gameWorld.finirTour(this.name);
 
     }
 
