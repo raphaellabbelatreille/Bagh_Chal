@@ -187,7 +187,7 @@ main.page_jeu{
             /*.replis_droite, .replis_gauche {
                 margin-top: auto;
             }*/
-            .indicateur{
+            .tour {
                 margin: 0.5em auto 0.5em;
                 width: 100%;
                 text-align: center;
@@ -208,9 +208,6 @@ main.page_jeu{
                 display: flex;
                 hr {
                     height: 25px;;
-                }
-                h3 {
-                    width:100%;
                 }
                 .tourChevre , .tourTigre {
                     width:50%;
@@ -247,9 +244,42 @@ main.page_jeu{
             } 
         }
         .scoreBoard {
+            width: 90vw;
+            margin: auto;
+            padding:10px;
+            border-radius: 12px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            border: 1px solid var(--couleurTexte);
+            border-radius: 12px;
+            background-color: var(--couleurFondBoard);
+            padding: 12px;
+            .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise ,.indiquateur_tigres_scores{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                
+            }
+            .indiquateur_chevres_reserves{
+
+            }
+            .indiquateur_tigres_imobilise{
+
+            }
+            .indiquateur_tigres_scores {
+                
+                .liste_tigres_scores {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 5px;
+                    img {
+                        width:30px;
+                        height:30px;
+                    }
+                }
+            }
         }
         .board_gazon {
             margin: auto;
