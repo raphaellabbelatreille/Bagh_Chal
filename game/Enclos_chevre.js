@@ -42,7 +42,6 @@ export default class Enclos_chevre {
         }
     }*/
     invoquerChevre(targetNode){
-        console.log(targetNode)
         if(targetNode.occupe == false && this.nbrChevreEnJeu < this.RESERVE_CHEVRE){
             let newDiv = document.createElement("div");
             newDiv.id = "chevre"+(this.nbrChevreEnJeu+1);

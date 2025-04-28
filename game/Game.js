@@ -46,7 +46,6 @@ export class Game {
     }
 
     creerTigre(){
-        //console.log("Création des tigres: ")
         for (let indexTigre = 1 ; indexTigre <= 4 ;indexTigre++  ){
             let x=0;
             let y=0;
@@ -81,11 +80,9 @@ export class Game {
             document.getElementById("board_gazon").appendChild(newDiv)
             
             this.listeJeton.push(new Tigre(x,y,this.listeGazon, this.listeJeton ,newDiv, this))
-            //console.log("Nom du nouveau tigre :"+ nameFile)
         }
     }
     finirTour(name){
-        console.log(name)
         if (this.tourEnCours == name){
             this.enclosChevre.deactiverSelectionChevre();
             this.enclosChevre.deactiverCreationChevre();
@@ -121,7 +118,6 @@ export class Game {
             case "tigre":
                 for (let indexTigre = 0; indexTigre < this.listeJeton.length; indexTigre++) {
                     if ( this.listeJeton[indexTigre].name == "tigre"){
-                        //console.log("un tigre")
                         this.listeJeton[indexTigre].activerSelection();
                     }   else {
                         this.listeJeton[indexTigre].deactiverSelection();
@@ -130,9 +126,7 @@ export class Game {
                 break;
             default: break;
         }
-        //console.log("Au tour des "+this.tourEnCours)
         this.changerAffichageBanniere();
-        //this.refBanniere.textContent="Tour des "+this.tourEnCours+"s"
     }
     changerAffichageBanniere(){
         
@@ -156,7 +150,6 @@ export class Game {
         let strRaison = "";
         if (this.tourEnCours == "chevre"){
             if (this.verifierSiTigreSontCoincé() >= 4){
-                console.log("les chevres ont gagné")
                 blnJugeVictoire = true;
                 strVictorieux = "chèvres"
                 strRaison = "Les tigres sont incapables de bouger!"
@@ -164,13 +157,11 @@ export class Game {
         }
         if (this.tourEnCours == "tigre"){
             if (this.scoreChevreCapturer >= 4){
-                console.log("les tigres ont gagné")
                 blnJugeVictoire = true;
                 strVictorieux = "tigres"
                 strRaison = "5 chèvres ont été mangé. Elles étaient savoureuses"
             } else {
                 if (this.verifierSiChevreSontCoincé() >= 20){
-                    console.log("les chevres ont gagné")
                     blnJugeVictoire = true;
                     strVictorieux = "tigres"
                     strRaison = "Les chèvres sont imobilisé de peur! Il ne peuvent plus bouger"
@@ -183,7 +174,6 @@ export class Game {
         return blnJugeVictoire
     }
     verifierSiTigreSontCoincé(){
-        //console.log("verification si les tigres sont coincé :")
         let compteurDeTigreCoincé = 0;
         for (let indexTigre = 0; indexTigre < this.listeJeton.length; indexTigre++) {
             if ( this.listeJeton[indexTigre].name == "tigre"){
@@ -193,7 +183,6 @@ export class Game {
             }   
         }
         document.getElementById("indiquateur_tigres_imobilise").innerText = compteurDeTigreCoincé;
-        //console.log("verification des tigres Terminer")
         return compteurDeTigreCoincé
     }
     verifierSiChevreSontCoincé(){
@@ -209,11 +198,9 @@ export class Game {
                 }
             }   
         }
-        console.log(compteurDeChevreCoincé)
         return compteurDeChevreCoincé
     }
     affichageVictoire(victorieux , raison){
-        console.log(victorieux + " : "+ raison)
         document.getElementById("banderole_victoire").classList.remove("cache")
         document.getElementById("banderole_titre").innerHTML = "les "+victorieux + " ont gagné!"
         document.getElementById("banderole_texte").innerHTML = raison
@@ -222,14 +209,10 @@ export class Game {
 
     //Quand un jeton est selectioner (et selectionnable), déactive la selection des autres.
     selectionerJetonGlobal(name) {
-        //console.log("selectionGlobal des "+name)
         for (let index= 0; index<this.listeJeton.length ; index++){
             if (this.listeJeton[index].name == name){
-                //console.log("un "+name)
                 this.listeJeton[index].finirSelection();
             } else {
-                //console.log("pas un "+name)
-
                 this.listeJeton[index].deactiverSelection();
             }
             
@@ -259,13 +242,6 @@ export class Game {
     decrementerReserveChevre(nbrChevreEnJeu){
         this.refReservesChevre.textContent = this.RESERVE_CHEVRE - nbrChevreEnJeu
     }
-    /*chancePiece(nombreDePieceLance){
-        let resultat = 0;
-        for (let index=0; index < nombreDePieceLance ; index++){
-            resultat += Math.round(Math.random()*1)
-        }
-        return resultat
-    }*/
 }
 
 

@@ -3,36 +3,36 @@
   <defs>
     <style>
       .cls-1, .cls-2, .cls-3 {
-        fill: #615d37;
+        fill: #77795a;
       }
 
-      .cls-1, .cls-4 {
-        font-size: 31.63px;
-      }
-
-      .cls-1, .cls-4, .cls-3, .cls-5, .cls-6, .cls-7 {
+      .cls-1, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
         font-family: RobotoSlab-Regular, 'Roboto Slab';
         font-variation-settings: 'wght' 400;
       }
 
-      .cls-8, .cls-4, .cls-6 {
-        fill: #e5e4a1;
-      }
-
-      .cls-3, .cls-5, .cls-6 {
+      .cls-1, .cls-5, .cls-6 {
         font-size: 12px;
       }
 
-      .cls-9, .cls-5, .cls-7 {
-        fill: #b7ba8b;
+      .cls-8, .cls-4, .cls-5 {
+        fill: #cccfae;
       }
 
-      .cls-10 {
-        fill: #a59b56;
+      .cls-3, .cls-4 {
+        font-size: 31.63px;
+      }
+
+      .cls-9, .cls-6, .cls-7 {
+        fill: #b7ba8b;
       }
 
       .cls-7 {
         font-size: 31.48px;
+      }
+
+      .cls-10 {
+        fill: #a59b56;
       }
     </style>
   </defs>
@@ -44,12 +44,12 @@
       <circle class="cls-2" cx="50" cy="49" r="47"/>
       <circle class="cls-10" cx="50" cy="50" r="46"/>
       <g>
-        <text class="cls-3" transform="translate(48.05 73.64)"><tspan x="0" y="0">TIGRE</tspan></text>
-        <text class="cls-6" transform="translate(48.05 72.64)"><tspan x="0" y="0">TIGRE</tspan></text>
-        <text class="cls-5" transform="translate(48.05 73.14)"><tspan x="0" y="0">TIGRE</tspan></text>
+        <text class="cls-1" transform="translate(48.05 73.64)"><tspan x="0" y="0">TIGRE</tspan></text>
+        <text class="cls-5" transform="translate(48.05 72.64)"><tspan x="0" y="0">TIGRE</tspan></text>
+        <text class="cls-6" transform="translate(48.05 73.14)"><tspan x="0" y="0">TIGRE</tspan></text>
       </g>
       <g>
-        <text class="cls-1" transform="translate(42.13 60.43)"><tspan x="0" y="0">UN</tspan></text>
+        <text class="cls-3" transform="translate(42.13 60.43)"><tspan x="0" y="0">UN</tspan></text>
         <text class="cls-4" transform="translate(42.13 59.43)"><tspan x="0" y="0">UN</tspan></text>
         <text class="cls-7" transform="translate(42.13 59.81)"><tspan x="0" y="0">UN</tspan></text>
       </g>

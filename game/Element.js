@@ -17,7 +17,6 @@ export class Element {
         
     }
     detruireElement() {
-        console.log(this.element+" is to be destroyed")
         this.element.remove();
         //this = null;
     }

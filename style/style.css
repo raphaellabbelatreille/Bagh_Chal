@@ -279,9 +279,9 @@ main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste_tigres
 main.page_jeu .section_game .board_gazon {
   margin: auto;
   width: 80vw;
+  height: 80vh;
   max-width: 80vh;
-  height: 80vw;
-  max-height: 80vh;
+  max-height: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -289,6 +289,12 @@ main.page_jeu .section_game .board_gazon {
   margin-top: 1em;
   border-radius: 12px;
   background: var(--couleurFondBoard);
+}
+@media (min-width: 1000px) {
+  main.page_jeu .section_game .board_gazon {
+    max-width: 900px;
+    max-height: 900px;
+  }
 }
 main.page_jeu .section_game .board_gazon .row {
   display: flex;

@@ -66,8 +66,6 @@ export default class Jeton extends Element{
         this.currentNode.deSouligneNode();
     }
     selectionerJeton(){
-        console.log(this.name+ " selectionner")
-
         let estCeQueJetonCoince = 0;
         //Appeler finir Selction des autres tigres ou chevres;
         this.gameWorld.selectionerJetonGlobal(this.name);
@@ -152,7 +150,6 @@ export default class Jeton extends Element{
     variationAleatoire(){
         //let randomDirection = Math.round(Math.random()*3-1) 
         let randomNumber = this.gameWorld.chancePiece(10)
-        //console.log(randomNumber+" "+ randomDirection)
         return (randomNumber - 5)
     }
 
