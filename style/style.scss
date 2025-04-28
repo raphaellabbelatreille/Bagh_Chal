@@ -164,10 +164,88 @@ main.page_jeu{
         max-height: 95vh;
         display: flex;
         margin: auto;
+        margin-top:2em ;
+        margin-bottom:2em ;
         justify-content: space-around;
         flex-direction: column;
-
         padding: auto;
+        .banniere {
+            //height:55px;
+            width: 80vw;//615px;
+            display: flex;
+            padding: 0px 2px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            align-self: stretch;
+            flex-wrap: wrap;
+            margin: auto;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            
+            background: #868686;
+            /*.replis_droite, .replis_gauche {
+                margin-top: auto;
+            }*/
+            .indicateur{
+                margin: 0.5em auto 0.5em;
+                width: 100%;
+                text-align: center;
+            }
+            .conteneur_bannière {
+                //position: absolute;
+                display: flex;
+                height: 45px;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+                left: 35px;
+                
+                margin: auto;
+                padding: 0px 15px;
+                display: flex;
+                hr {
+                    height: 25px;;
+                }
+                h3 {
+                    width:100%;
+                }
+                .tourChevre , .tourTigre {
+                    width:50%;
+                    height: 39px;
+                    text-align: center;
+                    color:rgba(255, 255, 255, 0.5);
+                    &.CURRENT {
+                        color:var(--couleurTexte);
+                        border: 3px solid var(--couleurCursor);
+                    }
+                }
+                              
+            }
+            .table_only {
+                visibility: hidden;
+                display: none;
+            }  
+            @media (min-width:1200px) {
+                    width: 80vw;
+                    .conteneur_bannière{
+                        width: 615px;
+                    
+                    }
+                    .mobile_only {
+                        visibility: hidden;
+                        display: none;
+                    }
+                    .table_only {
+                        visibility:visible;
+                        display: block;
+                    }
+                
+                    
+            } 
+        }
         .scoreBoard {
             display: flex;
             flex-direction: row;
@@ -175,9 +253,9 @@ main.page_jeu{
         }
         .board_gazon {
             margin: auto;
-            width: 600px;
+            width: 80vw;
             max-width: 80vh;
-            height: 600px;
+            height: 80vw;
             max-height: 80vh;
             display: flex;
             flex-direction: column;

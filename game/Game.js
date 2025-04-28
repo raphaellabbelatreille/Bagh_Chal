@@ -12,9 +12,10 @@ export class Game {
         this.RESERVE_CHEVRE = 20//this.LONGUEUR*this.LONGUEUR-this.LONGUEUR
         this.GROSSEUR_DES_ELEMENTS = this.TAILLE / this.LONGUEUR;
 
-        this.refBoard.style.width = this.TAILLE+"px"
-        this.refBoard.style.height = this.TAILLE+"px"
-        this.refBanniere =document.getElementById("banniere_tour")
+        //this.refBoard.style.width = this.TAILLE+"px"
+        //this.refBoard.style.height = this.TAILLE+"px"
+        this.refBanniereChevre = document.getElementById("tourChevre")
+        this.refBanniereTigre = document.getElementById("tourTigre")
         this.refBtnRecommencer =document.getElementById("btnRecommencer")
         this.reinitialiserPartie_lier = this.reinitialiserPartie.bind(this)
         this.refBtnRecommencer.addEventListener("click", this.reinitialiserPartie_lier)
@@ -130,7 +131,32 @@ export class Game {
             default: break;
         }
         //console.log("Au tour des "+this.tourEnCours)
-        this.refBanniere.textContent="Tour des "+this.tourEnCours+"s"
+        this.changerAffichageBanniere();
+        //this.refBanniere.textContent="Tour des "+this.tourEnCours+"s"
+    }
+    changerAffichageBanniere(){
+        
+        //this.refBanniere.querySelectorAll(".CURRENT").classList.remove("CURRENT");
+        this.refBanniereChevre.classList.remove("CURRENT");
+        this.refBanniereTigre.classList.remove("CURRENT");
+        switch (this.tourEnCours) {
+            case "chèvre":
+                this.refBanniereChevre.classList.add("CURRENT");
+                
+
+                break;
+            case "tigre":
+                this.refBanniereTigre.classList.add("CURRENT");
+
+
+                
+
+                break;
+            default:
+                break;
+        }
+    
+
     }
     verifierConditionsVictoire(){
         let blnJugeVictoire = true;

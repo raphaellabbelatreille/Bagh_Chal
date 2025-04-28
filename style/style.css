@@ -174,9 +174,82 @@ main.page_jeu .section_game {
   max-height: 95vh;
   display: flex;
   margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
   justify-content: space-around;
   flex-direction: column;
   padding: auto;
+}
+main.page_jeu .section_game .banniere {
+  width: 80vw;
+  display: flex;
+  padding: 0px 2px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: stretch;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background: #868686;
+  /*.replis_droite, .replis_gauche {
+      margin-top: auto;
+  }*/
+}
+main.page_jeu .section_game .banniere .indicateur {
+  margin: 0.5em auto 0.5em;
+  width: 100%;
+  text-align: center;
+}
+main.page_jeu .section_game .banniere .conteneur_bannière {
+  display: flex;
+  height: 45px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  left: 35px;
+  margin: auto;
+  padding: 0px 15px;
+  display: flex;
+}
+main.page_jeu .section_game .banniere .conteneur_bannière hr {
+  height: 25px;
+}
+main.page_jeu .section_game .banniere .conteneur_bannière h3 {
+  width: 100%;
+}
+main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre, main.page_jeu .section_game .banniere .conteneur_bannière .tourTigre {
+  width: 50%;
+  height: 39px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre.CURRENT, main.page_jeu .section_game .banniere .conteneur_bannière .tourTigre.CURRENT {
+  color: var(--couleurTexte);
+  border: 3px solid var(--couleurCursor);
+}
+main.page_jeu .section_game .banniere .table_only {
+  visibility: hidden;
+  display: none;
+}
+@media (min-width: 1200px) {
+  main.page_jeu .section_game .banniere {
+    width: 80vw;
+  }
+  main.page_jeu .section_game .banniere .conteneur_bannière {
+    width: 615px;
+  }
+  main.page_jeu .section_game .banniere .mobile_only {
+    visibility: hidden;
+    display: none;
+  }
+  main.page_jeu .section_game .banniere .table_only {
+    visibility: visible;
+    display: block;
+  }
 }
 main.page_jeu .section_game .scoreBoard {
   display: flex;
@@ -185,9 +258,9 @@ main.page_jeu .section_game .scoreBoard {
 }
 main.page_jeu .section_game .board_gazon {
   margin: auto;
-  width: 600px;
+  width: 80vw;
   max-width: 80vh;
-  height: 600px;
+  height: 80vw;
   max-height: 80vh;
   display: flex;
   flex-direction: column;

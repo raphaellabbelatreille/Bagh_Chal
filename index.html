@@ -89,7 +89,24 @@
                 <noscript>
                     Pour pouvoir jouer au jeu, veuillez activer le javascript de votre naviguateur.
                 </noscript>
-                <h2 class="banniere" id="banniere_tour">Tour des chèvres</h2>
+                <div class="banniere" id="banniere_tour">
+                    <!--<svg class="replis_gauche" xmlns="http://www.w3.org/2000/svg" width="70" height="38" viewBox="0 0 70 38" fill="none">
+                        <path d="M70 38L7.62939e-06 38L25.1563 19L1.19358e-05 2.26355e-07L70 4.94719e-06L70 38Z" fill="#606060"/>
+                        <path d="M35 7L70 16.2031V27.1016V38L35 28.7969V7Z" fill="#4C4B4B"/>
+                    </svg>-->
+                    <h3 class="indicateur mobile_only">Au tour des </h3>
+                    <div class="conteneur_bannière">
+                        
+                        <h2 class="tourChevre CURRENT" id="tourChevre"><div class="table_only">Au tour des chèvres</div><div class="mobile_only">Chèvres</div></h2>
+                        <hr>
+                        <h2 class="tourTigre CURRENT" id="tourTigre"><div class="table_only">Au tour des tigres</div><div class="mobile_only">Tigres</div></h2>
+                    </div>
+
+                    <!--<svg class="replis_droite" xmlns="http://www.w3.org/2000/svg" width="70" height="35" viewBox="0 0 70 35" fill="none">
+                        <path d="M0 0H70L44.8438 17.5L70 35H0V0Z" fill="#606060"/>
+                        <path d="M35 4L0 13.2031V24.1016V35L35 25.7969V4Z" fill="#4C4B4B"/>
+                    </svg>-->
+                </div>
                 <div class="scoreBoard">
                     <div><strong id="indiquateur_chevres_reserves">20</strong>/20 chèvres en réserves</div>
                     <div> <strong id="indiquateur_tigres_imobilise">0</strong>/4 tigres d'immobile</div>
