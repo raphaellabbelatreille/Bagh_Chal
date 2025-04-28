@@ -319,29 +319,37 @@ main.page_jeu{
                 }
             }
             .banderole_victoire {
+                z-index: 30;
                 display: flex;
-                width: 585px;
-                height: 100px;
-                justify-content: space-between;
-                align-items: flex-end;
+                width: 100%;//585px; 465
+                padding: auto;
+                //height: 100px;
+                justify-content: center;
+                align-items: center;
                 position: absolute;
-                left: 10vw;
-                top: -7px;
+                gap:465px;
+                margin: auto;
+                //top: 20%;
+                &.cache {
+                    display: none;    
+                }
                 .replis_gauche, .replis_droite {
                     height: 75px;
+                    width:60px;
                 }
                 .conteneur_banderole {
                     display: flex;
-                    width: 515px;
-                    height: 105px;
+                    width: 100%;
+                    max-width: 520px;
+                    
                     padding-bottom: 10px;
                     flex-direction: column;
-                    align-items: flex-start;
+                    align-items: center;
                     gap: 10px;
                     position: absolute;
-                    left: 35px;
-                    bottom: -5px;
-                    .banderole_texte{
+                    //left: 35px;
+                    //bottom: -5px;
+                    .banderole_titre{
                         display: flex;
                         height: 79px;
                         padding: 0px 15px;
@@ -351,6 +359,22 @@ main.page_jeu{
                         flex-shrink: 0;
                         align-self: stretch;
                         background: #868686;
+                        border: 1px solid var(--couleurTexte);
+                        border-radius: 12px;
+                    }
+                    .banderole_texte{
+                        display: flex;
+                        width:80%;
+                        margin: auto;
+                        padding: 15px 15px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        flex-shrink: 0;
+                        align-self: stretch;
+                        background: #868686;
+                        border: 1px solid var(--couleurTexte);
+                        border-radius: 12px;
                     }
                 }
             }

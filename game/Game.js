@@ -87,17 +87,16 @@ export class Game {
     finirTour(name){
         console.log(name)
         if (this.tourEnCours == name){
+            this.enclosChevre.deactiverSelectionChevre();
+            this.enclosChevre.deactiverCreationChevre();
+            for (let index= 0; index<this.listeJeton.length ; index++){
+                this.listeJeton[index].finirSelection();
+                this.listeJeton[index].deactiverSelection();
+            }
+            for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
+                this.listeGazon[indexGaz].deSouligneNode();
+            }
             if (!this.verifierConditionsVictoire() ){
-                this.enclosChevre.deactiverSelectionChevre();
-                this.enclosChevre.deactiverCreationChevre();
-                for (let index= 0; index<this.listeJeton.length ; index++){
-                    this.listeJeton[index].finirSelection();
-                    this.listeJeton[index].deactiverSelection();
-                }
-                for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
-                    this.listeGazon[indexGaz].deSouligneNode();
-                }
-                
                 switch(this.tourEnCours){
                     case "chevre": this.debutTour("tigre"); 
                     break;
@@ -143,34 +142,45 @@ export class Game {
         switch (this.tourEnCours) {
             case "chevre":
                 this.refBanniereChevre.classList.add("CURRENT");
-                
-
                 break;
             case "tigre":
                 this.refBanniereTigre.classList.add("CURRENT");
-
-
-                
-
                 break;
             default:
                 break;
         }
-    
-
     }
     verifierConditionsVictoire(){
-        let blnJugeVictoire = true;
+        let blnJugeVictoire = false;
+        let strVictorieux = "";
+        let strRaison = "";
         if (this.tourEnCours == "chevre"){
             if (this.verifierSiTigreSontCoincé() >= 4){
                 console.log("les chevres ont gagné")
+                blnJugeVictoire = true;
+                strVictorieux = "chèvres"
+                strRaison = "Les tigres sont incapables de bouger!"
             }
         }
         if (this.tourEnCours == "tigre"){
-            if (this.scoreChevreCapturer >= 5){
+            if (this.scoreChevreCapturer >= 4){
                 console.log("les tigres ont gagné")
+                blnJugeVictoire = true;
+                strVictorieux = "tigres"
+                strRaison = "5 chèvres ont été mangé. Elles étaient savoureuses"
+            } else {
+                if (this.verifierSiChevreSontCoincé() >= 20){
+                    console.log("les chevres ont gagné")
+                    blnJugeVictoire = true;
+                    strVictorieux = "tigres"
+                    strRaison = "Les chèvres sont imobilisé de peur! Il ne peuvent plus bouger"
+                }
             }
         }
+        if (blnJugeVictoire == true){
+            this.affichageVictoire(strVictorieux, strRaison)
+        }
+        return blnJugeVictoire
     }
     verifierSiTigreSontCoincé(){
         //console.log("verification si les tigres sont coincé :")
@@ -186,6 +196,30 @@ export class Game {
         //console.log("verification des tigres Terminer")
         return compteurDeTigreCoincé
     }
+    verifierSiChevreSontCoincé(){
+        let compteurDeChevreCoincé = 0;
+        for (let indexChevre = 0; indexChevre < this.listeJeton.length; indexChevre++) {
+            if ( this.listeJeton[indexChevre].name == "chevre"){
+                let blnDead = this.listeJeton[indexChevre].isDead
+                let ChevreCoincé = this.listeJeton[indexChevre].selectionerJeton(); //0 ou 1 (coincé)
+                this.listeJeton[indexChevre].finirSelection();
+                this.listeJeton[indexChevre].deactiverSelection();
+                if (blnDead == true || ChevreCoincé == 1){
+                    compteurDeChevreCoincé++
+                }
+            }   
+        }
+        console.log(compteurDeChevreCoincé)
+        return compteurDeChevreCoincé
+    }
+    affichageVictoire(victorieux , raison){
+        console.log(victorieux + " : "+ raison)
+        document.getElementById("banderole_victoire").classList.remove("cache")
+        document.getElementById("banderole_titre").innerHTML = "les "+victorieux + " ont gagné!"
+        document.getElementById("banderole_texte").innerHTML = raison
+    }
+
+
     //Quand un jeton est selectioner (et selectionnable), déactive la selection des autres.
     selectionerJetonGlobal(name) {
         //console.log("selectionGlobal des "+name)
