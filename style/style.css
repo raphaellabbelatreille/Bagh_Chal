@@ -311,6 +311,42 @@ main.page_jeu .section_game .board_gazon .row .node img {
   width: 80%;
   height: 80%;
 }
+main.page_jeu .section_game .board_gazon .banderole_victoire {
+  display: flex;
+  width: 585px;
+  height: 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  left: 10vw;
+  top: -7px;
+}
+main.page_jeu .section_game .board_gazon .banderole_victoire .replis_gauche, main.page_jeu .section_game .board_gazon .banderole_victoire .replis_droite {
+  height: 75px;
+}
+main.page_jeu .section_game .board_gazon .banderole_victoire .conteneur_banderole {
+  display: flex;
+  width: 515px;
+  height: 105px;
+  padding-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+  left: 35px;
+  bottom: -5px;
+}
+main.page_jeu .section_game .board_gazon .banderole_victoire .conteneur_banderole .banderole_texte {
+  display: flex;
+  height: 79px;
+  padding: 0px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: #868686;
+}
 main.page_jeu .jeton {
   z-index: 20;
   position: absolute;

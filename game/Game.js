@@ -85,6 +85,7 @@ export class Game {
         }
     }
     finirTour(name){
+        console.log(name)
         if (this.tourEnCours == name){
             if (!this.verifierConditionsVictoire() ){
                 this.enclosChevre.deactiverSelectionChevre();
@@ -98,9 +99,9 @@ export class Game {
                 }
                 
                 switch(this.tourEnCours){
-                    case "chèvre": this.debutTour("tigre"); 
+                    case "chevre": this.debutTour("tigre"); 
                     break;
-                    case "tigre": this.debutTour("chèvre"); 
+                    case "tigre": this.debutTour("chevre"); 
                     break;
                 }
             }
@@ -110,7 +111,7 @@ export class Game {
     debutTour(animal){
         this.tourEnCours = animal
         switch (this.tourEnCours) {
-            case "chèvre":
+            case "chevre":
                 if (this.enclosChevre.nbrChevreEnJeu < this.RESERVE_CHEVRE){
                     this.enclosChevre.activerCreationChevre();
                 } else {
@@ -140,7 +141,7 @@ export class Game {
         this.refBanniereChevre.classList.remove("CURRENT");
         this.refBanniereTigre.classList.remove("CURRENT");
         switch (this.tourEnCours) {
-            case "chèvre":
+            case "chevre":
                 this.refBanniereChevre.classList.add("CURRENT");
                 
 
@@ -160,7 +161,7 @@ export class Game {
     }
     verifierConditionsVictoire(){
         let blnJugeVictoire = true;
-        if (this.tourEnCours == "chèvre"){
+        if (this.tourEnCours == "chevre"){
             if (this.verifierSiTigreSontCoincé() >= 4){
                 console.log("les chevres ont gagné")
             }

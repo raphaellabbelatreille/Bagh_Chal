@@ -54,7 +54,7 @@ export default class Enclos_chevre {
             this.gameWorld.listeJeton.push(new Chevre(targetNode.x,targetNode.y,this.gameWorld.listeGazon, this.gameWorld.listeJeton ,newDiv, this.gameWorld));
             this.nbrChevreEnJeu++;
             this.gameWorld.decrementerReserveChevre(this.nbrChevreEnJeu)
-            this.gameWorld.finirTour("chèvre");
+            this.gameWorld.finirTour("chevre");
         } 
     }
 
