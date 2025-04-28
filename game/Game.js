@@ -246,6 +246,10 @@ export class Game {
         
         this.refReservesChevre = document.getElementById("indiquateur_chevres_reserves")
         this.refReservesChevre.textContent= this.RESERVE_CHEVRE;
+
+        document.getElementById("banderole_victoire").classList.add("cache")
+        document.getElementById("banderole_titre").innerHTML = ""
+        document.getElementById("banderole_texte").innerHTML = ""
     }
     incrementerScoreTigre(){
         this.scoreChevreCapturer++
