@@ -242,7 +242,7 @@ export class Game {
         this.scoreTigreImobile = 0
         this.refScoreTigreImobil = document.getElementById("indiquateur_tigres_imobilise")
         this.refScoreTigreImobil.textContent= this.scoreTigreImobile;
-        for (let index = 1; index < 4; index++) {
+        for (let index = 1; index < 5; index++) {
                 document.getElementById("tigres_imobile_"+index).src = "img/Circle.svg"
         }
         
@@ -256,7 +256,7 @@ export class Game {
     incrementerScoreTigre(){
         this.scoreChevreCapturer++
         this.refScoreChevreCapturer.textContent = this.scoreChevreCapturer
-        document.getElementById("tigres_scores_"+this.scoreChevreCapturer).src = "img/Chevre/Chevre_1.svg"
+        document.getElementById("tigres_scores_"+this.scoreChevreCapturer).src = "img/Chevre/Male.svg"
     }
     
     decrementerReserveChevre(nbrChevreEnJeu){

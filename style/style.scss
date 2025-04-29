@@ -113,9 +113,16 @@ small {
 
 .section_context {
     width:80%;
+    max-width: 700px;
     margin:auto;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
 }
 main.page_jeu{
+    margin-top: 1em;
+    margin-bottom: 1em;
     position: relative;
     width: 100%;
     display: flex;
@@ -252,10 +259,7 @@ main.page_jeu{
             } */
         }
         .scoreBoard {
-            width: 90vw;
             margin: auto;
-            padding:10px;
-            border-radius: 12px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -263,12 +267,14 @@ main.page_jeu{
             border-radius: 12px;
             background-color: var(--couleurFondBoard);
             padding: 12px;
+            gap: 40px;
+            align-items: center;
             .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise ,.indiquateur_tigres_scores{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 5px;
-                
+                width:30%;
             }
             .indiquateur_chevres_reserves{
 
@@ -281,10 +287,21 @@ main.page_jeu{
                     width:100%;
                     height: 30px;
                     img {
-                        max-width:30px;
-                        max-height:30px;
+                        max-width:20px;
+                        max-height:20px;
                     }
                 }
+            }
+            @media (min-width) {
+                .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
+                    .liste {
+                        img {
+                            max-width:30px;
+                            max-height:30px;
+                        }
+                    }
+                }
+                
             }
         }
         .board_gazon {
@@ -402,8 +419,10 @@ main.page_jeu{
         justify-content: space-around;
         img {
             margin: auto;
-            width: 40%;
-            height: 40%;
+            min-width: 40%;
+            min-height: 40%;
+            width: 45px;
+            height: 45px;
         }
         &.bordered {
             border-width: 3px;
@@ -431,6 +450,7 @@ main.page_jeu{
             display: flex;
             flex-direction: row;
             gap:-3px;
+            margin-left: 0px;
             * {
                 transform-origin: 0% 0%;
                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);

@@ -123,10 +123,17 @@ small {
 }
 .section_context {
   width: 80%;
+  max-width: 700px;
   margin: auto;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
 }
 
 main.page_jeu {
+  margin-top: 1em;
+  margin-bottom: 1em;
   position: relative;
   width: 100%;
   display: flex;
@@ -256,10 +263,7 @@ main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre .icon_tou
   height: 90%;
 }
 main.page_jeu .section_game .scoreBoard {
-  width: 90vw;
   margin: auto;
-  padding: 10px;
-  border-radius: 12px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -267,12 +271,15 @@ main.page_jeu .section_game .scoreBoard {
   border-radius: 12px;
   background-color: var(--couleurFondBoard);
   padding: 12px;
+  gap: 40px;
+  align-items: center;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  width: 30%;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste {
   display: flex;
@@ -282,8 +289,14 @@ main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste, ma
   height: 30px;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste img, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste img {
-  max-width: 30px;
-  max-height: 30px;
+  max-width: 20px;
+  max-height: 20px;
+}
+@media (min-width) {
+  main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste img, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste img {
+    max-width: 30px;
+    max-height: 30px;
+  }
 }
 main.page_jeu .section_game .board_gazon {
   margin: auto;
@@ -393,8 +406,10 @@ main.page_jeu .jeton {
 }
 main.page_jeu .jeton img {
   margin: auto;
-  width: 40%;
-  height: 40%;
+  min-width: 40%;
+  min-height: 40%;
+  width: 45px;
+  height: 45px;
 }
 main.page_jeu .jeton.bordered {
   border-width: 3px;
@@ -414,6 +429,7 @@ main.page_jeu .jeton.bordered {
     display: flex;
     flex-direction: row;
     gap: -3px;
+    margin-left: 0px;
   }
   main.page_jeu .section_resume * {
     transform-origin: 0% 0%;
