@@ -15,10 +15,10 @@ export default class Board_gazon {
         for (let y = 0; y < this.LONGUEUR;y++) {
             let newRow = document.createElement("div");
             newRow.classList =" row";
-            newRow.id = "row"+y;
+            newRow.id = "row"+y; 
             for (let x = 0; x < this.LONGUEUR ;x++) {
                 let newTile = document.createElement("div");
-                let node = document.createElement("img");
+                let node = document.getElementById("Odd").cloneNode(true);//document.createElement("img");
                 let pairity = "";
                 node.id = x+y*this.LONGUEUR;
                 if ( (node.id % 2) == 0) {
@@ -29,36 +29,37 @@ export default class Board_gazon {
 
                 if (y == 0){
                     if (x == 0){
-                        node.src = "img/Node/Corner.svg"
+                        node = document.getElementById("Corner").cloneNode(true)
                     } else if (x == this.LONGUEUR-1){
-                        node.src = "img/Node/Corner.svg"
+                        node = document.getElementById("Corner").cloneNode(true)
                         node.style= "transform: rotate(90deg);"
                     } else {
-                        node.src = "img/Node/Border_"+pairity+".svg"
+                        node = document.getElementById("Border_"+pairity).cloneNode(true)
                         //node.style= "transform: rotate(90deg);"
                     }
                 } else if(y == (this.LONGUEUR-1)) {
                     
                     if (x == 0){
-                        node.src = "img/Node/Corner.svg"
+                        node = document.getElementById("Corner").cloneNode(true)
                         node.style= "transform: rotate(270deg);"
                     } else if (x == this.LONGUEUR-1){
-                        node.src = "img/Node/Corner.svg"
+                        node = document.getElementById("Corner").cloneNode(true)
                         node.style= "transform: rotate(180deg);"
                     } else {
-                        node.src = "img/Node/Border_"+pairity+".svg"
+                        node = document.getElementById("Border_"+pairity).cloneNode(true)
                         node.style= "transform: rotate(180deg);"
                     }
                 } else {
                     if (x == 0){
-                        node.src = "img/Node/Border_"+pairity+".svg"
+                        node = document.getElementById("Border_"+pairity).cloneNode(true)
                         node.style= "transform: rotate(270deg);"
 
                     } else if (x == this.LONGUEUR-1){
-                        node.src = "img/Node/Border_"+pairity+".svg"
+                        node = document.getElementById("Border_"+pairity).cloneNode(true)
                         node.style= "transform: rotate(90deg);"
                     } else {
-                        node.src = "img/Node/"+pairity+".svg"
+                        node = document.getElementById(pairity).cloneNode(true)
+
                     }
                     
                 }

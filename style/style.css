@@ -319,12 +319,16 @@ main.page_jeu .section_game .board_gazon .row .node {
   justify-content: space-around;
   margin: auto;
 }
-main.page_jeu .section_game .board_gazon .row .node img {
+main.page_jeu .section_game .board_gazon .row .node svg {
   max-width: 130px;
   max-height: 130px;
   margin: auto;
   width: 80%;
   height: 80%;
+}
+main.page_jeu .section_game .board_gazon .row .node svg * {
+  stroke: var(--couleurNode);
+  box-shadow: 0px 0px 3px 0px var(--couleurNode);
 }
 main.page_jeu .section_game .board_gazon .banderole_victoire {
   z-index: 30;
@@ -600,4 +604,9 @@ footer {
 }
 footer small {
   text-align: center;
+}
+
+.hidden_board {
+  display: none;
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */

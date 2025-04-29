@@ -320,12 +320,16 @@ main.page_jeu{
                     display: flex;
                     justify-content: space-around;
                     margin:auto;
-                    img {
+                    svg {
                         max-width: 130px;
                         max-height: 130px;
                         margin:auto;
                         width: 80%;
                         height: 80%;
+                        *{
+                            stroke:var(--couleurNode);
+                            box-shadow: 0px 0px 3px 0px var(--couleurNode);
+                        }
                     }
                 }
             }
@@ -628,4 +632,9 @@ footer {
     small {
         text-align: center;
     }
+}
+
+.hidden_board {
+    display: none;
+    visibility: hidden;
 }
