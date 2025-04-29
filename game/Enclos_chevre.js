@@ -47,7 +47,7 @@ export default class Enclos_chevre {
             newDiv.id = "chevre"+(this.nbrChevreEnJeu+1);
             newDiv.className = "jeton chevre" ;
             let newImg = document.createElement("img");
-            newImg.src = "img/Placeholder_chevre.svg"
+            newImg.src = "img/Chevre/Chevre_1.svg"
             newDiv.appendChild(newImg)
             document.getElementById("board_gazon").appendChild(newDiv)
             this.gameWorld.listeJeton.push(new Chevre(targetNode.x,targetNode.y,this.gameWorld.listeGazon, this.gameWorld.listeJeton ,newDiv, this.gameWorld));

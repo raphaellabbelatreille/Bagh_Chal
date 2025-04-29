@@ -171,7 +171,7 @@ main.page_jeu{
         padding: auto;
         .banniere {
             //height:55px;
-            width: 80vw;//615px;
+            //width: 80vw;//615px;
             display: flex;
             padding: 0px 2px;
             justify-content: center;
@@ -204,24 +204,32 @@ main.page_jeu{
                 left: 35px;
                 
                 margin: auto;
-                padding: 0px 15px;
+                padding: 10px 15px;
                 display: flex;
                 hr {
                     height: 25px;;
                 }
                 .tourChevre , .tourTigre {
                     width:50%;
-                    height: 39px;
-                    text-align: center;
+                    height: 45px;
+                    
                     color:rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    gap: 12px;
                     &.CURRENT {
                         color:var(--couleurTexte);
                         border: 3px solid var(--couleurCursor);
                     }
+                    .icon_tour {
+                        width:auto;
+                        height:90%;
+                    }
                 }
                               
             }
-            .table_only {
+            /*.table_only {
                 visibility: hidden;
                 display: none;
             }  
@@ -241,7 +249,7 @@ main.page_jeu{
                     }
                 
                     
-            } 
+            } */
         }
         .scoreBoard {
             width: 90vw;
