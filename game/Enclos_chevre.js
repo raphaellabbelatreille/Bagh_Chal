@@ -47,7 +47,14 @@ export default class Enclos_chevre {
             newDiv.id = "chevre"+(this.nbrChevreEnJeu+1);
             newDiv.className = "jeton chevre" ;
             let newImg = document.createElement("img");
-            newImg.src = "img/Chevre/Chevre_1.svg"
+            let chiffreAléatoire =Math.floor(Math.random()*2)
+            if (chiffreAléatoire == 0){
+                newImg.src = "img/Chevre/Male.svg"
+            } else {
+                newImg.src = "img/Chevre/Femelle.svg"
+
+            }
+            
             newDiv.appendChild(newImg)
             document.getElementById("board_gazon").appendChild(newDiv)
             this.gameWorld.listeJeton.push(new Chevre(targetNode.x,targetNode.y,this.gameWorld.listeGazon, this.gameWorld.listeJeton ,newDiv, this.gameWorld));

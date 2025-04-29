@@ -8,22 +8,9 @@
     <body>
         <section class="section_context">
             <h1>La tactique des Chèvres</h1>
-            <p>
-                La "tactique des Chèvres" est une reprise du jeu "Bagh Chal", ou "Mouvement du Tigre". Celui-ci est un jeu de
-                stratégie traditionnel du Népal. Il oppose quatre tigres à vingt
-                chèvres sur une grille de 25 intersections. Les tigres
-                cherchent à capturer les chèvres en sautant par-dessus
-                elles, tandis que les chèvres tentent d'immobiliser les tigres.
-                Ce jeu asymétrique reflète des dynamiques de pouvoir
-                similaires à celles observées dans les structures
-                patriarcales. Le Bagh Chal n'est pas seulement un jeu
-                traditionnel, mais aussi une représentation symbolique
-                des dynamiques de pouvoir et des stratégies de résistance.
-                Il oIre des enseignements précieux sur la manière dont
-                la coopération et la solidarité peuvent contester et
-                transformer les structures oppressives, ouvrant la voie à une
-                société plus équilibrée et équitable.
-            </p>
+            <p>La Tactique des Chèvres, inspirée du Bagh Chal traditionnel népalais (<u><a href="https://fr.wikipedia.org/wiki/Bagh_Chal">Lien Wikipedia</a></u>), oppose quatre prédateurs $$$$ à une communauté de vingt individus surnommés les chèvres.</p>
+            <p>Ce jeu asymétrique confronte la logique patriarcale capitaliste — exploitation des femmes, de la nature et des ressources (« drill, baby drill ! ») — et les valeurs de coopération et de solidarité.</p>
+            <p>Ici, nous jouons pour la communauté : faites triompher les chèvres et développons notre intelligence collective !</p>
         </section>
 
         <main class="page_jeu">
@@ -46,34 +33,43 @@
                             <div class="tete">
                                 <h2>Au début de la partie</h2>
                             </div>
-                            <p>Sur le plateau, il y a 4 tigres, chacun placé à chaque coin de celui si.</p>
-                            <p>Il y a 20 chèvres mais ils ne sont pass sur le plateau. Ils sont caché en réserves</p>
-                            <p>Un jeton qui fait un <strong>mouvement normal</strong> est un jeton qui se déplace de 1 noeud tout en suivant les lignes.</p>
-                            <p>Les chèvres commencent en premier, suivi des tigres.</p>
+                            <ul>
+                                <li>Les 4 tigres sont placé dans les coin du plateau.</li>
+                                <li>les 20 chèvres commencent dans la réserve.</li>
+                                <li>Les chèvres commencent en premier, suivi des tigres.</li>
+                            </ul>
+                            <p>Pour déplacé un jeton, place le sur un noeud adjacent qui est vide de facon à suivre les lignes.</p>
                         </div>
                         <div class="au_chevre post-it">
                             <div class="tete">
                                 <img src="img/Chevre/Chevre_1.svg">
                                 <h2>Durant le tour des chêvres</h2>
                             </div>
-                            <p>Durant le tour des chèvres, tu peux faire sortir une chèvres de la réserves. Pour ce faire, selectionnez un noeud vide non occupé.</p>
-                            <p>Tu ne peux pas déplacer de chèvres tant qu’il y en a en réserves. Si il n’y a plus de chèvres en réserves, tu doit déplacer une des chèvres en faisant un <strong>mouvement normal</strong>.</p>
+                            <ul>
+                                <li>Si il y a encore des chevres en réserves, place en une sur un noeud vide</li>
+                                <li>Sinon, déplace une des chevres.</li>
+                            </ul>
+                            
                         </div>
                         <div class="au_tigre post-it">
                             <div class="tete">
                                 <img src="img/placeholder_tigre.svg">
                                 <h2>Durant le tour des tigres</h2>
                             </div>
-                            <p>Durant le tour des tigres, Les tigres peuvent se déplacé en faisant un <strong>mouvement normal</strong>.</p>
-                            <p>Les tigres peuvent capturer les chèvres adjacente en sautant par dessus ceux-si. Cette capture devient impossible si il y a un autre jeton ou le rebord du plateau à la destination.</p>
+                            <ul>
+                                <li>Tu peux déplacer un tigre</li>
+                                <li>Capturer une chevre en sautant par dessus</li>
+                            </ul>
                         </div>
                         <div class="au_trophée post-it">
                             <div class="tete">
                                 <img src="img/placeholder_tigre.svg">
                                 <h2>Comment gagné</h2>
                             </div>
-                            <p>Les chèvre gagnent si les tigres se retrouvent incapables de bouger au début de leur tour.</p>
-                            <p>Les tigres gagnent après avoir capturé 5 chèvres.</p>
+                            <ul>
+                                <li>Un joueur gagne si son opposant se retrouve incapables de jouer au début de leur tour.</li>
+                                <li>Les tigres gagnent après avoir capturé 5 chèvres.</li>
+                            </ul>
                         </div>
                         <a class="btn_bulle" href="instruction.html" target="_blank">
                             <svg class="svg_bulle" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
@@ -113,10 +109,10 @@
                 </div>
                 <div class="scoreBoard">
                     <div class="indiquateur_chevres_reserves">
-                        <p><strong id="indiquateur_chevres_reserves">20</strong>/20 chèvres en réserves</p>
+                        <p><strong id="indiquateur_chevres_reserves">20</strong>/20 chèvres en réserve</p>
                     </div>
                     <div class="indiquateur_tigres_imobilise">
-                        <p><strong id="indiquateur_tigres_imobilise">0</strong>/4 tigres d'immobile</p>
+                        <p><strong id="indiquateur_tigres_imobilise">0</strong>/4 tigres imobilisés</p>
                         <div class="liste">
                             <img id="tigres_imobile_1" src="img/Circle.svg"> 
                             <img id="tigres_imobile_2" src="img/Circle.svg"> 
@@ -125,7 +121,7 @@
                         </div>
                     </div>
                     <div class="indiquateur_tigres_scores">
-                        <p> <strong id="indiquateur_tigres_scores">0</strong>/5 chèvres de capturer </p>
+                        <p> <strong id="indiquateur_tigres_scores">0</strong>/5 chèvres capturés </p>
                         <div class="liste">
                             <img id="tigres_scores_1" src="img/Circle.svg"> 
                             <img id="tigres_scores_2" src="img/Circle.svg"> 
