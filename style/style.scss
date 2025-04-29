@@ -273,18 +273,16 @@ main.page_jeu{
             .indiquateur_chevres_reserves{
 
             }
-            .indiquateur_tigres_imobilise{
-
-            }
-            .indiquateur_tigres_scores {
-                
-                .liste_tigres_scores {
+            .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
+                .liste {
                     display: flex;
-                    align-items: flex-start;
-                    gap: 5px;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width:100%;
+                    height: 30px;
                     img {
-                        width:30px;
-                        height:30px;
+                        max-width:30px;
+                        max-height:30px;
                     }
                 }
             }

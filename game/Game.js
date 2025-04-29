@@ -79,7 +79,7 @@ export class Game {
             newDiv.appendChild(newImg)
             document.getElementById("board_gazon").appendChild(newDiv)
             
-            this.listeJeton.push(new Tigre(x,y,this.listeGazon, this.listeJeton ,newDiv, this))
+            this.listeJeton.push(new Tigre(x,y,this.listeGazon, this.listeJeton ,newDiv, this, nameFile))
         }
     }
     finirTour(name){
@@ -148,25 +148,24 @@ export class Game {
         let blnJugeVictoire = false;
         let strVictorieux = "";
         let strRaison = "";
-        if (this.tourEnCours == "chevre"){
-            if (this.verifierSiTigreSontCoincé() >= 4){
-                blnJugeVictoire = true;
-                strVictorieux = "chèvres"
-                strRaison = "Les tigres sont incapables de bouger!"
-            }
+
+        if (this.verifierSiTigreSontCoincé() >= 4){
+            blnJugeVictoire = true;
+            strVictorieux = "chèvres"
+            strRaison = "Les tigres sont incapables de bouger!"
         }
+        if (this.verifierSiChevreSontCoincé() >= 20){
+            blnJugeVictoire = true;
+            strVictorieux = "tigres"
+            strRaison = "Les chèvres sont imobilisé de peur! Il ne peuvent plus bouger"
+        }
+
         if (this.tourEnCours == "tigre"){
             if (this.scoreChevreCapturer >= 4){
                 blnJugeVictoire = true;
                 strVictorieux = "tigres"
                 strRaison = "5 chèvres ont été mangé. Elles étaient savoureuses"
-            } else {
-                if (this.verifierSiChevreSontCoincé() >= 20){
-                    blnJugeVictoire = true;
-                    strVictorieux = "tigres"
-                    strRaison = "Les chèvres sont imobilisé de peur! Il ne peuvent plus bouger"
-                }
-            }
+            } 
         }
         if (blnJugeVictoire == true){
             this.affichageVictoire(strVictorieux, strRaison)
@@ -177,10 +176,22 @@ export class Game {
         let compteurDeTigreCoincé = 0;
         for (let indexTigre = 0; indexTigre < this.listeJeton.length; indexTigre++) {
             if ( this.listeJeton[indexTigre].name == "tigre"){
-                compteurDeTigreCoincé += this.listeJeton[indexTigre].selectionerJeton();
+                
+                
+                if ( this.listeJeton[indexTigre].selectionerJeton() == 1){
+                    compteurDeTigreCoincé ++
+                    document.getElementById("tigres_imobile_"+compteurDeTigreCoincé).src = "img/Tigre/"+this.listeJeton[indexTigre].surname+".svg"
+                } else {
+                    
+                }
                 this.listeJeton[indexTigre].finirSelection();
                 this.listeJeton[indexTigre].deactiverSelection();
             }   
+        }
+        for (let index = 0; index < 4; index++) {
+            if (index> compteurDeTigreCoincé){
+                document.getElementById("tigres_imobile_"+index).src = "img/Circle.svg"
+            }
         }
         document.getElementById("indiquateur_tigres_imobilise").innerText = compteurDeTigreCoincé;
         return compteurDeTigreCoincé
@@ -195,6 +206,7 @@ export class Game {
                 this.listeJeton[indexChevre].deactiverSelection();
                 if (blnDead == true || ChevreCoincé == 1){
                     compteurDeChevreCoincé++
+                    
                 }
             }   
         }
@@ -223,9 +235,16 @@ export class Game {
         this.scoreChevreCapturer = 0
         this.refScoreChevreCapturer = document.getElementById("indiquateur_tigres_scores") 
         this.refScoreChevreCapturer.textContent= this.scoreChevreCapturer;
+        for (let index = 1; index <= 5; index++) {
+            document.getElementById("tigres_scores_"+index).src = "img/Circle.svg"
+        }
+
         this.scoreTigreImobile = 0
         this.refScoreTigreImobil = document.getElementById("indiquateur_tigres_imobilise")
         this.refScoreTigreImobil.textContent= this.scoreTigreImobile;
+        for (let index = 1; index < 4; index++) {
+                document.getElementById("tigres_imobile_"+index).src = "img/Circle.svg"
+        }
         
         this.refReservesChevre = document.getElementById("indiquateur_chevres_reserves")
         this.refReservesChevre.textContent= this.RESERVE_CHEVRE;
@@ -237,6 +256,7 @@ export class Game {
     incrementerScoreTigre(){
         this.scoreChevreCapturer++
         this.refScoreChevreCapturer.textContent = this.scoreChevreCapturer
+        document.getElementById("tigres_scores_"+this.scoreChevreCapturer).src = "img/Chevre/Chevre_1.svg"
     }
     
     decrementerReserveChevre(nbrChevreEnJeu){

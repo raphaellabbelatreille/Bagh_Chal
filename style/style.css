@@ -274,14 +274,16 @@ main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves, main.page
   align-items: center;
   gap: 5px;
 }
-main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste_tigres_scores {
+main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste {
   display: flex;
-  align-items: flex-start;
-  gap: 5px;
-}
-main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste_tigres_scores img {
-  width: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
   height: 30px;
+}
+main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste img, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste img {
+  max-width: 30px;
+  max-height: 30px;
 }
 main.page_jeu .section_game .board_gazon {
   margin: auto;

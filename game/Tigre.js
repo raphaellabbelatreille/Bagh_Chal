@@ -2,9 +2,10 @@ import Jeton from "./Jeton.js";
 
 
 export default class Tigre extends Jeton {
-    constructor(x, y, BoardTile, listeJeton , htmlElement, gameWorld) {
+    constructor(x, y, BoardTile, listeJeton , htmlElement, gameWorld, surname) {
         super(x,y,BoardTile, listeJeton, htmlElement, gameWorld);
         this.name = "tigre";
+        this.surname = surname;
         //this.selectionerTigre_lier = this.selectionerTigre.bind(this)
         //this.element.addEventListener("click", this.selectionerTigre_lier)
     }
