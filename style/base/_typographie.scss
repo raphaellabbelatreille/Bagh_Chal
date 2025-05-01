@@ -1,0 +1,55 @@
+/* TYPOGRAPHIE, couleur de texte et Font size*/
+html {
+    font-size: 62.5%;
+    font-size: 10px;
+}
+body {
+    background: var(--couleurFondDEcran);
+    color: var(--couleurTexte);
+    font-family: "Instrument Sans", sans-serif;
+    margin: 0px;
+    @include fontSize(12px);
+    @media (min-width:1000px) {
+        @include fontSize(16px);
+    }
+}
+h1, h2 {
+    font-family: "Itim", cursive;
+}
+h3, p, span , small {
+    font-family: "Instrument Sans", sans-serif;
+}
+h1 {
+    @include fontSize(32px);
+    @media (min-width:1000px) {
+        @include fontSize(36px);
+    }
+}
+h2 {
+    @include fontSize(20px);
+    @media (min-width:1000px) {
+        @include fontSize(24px);
+    }
+}
+h3 {
+    @include fontSize(16px);
+    @media (min-width:1000px) {
+        @include fontSize(20px);
+    }
+}
+p, span {
+    @include fontSize(14px);
+    @media (min-width:1000px) {
+        @include fontSize(16px);
+    }
+}
+a {
+    color : var(--couleurTexte);
+    text-decoration: none;
+}
+small {
+    @include fontSize(12px);
+    @media (min-width:1000px) {
+        @include fontSize(14px);
+    }
+}

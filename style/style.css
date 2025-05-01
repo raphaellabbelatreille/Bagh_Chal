@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/* I do not like Margin-block-chose */
+* {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
 /* VARIABLES */
 :root {
   --couleurFondDEcran:rgb(0, 77, 46);
@@ -10,12 +16,36 @@
   --couleurCursor: #FEE180;
 }
 
+/* MIXIN */
+/* SECTION PARTAGÉ ENTRE lES DEUX PAGES*/
+.section_context {
+  width: 80%;
+  max-width: 700px;
+  margin: auto;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2em 2em;
+  gap: 12px;
+  margin-top: 1em;
+}
+footer small {
+  text-align: center;
+}
+
+/* TYPOGRAPHIE, couleur de texte et Font size*/
 html {
   font-size: 62.5%;
   font-size: 10px;
 }
 
-/* MIXIN */
 body {
   background: var(--couleurFondDEcran);
   color: var(--couleurTexte);
@@ -29,12 +59,6 @@ body {
     font-size: 16px;
     font-size: 1.6rem;
   }
-}
-
-/* TYPOGRAPHIE */
-* {
-  margin-block-start: 0em;
-  margin-block-end: 0em;
 }
 
 h1, h2 {
@@ -105,32 +129,6 @@ small {
   }
 }
 
-/* LE VRAIE SCSS */
-.btn_bulle {
-  appearance: none;
-  display: inline-flex;
-  padding: 10px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
-  border: 2px solid var(--couleurTexte);
-  background-color: var(--couleurFondBulle);
-  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
-  max-height: 35px;
-  min-width: 150px;
-  margin: auto;
-}
-.section_context {
-  width: 80%;
-  max-width: 700px;
-  margin: auto;
-  gap: 12px;
-  display: flex;
-  flex-direction: column;
-  padding: 12px;
-}
-
 main.page_jeu {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -141,40 +139,6 @@ main.page_jeu {
   flex-direction: column;
   align-items: center;
   gap: 50px;
-}
-main.page_jeu .section_resume {
-  max-width: 800px;
-  margin: auto;
-}
-main.page_jeu .section_resume .switch_slider, main.page_jeu .section_resume .spaceur, main.page_jeu .section_resume .arrow {
-  display: none;
-}
-main.page_jeu .section_resume .containeur_resume, main.page_jeu .section_resume .spaceur {
-  border: 1px solid var(--couleurTexte);
-  border-radius: 12px;
-  background-color: var(--couleurFond);
-  padding: 12px;
-}
-main.page_jeu .section_resume .containeur_resume {
-  gap: 12px;
-}
-main.page_jeu .section_resume .containeur_resume .slider {
-  display: flex;
-  justify-content: space-around;
-}
-main.page_jeu .section_resume .containeur_resume .instruction {
-  display: flex;
-  gap: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
-}
-main.page_jeu .section_resume .containeur_resume .instruction .post-it {
-  display: flex;
-  gap: 5px;
-  flex-direction: column;
 }
 main.page_jeu .section_game {
   width: 100%;
@@ -202,27 +166,6 @@ main.page_jeu .section_game .banniere {
   /*.replis_droite, .replis_gauche {
       margin-top: auto;
   }*/
-  /*.table_only {
-      visibility: hidden;
-      display: none;
-  }  
-  @media (min-width:1200px) {
-          width: 80vw;
-          .conteneur_bannière{
-              width: 615px;
-
-          }
-          .mobile_only {
-              visibility: hidden;
-              display: none;
-          }
-          .table_only {
-              visibility:visible;
-              display: block;
-          }
-
-
-  } */
 }
 main.page_jeu .section_game .banniere .tour {
   margin: 0.5em auto 0.5em;
@@ -421,78 +364,12 @@ main.page_jeu .jeton.bordered {
     flex-direction: row;
     gap: 0px;
   }
-  main.page_jeu .section_resume {
-    position: absolute;
-    top: 100px;
-    left: 0px;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-    display: flex;
-    flex-direction: row;
-    gap: -3px;
-    margin-left: 0px;
-  }
-  main.page_jeu .section_resume * {
-    transform-origin: 0% 0%;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  }
-  main.page_jeu .section_resume .spaceur, main.page_jeu .section_resume .containeur_resume {
-    background-color: var(--couleurFond);
-    border-left: none;
-    border-radius: 0px 12px 12px 0px;
-    border-top: 1px solid var(--couleurTexte);
-    border-bottom: 1px solid var(--couleurTexte);
-    border-right: 1px solid var(--couleurTexte);
-    transform-origin: 0;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  }
-  main.page_jeu .section_resume .spaceur {
-    display: block;
-    width: 45px;
-    min-height: 400px;
-  }
-  main.page_jeu .section_resume .containeur_resume {
-    transform-origin: 0;
-    margin: 10px 0px 10px -2px;
-    height: fit-content;
-  }
-  main.page_jeu .section_resume .containeur_resume .slider {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    height: 45px;
-  }
-  main.page_jeu .section_resume .containeur_resume .slider h2, main.page_jeu .section_resume .containeur_resume .slider .arrow {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  main.page_jeu .section_resume .containeur_resume .slider .arrow {
-    transform-origin: 50% 50%;
-    display: block;
-    width: 30px;
-    height: 30px;
-  }
-  main.page_jeu .section_resume .containeur_resume .instruction {
-    display: none;
-  }
-  main.page_jeu:has(.switch_slider:checked) .section_resume {
-    top: 0px;
-    position: relative;
-  }
-  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume {
-    width: 400px;
-  }
-  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume .slider {
-    width: 100%;
-  }
-  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume .slider .arrow {
-    transform: rotate(180deg);
-  }
-  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume .instruction {
-    display: flex;
-  }
-  main.page_jeu:has(.switch_slider:checked) .section_game {
-    width: 70%;
-  }
+}
+
+/* Pour stocker les noeuds qui vont être recopier dans le plateau */
+.hidden_board {
+  display: none;
+  visibility: hidden;
 }
 
 /* INSTRUCTION */
@@ -595,34 +472,147 @@ main.page_instruction .containeur_animaux .section_tigre {
   }
 }
 
+.section_resume {
+  max-width: 800px;
+  margin: auto;
+}
+.section_resume .switch_slider, .section_resume .spaceur, .section_resume .arrow {
+  display: none;
+}
+.section_resume .containeur_resume, .section_resume .spaceur {
+  border: 1px solid var(--couleurTexte);
+  border-radius: 12px;
+  background-color: var(--couleurFond);
+  padding: 12px;
+}
+.section_resume .containeur_resume {
+  gap: 12px;
+}
+.section_resume .containeur_resume .slider {
+  display: flex;
+  justify-content: space-around;
+}
+.section_resume .containeur_resume .instruction {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+.section_resume .containeur_resume .instruction .post-it {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+/* Fonctionnalité du slider lorsque en mode Table */
+@media (min-width: 1200px) {
+  main.page_jeu .section_resume {
+    position: absolute;
+    top: 20vh;
+    left: 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    display: flex;
+    flex-direction: row;
+    gap: -3px;
+    margin-left: 0px;
+  }
+  main.page_jeu .section_resume * {
+    transform-origin: 0% 0%;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  main.page_jeu .section_resume .spaceur, main.page_jeu .section_resume .containeur_resume {
+    background-color: var(--couleurFond);
+    border-left: none;
+    border-radius: 0px 12px 12px 0px;
+    border-top: 1px solid var(--couleurTexte);
+    border-bottom: 1px solid var(--couleurTexte);
+    border-right: 1px solid var(--couleurTexte);
+    transform-origin: 0;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  main.page_jeu .section_resume .spaceur {
+    display: block;
+    width: 45px;
+    min-height: 400px;
+  }
+  main.page_jeu .section_resume .containeur_resume {
+    transform-origin: 0;
+    margin: 10px 0px 10px -2px;
+    height: fit-content;
+  }
+  main.page_jeu .section_resume .containeur_resume .slider {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    height: 45px;
+  }
+  main.page_jeu .section_resume .containeur_resume .slider h2, main.page_jeu .section_resume .containeur_resume .slider .arrow {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  main.page_jeu .section_resume .containeur_resume .slider .arrow {
+    transform-origin: 50% 50%;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+  main.page_jeu .section_resume .containeur_resume .instruction {
+    display: none;
+  }
+  main.page_jeu:has(.switch_slider:checked) .section_resume {
+    top: 0px;
+    position: relative;
+  }
+  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume {
+    width: 400px;
+  }
+  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume .slider {
+    width: 100%;
+  }
+  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume .slider .arrow {
+    transform: rotate(180deg);
+  }
+  main.page_jeu:has(.switch_slider:checked) .section_resume .containeur_resume .instruction {
+    display: flex;
+  }
+  main.page_jeu:has(.switch_slider:checked) .section_game {
+    width: 70%;
+  }
+}
+
+/* TRUC RÉCURENT */
+.btn_bulle {
+  appearance: none;
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--couleurTexte);
+  background-color: var(--couleurFondBulle);
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+  max-height: 35px;
+  min-width: 150px;
+  margin: auto;
+}
 .tete {
   margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   display: flex;
   flex-direction: row;
   gap: 24px;
+  max-width: 300px;
+  align-items: center;
 }
 .tete h2 {
   width: 100%;
-  max-width: 230px;
 }
-.tete img {
-  min-width: 50px;
-  max-width: 150px;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 2em 2em;
-  gap: 12px;
-  margin-top: 1em;
-}
-footer small {
-  text-align: center;
-}
-
-.hidden_board {
-  display: none;
-  visibility: hidden;
+.tete img, .tete svg {
+  max-width: 70px;
+  max-height: 70px;
 }/*# sourceMappingURL=style.css.map */

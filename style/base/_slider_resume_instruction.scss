@@ -1,0 +1,121 @@
+.section_resume {
+    max-width: 800px;
+    margin: auto;
+    .switch_slider, .spaceur, .arrow {
+        display: none;
+    }
+    .containeur_resume, .spaceur {
+        border: 1px solid var(--couleurTexte);
+        border-radius: 12px;
+        background-color: var(--couleurFond);
+        padding: 12px;
+    }
+    .containeur_resume {
+        gap:12px;
+        .slider {
+            display: flex;
+            justify-content: space-around;
+        }
+        .instruction {
+            display: flex;
+            gap:10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            flex-direction: column;
+            justify-content: space-around;
+            width:100%;
+            .post-it {
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+            
+                
+            }
+        }
+    }
+}
+
+/* Fonctionnalité du slider lorsque en mode Table */
+main.page_jeu{
+    @media (min-width:1200px) {
+        .section_resume {
+            position: absolute;
+            top: 20vh;
+            left:0px;
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+            //transform: translate(-100%, 0);
+            display: flex;
+            flex-direction: row;
+            gap:-3px;
+            margin-left: 0px;
+            * {
+                transform-origin: 0% 0%;
+                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+            }
+            .spaceur,.containeur_resume{
+                background-color: var(--couleurFond);
+                border-left :none;
+                border-radius: 0px 12px 12px 0px;
+                border-top: 1px solid var(--couleurTexte);
+                border-bottom: 1px solid var(--couleurTexte);
+                border-right: 1px solid var(--couleurTexte);
+                transform-origin: 0;
+                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+            }
+            .spaceur {
+                display: block;
+                width: 45px;
+                min-height: 400px;
+            }
+            .containeur_resume {
+                transform-origin: 0;
+                margin: 10px 0px 10px -2px;
+                height: fit-content;
+                .slider{
+                    display: flex;
+                    justify-content: center;
+                    gap:12px;
+                    //width:150px;
+                    height: 45px;
+                    h2, .arrow {
+                        margin-top: auto;
+                        margin-bottom: auto;
+                    }
+                    .arrow {   
+                        transform-origin: 50% 50%;             
+                        display: block;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .instruction {
+                    display: none;
+                }
+            } 
+        }
+        .section_game {
+            //width:100%;
+        }
+        &:has(.switch_slider:checked){
+            .section_resume{
+                top: 0px;
+                position: relative;
+                .containeur_resume {
+                    width:400px;
+                    .slider {
+                        width:100%;
+                        .arrow {
+                            transform: rotate(180deg);
+                        }
+                    }
+                    .instruction {
+                        display: flex;
+                    }
+                }
+            }
+            .section_game {
+                width: 70%;
+            }
+        }
+    }
+}

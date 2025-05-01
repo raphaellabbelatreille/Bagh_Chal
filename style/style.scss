@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/* I do not like Margin-block-chose */
+*  {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
 /* VARIABLES */
 :root {
     --couleurFondDEcran:rgb(0, 77, 46);
@@ -9,10 +15,6 @@
     
     --couleurTexte : white;
     --couleurCursor : #FEE180; //#FEE180
-}
-html {
-    font-size: 62.5%;
-    font-size: 10px;
 }
 /* MIXIN */
 @function calculateRem($size) {
@@ -25,70 +27,36 @@ html {
 }
 
 
-body {
-    background: var(--couleurFondDEcran);
-    color: var(--couleurTexte);
-    font-family: "Instrument Sans", sans-serif;
-    margin: 0px;
-    @include fontSize(12px);
-    @media (min-width:1000px) {
-        @include fontSize(16px);
+/* SECTION PARTAGÉ ENTRE lES DEUX PAGES*/
+.section_context {
+    width:80%;
+    max-width: 700px;
+    margin:auto;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2em 2em;
+    gap:12px;
+    margin-top: 1em;
+    small {
+        text-align: center;
     }
 }
 
 
-/* TYPOGRAPHIE */
-*  {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-}
+@import "base/typographie";
+@import "base/page_jeu";
+@import "base/page_instruction";
+@import "base/slider_resume_instruction";
 
-h1, h2 {
-    font-family: "Itim", cursive;
-}
-h3, p, span , small {
-    font-family: "Instrument Sans", sans-serif;
-}
-h1 {
-    @include fontSize(32px);
-    @media (min-width:1000px) {
-        @include fontSize(36px);
-    }
-}
-h2 {
-    @include fontSize(20px);
-    @media (min-width:1000px) {
-        @include fontSize(24px);
-    }
-}
-
-h3 {
-    @include fontSize(16px);
-    @media (min-width:1000px) {
-        @include fontSize(20px);
-    }
-}
-p, span {
-    @include fontSize(14px);
-    @media (min-width:1000px) {
-        @include fontSize(16px);
-    }
-}
-a {
-    //appearance: none;
-    color : var(--couleurTexte);
-    text-decoration: none;
-}
-small {
-    @include fontSize(12px);
-    @media (min-width:1000px) {
-        @include fontSize(14px);
-    }
-}
-
-
-
-/* LE VRAIE SCSS */
+/* TRUC RÉCURENT */
+// bouton rond
 .btn_bulle {
     appearance: none;
     display: inline-flex;
@@ -109,552 +77,21 @@ small {
 
     }
 }
-
-
-.section_context {
-    width:80%;
-    max-width: 700px;
-    margin:auto;
-    gap: 12px;
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-}
-main.page_jeu{
-    margin-top: 1em;
-    margin-bottom: 1em;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    gap:50px;
-    .section_resume {
-        max-width: 800px;
-        margin: auto;
-        .switch_slider, .spaceur, .arrow {
-            display: none;
-        }
-        .containeur_resume, .spaceur {
-            border: 1px solid var(--couleurTexte);
-            border-radius: 12px;
-            background-color: var(--couleurFond);
-            padding: 12px;
-        }
-        .containeur_resume {
-            gap:12px;
-            .slider {
-                display: flex;
-                justify-content: space-around;
-            }
-            .instruction {
-                display: flex;
-                gap:10px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                flex-direction: column;
-                justify-content: space-around;
-                width:100%;
-                .post-it {
-                    display: flex;
-                    gap: 5px;
-                    flex-direction: column;
-                
-                    
-                }
-            }
-        }
-    }
-    .section_game {
-        width:100%;
-        max-height: 95vh;
-        display: flex;
-        margin: auto;
-        margin-top:2em ;
-        margin-bottom:2em ;
-        justify-content: space-around;
-        flex-direction: column;
-        padding: auto;
-        .banniere {
-            //height:55px;
-            //width: 80vw;//615px;
-            display: flex;
-            padding: 0px 2px;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            align-self: stretch;
-            flex-wrap: wrap;
-            margin: auto;
-            margin-top: 2em;
-            margin-bottom: 2em;
-            
-            background: #868686;
-            /*.replis_droite, .replis_gauche {
-                margin-top: auto;
-            }*/
-            .tour {
-                margin: 0.5em auto 0.5em;
-                width: 100%;
-                text-align: center;
-            }
-            .conteneur_bannière {
-                //position: absolute;
-                display: flex;
-                height: 45px;
-                width: 100%;
-                justify-content: space-between;
-                align-items: center;
-                gap: 10px;
-                align-self: stretch;
-                left: 35px;
-                
-                margin: auto;
-                padding: 10px 15px;
-                display: flex;
-                hr {
-                    height: 25px;;
-                }
-                .tourChevre , .tourTigre {
-                    width:50%;
-                    height: 45px;
-                    
-                    color:rgba(255, 255, 255, 0.5);
-                    display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    gap: 12px;
-                    &.CURRENT {
-                        color:var(--couleurTexte);
-                        border: 3px solid var(--couleurCursor);
-                    }
-                    .icon_tour {
-                        width:auto;
-                        height:90%;
-                    }
-                }
-                              
-            }
-            /*.table_only {
-                visibility: hidden;
-                display: none;
-            }  
-            @media (min-width:1200px) {
-                    width: 80vw;
-                    .conteneur_bannière{
-                        width: 615px;
-                    
-                    }
-                    .mobile_only {
-                        visibility: hidden;
-                        display: none;
-                    }
-                    .table_only {
-                        visibility:visible;
-                        display: block;
-                    }
-                
-                    
-            } */
-        }
-        .scoreBoard {
-            margin: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            border: 1px solid var(--couleurTexte);
-            border-radius: 12px;
-            background-color: var(--couleurFondBoard);
-            padding: 12px;
-            gap: 40px;
-            align-items: center;
-            .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise ,.indiquateur_tigres_scores{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 5px;
-                width:30%;
-            }
-            .indiquateur_chevres_reserves{
-
-            }
-            .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
-                .liste {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    width:100%;
-                    height: 30px;
-                    img {
-                        max-width:20px;
-                        max-height:20px;
-                    }
-                }
-            }
-            @media (min-width) {
-                .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
-                    .liste {
-                        img {
-                            max-width:30px;
-                            max-height:30px;
-                        }
-                    }
-                }
-                
-            }
-        }
-        .board_gazon {
-            margin: auto;
-            width: 80vw;
-            height: 80vh;
-            max-width: 80vh;
-            
-            max-height: 80vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            position: relative;
-            margin-top: 1em;
-
-            border-radius: 12px;
-            //border: 4px solid var(--couleurFondBoard);
-            background: var(--couleurFondBoard);
-            @media (min-width:1000px) {
-                max-width: 900px;
-                max-height: 900px;
-            }
-            .row {
-                
-                display: flex;
-                flex-direction: row;
-                height:100%;
-                width:100%;
-                justify-content: space-around;
-                .node {
-                    height:100%;
-                    width:100%;
-                    display: flex;
-                    justify-content: space-around;
-                    margin:auto;
-                    svg {
-                        max-width: 130px;
-                        max-height: 130px;
-                        margin:auto;
-                        width: 80%;
-                        height: 80%;
-                        *{
-                            stroke:var(--couleurNode);
-                            box-shadow: 0px 0px 3px 0px var(--couleurNode);
-                        }
-                    }
-                }
-            }
-            .banderole_victoire {
-                z-index: 30;
-                display: flex;
-                width: 100%;//585px; 465
-                padding: auto;
-                //height: 100px;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                gap:465px;
-                margin: auto;
-                //top: 20%;
-                &.cache {
-                    display: none;    
-                }
-                .replis_gauche, .replis_droite {
-                    height: 75px;
-                    width:60px;
-                }
-                .conteneur_banderole {
-                    display: flex;
-                    width: 100%;
-                    max-width: 520px;
-                    
-                    padding-bottom: 10px;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 10px;
-                    position: absolute;
-                    //left: 35px;
-                    //bottom: -5px;
-                    .banderole_titre{
-                        display: flex;
-                        height: 79px;
-                        padding: 0px 15px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        flex-shrink: 0;
-                        align-self: stretch;
-                        background: #868686;
-                        border: 1px solid var(--couleurTexte);
-                        border-radius: 12px;
-                    }
-                    .banderole_texte{
-                        display: flex;
-                        width:80%;
-                        margin: auto;
-                        padding: 15px 15px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        flex-shrink: 0;
-                        align-self: stretch;
-                        background: #868686;
-                        border: 1px solid var(--couleurTexte);
-                        border-radius: 12px;
-                    }
-                }
-            }
-        }
-    }
-    .jeton {
-        z-index: 20;
-        position: absolute;
-        display: flex;
-        justify-content: space-around;
-        img {
-            margin: auto;
-            min-width: 40%;
-            min-height: 40%;
-            width: 45px;
-            height: 45px;
-        }
-        &.bordered {
-            border-width: 3px;
-            border-style: dashed;
-            border-color: var(--couleurCursor);
-        }
-        
-    }
-    //Pour les controles de la souris
-    .cursor {
-
-
-    }
-
-    
-    @media (min-width:1200px) {
-        flex-direction: row;
-        gap:0px;
-        .section_resume {
-            position: absolute;
-            top: 100px;
-            left:0px;
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-            //transform: translate(-100%, 0);
-            display: flex;
-            flex-direction: row;
-            gap:-3px;
-            margin-left: 0px;
-            * {
-                transform-origin: 0% 0%;
-                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-            }
-            .spaceur,.containeur_resume{
-                background-color: var(--couleurFond);
-                border-left :none;
-                border-radius: 0px 12px 12px 0px;
-                border-top: 1px solid var(--couleurTexte);
-                border-bottom: 1px solid var(--couleurTexte);
-                border-right: 1px solid var(--couleurTexte);
-                transform-origin: 0;
-                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-            }
-            .spaceur {
-                display: block;
-                width: 45px;
-                min-height: 400px;
-            }
-            .containeur_resume {
-                transform-origin: 0;
-                margin: 10px 0px 10px -2px;
-                height: fit-content;
-                .slider{
-                    display: flex;
-                    justify-content: center;
-                    gap:12px;
-                    //width:150px;
-                    height: 45px;
-                    h2, .arrow {
-                        margin-top: auto;
-                        margin-bottom: auto;
-                    }
-                    .arrow {   
-                        transform-origin: 50% 50%;             
-                        display: block;
-                        width: 30px;
-                        height: 30px;
-                    }
-                }
-                .instruction {
-                    display: none;
-                }
-            }
-            
-        }
-        .section_game {
-            //width:100%;
-        }
-        &:has(.switch_slider:checked){
-            .section_resume{
-                top: 0px;
-                position: relative;
-                .containeur_resume {
-                    width:400px;
-                    .slider {
-                        width:100%;
-                        .arrow {
-                            transform: rotate(180deg);
-                        }
-                    }
-                    .instruction {
-                        
-                        display: flex;
-                    }
-                }
-            }
-            .section_game {
-                width: 70%;
-            }
-        }
-        
-    }
-}
-
-/* INSTRUCTION */ 
- main.page_instruction, .section_titre , .section_chevre, .section_tigre, .section_plateau, .section_trophée, .section_deplacement, .section_debut, .section_plateau {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    
-    justify-content: center;
-    align-items: baseline;
-}
-main.page_instruction, .section_titre {
-    gap: 40px;
-    align-items: center;
-}
-main.page_instruction {
-    padding: 0px 40px;
-    display: flex;
-    flex-wrap: wrap;
-    .section_chevre, .section_tigre, .section_plateau, .section_trophée, .section_deplacement, .section_debut {
-        gap:12px;
-        border: 2px solid var(--couleurTexte);
-        border-radius: 12px;
-        background-color: var(--couleurFond);
-        padding: 20px;
-    }
-    .containeur_commencement {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-
-        .section_debut , .section_deplacement {
-            max-width: 1000px;
-        }
-    }
-    
-    .section_plateau {
-        align-items: center;
-        .containeur_gauche {
-            display: flex;
-            max-width: 600px;
-        flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            ol {
-                margin: 0px;
-                li {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    gap:10px;
-                    .demo {
-                        width: 120px;
-                        max-height: 120px;
-                    }
-                }
-            }
-        }
-        .plateau {
-            max-width: 450px;
-            max-height: 450px;
-        }
-        @media (min-width:1000px) {
-            flex-direction: row;
-        }
-    }
-    
-    @media (min-width:1800px) {
-        flex-direction: row;
-        .section_plateau, .containeur_commencement .section_debut, .containeur_commencement .section_deplacement {
-            max-width: 800px;
-        }
-        
-    }
-
-    .containeur_animaux {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        .section_chevre {
-            background: rgba(90, 90, 90, 0.5);
-        }
-        .section_tigre {
-            background: rgba(255, 218, 95, 0.1);
-        }
-        @media (min-width:1000px) {
-            flex-direction: row;
-            section {
-            width: 40%;
-            max-width: 900px;
-            height: fit-content;
-        }
-        }
-        
-    }
-}
-
-
+//petite entête de mini section avec l'icone/img/svg à côté
 .tete {
     margin: auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     display:flex;
     flex-direction:row ;
     gap: 24px;
+    max-width: 300px;
+    align-items: center;
     h2 {
         width:100%;
-        max-width: 230px;
     }
-    img {
-        min-width: 50px;
-        max-width: 150px;
+    img, svg {
+        max-width: 70px;
+        max-height: 70px;
     }  
-}
-
-    
-footer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 2em 2em;
-    gap:12px;
-    margin-top: 1em;
-    small {
-        text-align: center;
-    }
-}
-
-.hidden_board {
-    display: none;
-    visibility: hidden;
 }

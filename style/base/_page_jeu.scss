@@ -1,0 +1,270 @@
+
+main.page_jeu{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap:50px;
+    .section_game {
+        width:100%;
+        max-height: 95vh;
+        display: flex;
+        margin: auto;
+        margin-top:2em ;
+        margin-bottom:2em ;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: auto;
+        .banniere {
+            //height:55px;
+            //width: 80vw;//615px;
+            display: flex;
+            padding: 0px 2px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            align-self: stretch;
+            flex-wrap: wrap;
+            margin: auto;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            
+            background: #868686;
+            /*.replis_droite, .replis_gauche {
+                margin-top: auto;
+            }*/
+            .tour {
+                margin: 0.5em auto 0.5em;
+                width: 100%;
+                text-align: center;
+            }
+            .conteneur_bannière {
+                //position: absolute;
+                display: flex;
+                height: 45px;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+                left: 35px;
+                
+                margin: auto;
+                padding: 10px 15px;
+                display: flex;
+                hr {
+                    height: 25px;;
+                }
+                .tourChevre , .tourTigre {
+                    width:50%;
+                    height: 45px;
+                    
+                    color:rgba(255, 255, 255, 0.5);
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    gap: 12px;
+                    &.CURRENT {
+                        color:var(--couleurTexte);
+                        border: 3px solid var(--couleurCursor);
+                    }
+                    .icon_tour {
+                        width:auto;
+                        height:90%;
+                    }
+                }                 
+            }
+        }
+        .scoreBoard {
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            border: 1px solid var(--couleurTexte);
+            border-radius: 12px;
+            background-color: var(--couleurFondBoard);
+            padding: 12px;
+            gap: 40px;
+            align-items: center;
+            .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise ,.indiquateur_tigres_scores{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                width:30%;
+            }
+            .indiquateur_chevres_reserves{
+
+            }
+            .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
+                .liste {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width:100%;
+                    height: 30px;
+                    img {
+                        max-width:20px;
+                        max-height:20px;
+                    }
+                }
+            }
+            @media (min-width) {
+                .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
+                    .liste {
+                        img {
+                            max-width:30px;
+                            max-height:30px;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .board_gazon {
+            margin: auto;
+            width: 80vw;
+            height: 80vh;
+            max-width: 80vh;
+            
+            max-height: 80vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+            margin-top: 1em;
+
+            border-radius: 12px;
+            //border: 4px solid var(--couleurFondBoard);
+            background: var(--couleurFondBoard);
+            @media (min-width:1000px) {
+                max-width: 900px;
+                max-height: 900px;
+            }
+            .row {
+                
+                display: flex;
+                flex-direction: row;
+                height:100%;
+                width:100%;
+                justify-content: space-around;
+                .node {
+                    height:100%;
+                    width:100%;
+                    display: flex;
+                    justify-content: space-around;
+                    margin:auto;
+                    svg {
+                        max-width: 130px;
+                        max-height: 130px;
+                        margin:auto;
+                        width: 80%;
+                        height: 80%;
+                        *{
+                            stroke:var(--couleurNode);
+                            box-shadow: 0px 0px 3px 0px var(--couleurNode);
+                        }
+                    }
+                }
+            }
+            .banderole_victoire {
+                z-index: 30;
+                display: flex;
+                width: 100%;//585px; 465
+                padding: auto;
+                //height: 100px;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                gap:465px;
+                margin: auto;
+                //top: 20%;
+                &.cache {
+                    display: none;    
+                }
+                .replis_gauche, .replis_droite {
+                    height: 75px;
+                    width:60px;
+                }
+                .conteneur_banderole {
+                    display: flex;
+                    width: 100%;
+                    max-width: 520px;
+                    
+                    padding-bottom: 10px;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    position: absolute;
+                    //left: 35px;
+                    //bottom: -5px;
+                    .banderole_titre{
+                        display: flex;
+                        height: 79px;
+                        padding: 0px 15px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        flex-shrink: 0;
+                        align-self: stretch;
+                        background: #868686;
+                        border: 1px solid var(--couleurTexte);
+                        border-radius: 12px;
+                    }
+                    .banderole_texte{
+                        display: flex;
+                        width:80%;
+                        margin: auto;
+                        padding: 15px 15px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        flex-shrink: 0;
+                        align-self: stretch;
+                        background: #868686;
+                        border: 1px solid var(--couleurTexte);
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .jeton {
+        z-index: 20;
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        img {
+            margin: auto;
+            min-width: 40%;
+            min-height: 40%;
+            width: 45px;
+            height: 45px;
+        }
+        &.bordered {
+            border-width: 3px;
+            border-style: dashed;
+            border-color: var(--couleurCursor);
+        }
+        
+    }
+    //Pour les controles de la souris
+    .cursor {
+
+
+    }
+    @media (min-width:1200px) {
+        flex-direction: row;
+        gap:0px;
+    }
+}
+
+/* Pour stocker les noeuds qui vont être recopier dans le plateau */
+.hidden_board {
+    display: none;
+    visibility: hidden;
+}
