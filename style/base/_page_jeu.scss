@@ -127,9 +127,9 @@ main.page_jeu{
         }
         .board_gazon {
             margin: auto;
-            width: 80vw;
+            width: 80vh;
             height: 80vh;
-            max-width: 80vh;
+            max-width: 80vw;
             
             max-height: 80vw;
             display: flex;
@@ -137,6 +137,7 @@ main.page_jeu{
             justify-content: space-around;
             position: relative;
             margin-top: 1em;
+            margin-bottom: 1em;
 
             border-radius: 12px;
             //border: 4px solid var(--couleurFondBoard);
@@ -254,7 +255,6 @@ main.page_jeu{
     }
     //Pour les controles de la souris
     .cursor {
-
 
     }
 }
