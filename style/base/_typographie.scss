@@ -20,7 +20,7 @@ h3, p, span , small {
     font-family: "Instrument Sans", sans-serif;
 }
 h1 {
-    @include fontSize(32px);
+    @include fontSize(36px);
     @media (min-width:1000px) {
         @include fontSize(36px);
     }

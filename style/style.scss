@@ -85,10 +85,12 @@ footer {
     display:flex;
     flex-direction:row ;
     gap: 24px;
-    max-width: 300px;
+    //max-width: 300px;
+    width: fit-content;
+
     align-items: center;
     h2 {
-        width:100%;
+        width: 300px;
     }
     img, svg {
         max-width: 70px;

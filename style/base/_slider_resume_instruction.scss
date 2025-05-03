@@ -1,6 +1,6 @@
 .section_resume {
-    max-width: 800px;
     margin: auto;
+    width: 100%;
     .switch_slider, .spaceur, .arrow {
         display: none;
     }
@@ -12,6 +12,8 @@
     }
     .containeur_resume {
         gap:12px;
+        width:80%;
+        margin: auto;
         .slider {
             display: flex;
             justify-content: space-around;
@@ -37,7 +39,9 @@
 
 /* Fonctionnalité du slider lorsque en mode Table */
 main.page_jeu{
-    @media (min-width:1200px) {
+    @media (min-width:1400px) {
+        flex-direction: row;
+        gap:0px;
         .section_resume {
             position: absolute;
             top: 20vh;
@@ -68,6 +72,7 @@ main.page_jeu{
                 min-height: 400px;
             }
             .containeur_resume {
+                width: 200px;
                 transform-origin: 0;
                 margin: 10px 0px 10px -2px;
                 height: fit-content;
@@ -98,6 +103,7 @@ main.page_jeu{
         }
         &:has(.switch_slider:checked){
             .section_resume{
+                width: 30%;
                 top: 0px;
                 position: relative;
                 .containeur_resume {

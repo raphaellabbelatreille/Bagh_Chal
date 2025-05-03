@@ -70,8 +70,8 @@ h3, p, span, small {
 }
 
 h1 {
-  font-size: 32px;
-  font-size: 3.2rem;
+  font-size: 36px;
+  font-size: 3.6rem;
 }
 @media (min-width: 1000px) {
   h1 {
@@ -359,13 +359,6 @@ main.page_jeu .jeton.bordered {
   border-style: dashed;
   border-color: var(--couleurCursor);
 }
-@media (min-width: 1200px) {
-  main.page_jeu {
-    flex-direction: row;
-    gap: 0px;
-  }
-}
-
 /* Pour stocker les noeuds qui vont être recopier dans le plateau */
 .hidden_board {
   display: none;
@@ -473,8 +466,8 @@ main.page_instruction .containeur_animaux .section_tigre {
 }
 
 .section_resume {
-  max-width: 800px;
   margin: auto;
+  width: 100%;
 }
 .section_resume .switch_slider, .section_resume .spaceur, .section_resume .arrow {
   display: none;
@@ -487,6 +480,8 @@ main.page_instruction .containeur_animaux .section_tigre {
 }
 .section_resume .containeur_resume {
   gap: 12px;
+  width: 80%;
+  margin: auto;
 }
 .section_resume .containeur_resume .slider {
   display: flex;
@@ -508,7 +503,11 @@ main.page_instruction .containeur_animaux .section_tigre {
 }
 
 /* Fonctionnalité du slider lorsque en mode Table */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
+  main.page_jeu {
+    flex-direction: row;
+    gap: 0px;
+  }
   main.page_jeu .section_resume {
     position: absolute;
     top: 20vh;
@@ -539,6 +538,7 @@ main.page_instruction .containeur_animaux .section_tigre {
     min-height: 400px;
   }
   main.page_jeu .section_resume .containeur_resume {
+    width: 200px;
     transform-origin: 0;
     margin: 10px 0px 10px -2px;
     height: fit-content;
@@ -563,6 +563,7 @@ main.page_instruction .containeur_animaux .section_tigre {
     display: none;
   }
   main.page_jeu:has(.switch_slider:checked) .section_resume {
+    width: 30%;
     top: 0px;
     position: relative;
   }
@@ -606,11 +607,11 @@ main.page_instruction .containeur_animaux .section_tigre {
   display: flex;
   flex-direction: row;
   gap: 24px;
-  max-width: 300px;
+  width: fit-content;
   align-items: center;
 }
 .tete h2 {
-  width: 100%;
+  width: 300px;
 }
 .tete img, .tete svg {
   max-width: 70px;
