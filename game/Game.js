@@ -129,8 +129,6 @@ export class Game {
         this.changerAffichageBanniere();
     }
     changerAffichageBanniere(){
-        
-        //this.refBanniere.querySelectorAll(".CURRENT").classList.remove("CURRENT");
         this.refBanniereChevre.classList.remove("CURRENT");
         this.refBanniereTigre.classList.remove("CURRENT");
         switch (this.tourEnCours) {
@@ -149,7 +147,7 @@ export class Game {
         let strVictorieux = "";
         let strRaison = "";
 
-        if (this.verifierSiTigreSontCoincé() >= 4){
+        if (this.verifierSiTigreSontCoincé() >= 5){
             blnJugeVictoire = true;
             strVictorieux = "chèvres"
             strRaison = "Les tigres sont incapables de bouger!"

@@ -74,6 +74,7 @@ export default class Jeton extends Element{
         } else {
             this.currentNode.element.addEventListener("click", this.finirSelection_lier)
             this.currentNode.souligneNode(70);
+            this.element.classList.add("bordered")
             this.actif = true;
             for(let index=0 ; index< this.BoardTile.length ; index++){
                 let tile = this.BoardTile[index]
@@ -141,6 +142,7 @@ export default class Jeton extends Element{
         this.possibleMove = []
         this.MoveBinder = []
         this.currentNode.souligneNode(50);
+        this.element.classList.remove("bordered")
     }
 
     appelerAnimation(etatEmotif){

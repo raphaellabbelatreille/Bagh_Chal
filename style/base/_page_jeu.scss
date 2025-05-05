@@ -77,7 +77,7 @@ main.page_jeu{
             }
         }
         .scoreBoard {
-            width: 50%;
+            width: 90%;
             margin: auto;
             display: flex;
             flex-direction: row;
@@ -122,12 +122,21 @@ main.page_jeu{
                     height: auto;
                     max-height: 20px;
                     img {
-                        max-width:20px;
+                        max-width:10%;
                         max-height:20px;
                     }
                 }
             }
             @media (min-width:1000px) {
+                .indiquateur_chevres_reserves {
+                    width: 50%;
+                    .liste {
+                        img {
+                            max-width:20px;
+                            max-height:20px;
+                        }
+                    }
+                }
                 .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
                     .liste {
                         img {
@@ -262,11 +271,7 @@ main.page_jeu{
             width: 45px;
             height: 45px;
         }
-        &.bordered {
-            border-width: 3px;
-            border-style: dashed;
-            border-color: var(--couleurCursor);
-        }
+        //Le restant des états est dans état_jeton
         
     }
     //Pour les controles de la souris

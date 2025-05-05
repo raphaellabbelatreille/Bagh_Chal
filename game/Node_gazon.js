@@ -15,22 +15,27 @@ export default class Node_gazon extends Element {
         this.occupe = false;
     }
     souligneNode(importance){
+        this.deSouligneNode()
         if (importance == null){
             importance = 50
         }
-        if (importance >= 70){
+        /*if (importance >= 70){
             this.element.classList.add("bordered");
 
         } else {
             this.element.style.border="";
 
         }
-        this.element.style.background = "radial-gradient(rgb(193, 193, 193, "+importance+"%) 0%, rgb(193, 193, 193,0) "+importance+"%)"
+        this.element.style.background = "radial-gradient(rgb(193, 193, 193, "+importance+"%) 0%, rgb(193, 193, 193,0) "+importance+"%)"*/
         //this.element.style.filter = "blur(100)";
+        this.element.classList.add("focused_"+importance)
     }
     deSouligneNode(){
-        this.element.style.background = "";
+        //this.element.style.background = "";
         this.element.classList.remove("bordered");
+        this.element.classList.remove("focused_30");
+        this.element.classList.remove("focused_50");
+        this.element.classList.remove("focused_70");
     }
     quandJetonRentre(jeton){
         this.occupe = false;

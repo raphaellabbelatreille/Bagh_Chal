@@ -9,7 +9,7 @@
 :root {
   --couleurFondDEcran:rgb(0, 77, 46);
   --couleurFondBoard:#352E29;
-  --couleurNode: #B4B4B4;
+  --couleurNode: rgb(180, 180, 180);
   --couleurFond: rgb(0, 96, 57);
   --couleurFondBulle: #616161;
   --couleurTexte: white;
@@ -201,7 +201,7 @@ main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre .icon_tou
   height: 90%;
 }
 main.page_jeu .section_game .scoreBoard {
-  width: 50%;
+  width: 90%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -245,10 +245,17 @@ main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves .liste {
   max-height: 20px;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves .liste img {
-  max-width: 20px;
+  max-width: 10%;
   max-height: 20px;
 }
 @media (min-width: 1000px) {
+  main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves {
+    width: 50%;
+  }
+  main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves .liste img {
+    max-width: 20px;
+    max-height: 20px;
+  }
   main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste img, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste img {
     max-width: 30px;
     max-height: 30px;
@@ -370,11 +377,6 @@ main.page_jeu .jeton img {
   min-height: 40%;
   width: 45px;
   height: 45px;
-}
-main.page_jeu .jeton.bordered {
-  border-width: 3px;
-  border-style: dashed;
-  border-color: var(--couleurCursor);
 }
 /* Pour stocker les noeuds qui vont être recopier dans le plateau */
 .hidden_board {
@@ -599,6 +601,26 @@ main.page_instruction .containeur_animaux .section_tigre {
   main.page_jeu:has(.switch_slider:checked) .section_game {
     width: 70%;
   }
+}
+
+.node.focused_70 {
+  background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 70%);
+}
+.node.focused_50 {
+  background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 50%);
+}
+.node.focused_30 {
+  background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 30%);
+}
+
+.jeton.bordered img {
+  min-width: 45% !important;
+  min-height: 45% !important;
+  width: 50px;
+  height: 50px;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: var(--couleurCursor);
 }
 
 /* TRUC RÉCURENT */
