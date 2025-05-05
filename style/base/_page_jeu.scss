@@ -11,14 +11,13 @@ main.page_jeu{
     gap:50px;
     .section_game {
         width:100%;
-        max-height: 95vh;
         display: flex;
         margin: auto;
         margin-top:2em ;
         margin-bottom:2em ;
         justify-content: space-around;
         flex-direction: column;
-        padding: auto;
+        gap:20px;
         .banniere {
             //height:55px;
             //width: 80vw;//615px;
@@ -30,15 +29,12 @@ main.page_jeu{
             align-self: stretch;
             flex-wrap: wrap;
             margin: auto;
-            margin-top: 2em;
-            margin-bottom: 2em;
-            
             background: #868686;
             /*.replis_droite, .replis_gauche {
                 margin-top: auto;
             }*/
             .tour {
-                margin: 0.5em auto 0.5em;
+                margin: 0.2em auto 0.2em;
                 width: 100%;
                 text-align: center;
             }
@@ -67,6 +63,7 @@ main.page_jeu{
                     display: flex;
                     justify-content: center;
                     text-align: center;
+                    align-items: center;
                     gap: 12px;
                     &.CURRENT {
                         color:var(--couleurTexte);
@@ -80,6 +77,7 @@ main.page_jeu{
             }
         }
         .scoreBoard {
+            width: 50%;
             margin: auto;
             display: flex;
             flex-direction: row;
@@ -97,14 +95,15 @@ main.page_jeu{
                 gap: 5px;
                 width:30%;
             }
-            .indiquateur_chevres_reserves{
-
-            }
-            .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
+            
+            .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
+                width:40%;
                 .liste {
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     width:100%;
                     height: 30px;
                     img {
@@ -113,7 +112,22 @@ main.page_jeu{
                     }
                 }
             }
-            @media (min-width) {
+            .indiquateur_chevres_reserves{
+                .containeur_liste{
+                    width:100%;
+
+                }
+                .liste {
+                    flex-direction: row;
+                    height: auto;
+                    max-height: 20px;
+                    img {
+                        max-width:20px;
+                        max-height:20px;
+                    }
+                }
+            }
+            @media (min-width:1000px) {
                 .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
                     .liste {
                         img {
@@ -127,24 +141,26 @@ main.page_jeu{
         }
         .board_gazon {
             margin: auto;
-            width: 80vh;
+            width: 90%;
+            height: 90vw;
+            /*width: 80vh;
             height: 80vh;
             max-width: 80vw;
             
-            max-height: 80vw;
+            max-height: 80vw;*/
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             position: relative;
-            margin-top: 1em;
-            margin-bottom: 1em;
-
             border-radius: 12px;
             //border: 4px solid var(--couleurFondBoard);
             background: var(--couleurFondBoard);
             @media (min-width:1000px) {
-                max-width: 900px;
-                max-height: 900px;
+                width: 900px;
+                height: 900px;
+                max-width: 70vh;
+            
+                max-height: 70vh;
             }
             .row {
                 

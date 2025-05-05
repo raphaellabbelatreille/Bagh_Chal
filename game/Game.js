@@ -232,6 +232,12 @@ export class Game {
     }
 
     initialiserScore(){
+        this.refReservesChevre = document.getElementById("indiquateur_chevres_reserves")
+        this.refReservesChevre.textContent= this.RESERVE_CHEVRE;
+        for (let index = 1; index < 20; index++) {
+            document.getElementById("chevre_reserve_"+index).src = "img/Chevre/Male.svg"
+        }
+
         this.scoreChevreCapturer = 0
         this.refScoreChevreCapturer = document.getElementById("indiquateur_tigres_scores") 
         this.refScoreChevreCapturer.textContent= this.scoreChevreCapturer;
@@ -246,9 +252,6 @@ export class Game {
                 document.getElementById("tigres_imobile_"+index).src = "img/Circle.svg"
         }
         
-        this.refReservesChevre = document.getElementById("indiquateur_chevres_reserves")
-        this.refReservesChevre.textContent= this.RESERVE_CHEVRE;
-
         document.getElementById("banderole_victoire").classList.add("cache")
         document.getElementById("banderole_titre").innerHTML = ""
         document.getElementById("banderole_texte").innerHTML = ""
@@ -260,7 +263,10 @@ export class Game {
     }
     
     decrementerReserveChevre(nbrChevreEnJeu){
-        this.refReservesChevre.textContent = this.RESERVE_CHEVRE - nbrChevreEnJeu
+        this.refReservesChevre.textContent = this.RESERVE_CHEVRE - nbrChevreEnJeu;
+        document.getElementById("chevre_reserve_"+nbrChevreEnJeu).src = ""
+        //document.getElementById("chevre_reserve_"+nbrChevreEnJeu).width = "7px"
+        
     }
 }
 

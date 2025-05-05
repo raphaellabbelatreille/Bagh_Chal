@@ -9,9 +9,9 @@ body {
     font-family: "Instrument Sans", sans-serif;
     margin: 0px;
     @include fontSize(12px);
-    @media (min-width:1000px) {
+    /*@media (min-width:1000px) {
         @include fontSize(16px);
-    }
+    }*/
 }
 h1, h2 {
     font-family: "Itim", cursive;
@@ -20,25 +20,25 @@ h3, p, span , small {
     font-family: "Instrument Sans", sans-serif;
 }
 h1 {
-    @include fontSize(36px);
+    @include fontSize(56px);
     @media (min-width:1000px) {
         @include fontSize(36px);
     }
 }
 h2 {
-    @include fontSize(20px);
+    @include fontSize(40px);
     @media (min-width:1000px) {
-        @include fontSize(24px);
+        @include fontSize(40px);
     }
 }
 h3 {
-    @include fontSize(16px);
+    @include fontSize(30px);
     @media (min-width:1000px) {
-        @include fontSize(20px);
+        @include fontSize(30px);
     }
 }
 p, span {
-    @include fontSize(14px);
+    @include fontSize(24px);
     @media (min-width:1000px) {
         @include fontSize(16px);
     }
@@ -48,8 +48,8 @@ a {
     text-decoration: none;
 }
 small {
-    @include fontSize(12px);
+    @include fontSize(18px);
     @media (min-width:1000px) {
-        @include fontSize(14px);
+        @include fontSize(20px);
     }
 }

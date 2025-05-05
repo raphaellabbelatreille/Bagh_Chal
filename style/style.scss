@@ -22,9 +22,11 @@
     @return #{$remSize}rem;
 }
 @mixin fontSize($size) {
+    font-size: calculateRem($size);
     font-size: $size;
-    font-size: calculateRem($size)
 }
+    
+    
 
 
 /* SECTION PARTAGÉ ENTRE lES DEUX PAGES*/
@@ -56,7 +58,7 @@ footer {
 @import "base/slider_resume_instruction";
 
 /* TRUC RÉCURENT */
-// bouton rond
+// bouton rond (peut autant être un <btn> que un <a>
 .btn_bulle {
     appearance: none;
     display: inline-flex;
@@ -73,6 +75,7 @@ footer {
     max-height:35px;
     min-width:150px;
     margin: auto;
+    color: var(--couleurTexte);
     .svg_bulle {
 
     }
@@ -90,7 +93,7 @@ footer {
 
     align-items: center;
     h2 {
-        width: 300px;
+        min-width: 300px;
     }
     img, svg {
         max-width: 70px;
