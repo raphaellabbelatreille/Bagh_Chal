@@ -20,25 +20,25 @@ h3, p, span , small {
     font-family: "Instrument Sans", sans-serif;
 }
 h1 {
-    @include fontSize(56px);
+    @include fontSize(30px);
     @media (min-width:1000px) {
         @include fontSize(36px);
     }
 }
 h2 {
-    @include fontSize(40px);
-    @media (min-width:1000px) {
-        @include fontSize(40px);
-    }
-}
-h3 {
-    @include fontSize(30px);
+    @include fontSize(24px);
     @media (min-width:1000px) {
         @include fontSize(30px);
     }
 }
+h3 {
+    @include fontSize(20px);
+    @media (min-width:1000px) {
+        @include fontSize(28px);
+    }
+}
 p, span {
-    @include fontSize(24px);
+    @include fontSize(20px);
     @media (min-width:1000px) {
         @include fontSize(16px);
     }

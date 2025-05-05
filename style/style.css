@@ -67,8 +67,8 @@ h3, p, span, small {
 }
 
 h1 {
-  font-size: 5.6rem;
-  font-size: 56px;
+  font-size: 3rem;
+  font-size: 30px;
 }
 @media (min-width: 1000px) {
   h1 {
@@ -78,30 +78,30 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
-  font-size: 40px;
+  font-size: 2.4rem;
+  font-size: 24px;
 }
 @media (min-width: 1000px) {
   h2 {
-    font-size: 4rem;
-    font-size: 40px;
-  }
-}
-
-h3 {
-  font-size: 3rem;
-  font-size: 30px;
-}
-@media (min-width: 1000px) {
-  h3 {
     font-size: 3rem;
     font-size: 30px;
   }
 }
 
+h3 {
+  font-size: 2rem;
+  font-size: 20px;
+}
+@media (min-width: 1000px) {
+  h3 {
+    font-size: 2.8rem;
+    font-size: 28px;
+  }
+}
+
 p, span {
-  font-size: 2.4rem;
-  font-size: 24px;
+  font-size: 2rem;
+  font-size: 20px;
 }
 @media (min-width: 1000px) {
   p, span {
@@ -202,6 +202,7 @@ main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre .icon_tou
 }
 main.page_jeu .section_game .scoreBoard {
   width: 90%;
+  max-width: 800px;
   margin: auto;
   display: flex;
   flex-direction: row;
