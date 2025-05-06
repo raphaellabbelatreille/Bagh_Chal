@@ -619,18 +619,7 @@ main.page_instruction .containeur_animaux .section_tigre {
   background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 30%);
 }
 
-.jeton .behind {
-  background: rgb(255, 255, 255);
-  width: 100px;
-  height: 100px;
-  position: relative;
-  -webkit-transition: background 0.5s ease-out;
-  -moz-transition: background 1s ease-out;
-  -o-transition: background 1s ease-out;
-  transition: background 1s ease-out;
-}
 .jeton img {
-  background: var(--couleurFondBoard);
   border-radius: 100px;
   -webkit-mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.5) 50%, #000 75%);
   mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.5) 50%, #000 75%);
@@ -643,6 +632,7 @@ main.page_instruction .containeur_animaux .section_tigre {
   background: rgb(255, 255, 255);
 }
 .jeton:hover .behind img {
+  background: var(--couleurFondBoard);
   transition: mask-position 2s ease, -webkit-mask-position 2s ease;
   -webkit-mask-position: 120%;
   mask-position: 120%;

@@ -15,17 +15,9 @@
 
 .jeton {
     .behind{
-        background:rgba(255,255,255,1);
-        width:100px; height:100px;
-        position:relative;
-
-        -webkit-transition: background .5s ease-out;
-            -moz-transition: background 1s ease-out;
-            -o-transition: background 1s ease-out;
-                transition: background 1s ease-out;
     }
     img {
-        background:var(--couleurFondBoard);
+        //background:var(--couleurFondBoard);
         border-radius: 100px;
         -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
         mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
@@ -40,6 +32,7 @@
         .behind {
             background:rgba(255,255,255,1);
             img {
+                background:var(--couleurFondBoard);
                 transition: mask-position 2s ease,-webkit-mask-position 2s ease;
                 -webkit-mask-position: 120%;
                 mask-position: 120%;
