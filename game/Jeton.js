@@ -94,7 +94,7 @@ export default class Jeton extends Element{
                                 
                         }
                     } else {
-                        if ((tile.x >= (this.jetonX-1) && tile.x <= (this.jetonX+1) && tile.y == this.currentNode.y ) || (tile.x == this.jetonX && tile.y >= (this.jetonY-1) && tile.y <= (this.jetonY+1)) ){
+                        if ((tile.x >= (this.currentNode.x-1) && tile.x <= (this.currentNode.x+1) && tile.y == this.currentNode.y ) || (tile.x == this.currentNode.x && tile.y >= (this.currentNode.y-1) && tile.y <= (this.currentNode.y+1)) ){
                             if (tile.occupe){ 
                                 this.selectionnerJetonSuperieur(tile);
                             } else {
@@ -143,16 +143,17 @@ export default class Jeton extends Element{
         let destinationX = this.currentNode.x
         let destinationY = this.currentNode.y
         let valeurBuffer = 0.05;
-        if ( (destinationX-valeurBuffer) < this.jetonX && (destinationX+valeurBuffer) > this.jetonX 
-                && (destinationY-valeurBuffer) < this.jetonY&& (destinationY+valeurBuffer) > this.jetonY){
+        if ( (destinationX-valeurBuffer) <= this.jetonX && (destinationX+valeurBuffer) >= this.jetonX 
+                && (destinationY-valeurBuffer) <= this.jetonY&& (destinationY+valeurBuffer) >= this.jetonY){
             //stop
             window.clearInterval(this.timerSlide)
             
             this.timerSlide = null
             this.gameWorld.finirTour(this.name);
         } else {
-            let valeurX = (destinationX -this.jetonX)/10;
-            let valeurY = (destinationY -this.jetonY)/10;
+            let diVitesse = 10;
+            let valeurX = (destinationX -this.jetonX)/ diVitesse;
+            let valeurY = (destinationY -this.jetonY)/ diVitesse;
             if ( destinationX !=this.jetonX  ){
                 this.jetonX= this.jetonX+ valeurX
             } 

@@ -74,9 +74,12 @@ export class Game {
             let newDiv = document.createElement("div");
             newDiv.id = "tigre"+indexTigre;
             newDiv.className = "jeton tigre" ;
+            let newBehind = document.createElement("div");
+            newBehind.className = "behind"
             let newImg = document.createElement("img");
             newImg.src = "img/Tigre/"+nameFile+".svg"
-            newDiv.appendChild(newImg)
+            newBehind.appendChild(newImg)
+            newDiv.appendChild(newBehind)
             document.getElementById("board_gazon").appendChild(newDiv)
             
             this.listeJeton.push(new Tigre(x,y,this.listeGazon, this.listeJeton ,newDiv, this, nameFile))

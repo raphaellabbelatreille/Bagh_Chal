@@ -14,15 +14,48 @@
 }
 
 .jeton {
+    .behind{
+        background:rgba(255,255,255,1);
+        width:100px; height:100px;
+        position:relative;
+
+        -webkit-transition: background .5s ease-out;
+            -moz-transition: background 1s ease-out;
+            -o-transition: background 1s ease-out;
+                transition: background 1s ease-out;
+    }
+    img {
+        background:var(--couleurFondBoard);
+        border-radius: 100px;
+        -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
+        mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
+        -webkit-mask-size: 800%;
+        mask-size: 800%;
+        -webkit-mask-position: 0;
+        mask-position: 0;
+    }
+    
+    
+    &:hover {
+        .behind {
+            background:rgba(255,255,255,1);
+            img {
+                transition: mask-position 2s ease,-webkit-mask-position 2s ease;
+                -webkit-mask-position: 120%;
+                mask-position: 120%;
+                opacity: 1;
+            }
+        }
+    }
     &.bordered{
-        img {
+        .behind {
             min-width: 45% !important;
             min-height: 45% !important;
             width: 50px;
             height: 50px;
-            border-width: 3px;
-            border-style:dashed;
-            border-color: var(--couleurCursor);
+            //border-width: 3px;
+            //border-style:dashed;
+            //border-color: var(--couleurFondBoard);
         }
     }
 }
