@@ -12,8 +12,11 @@ export default class Tigre extends Jeton {
     selectionnerJetonSuperieur(tile){
         let jetonEnCours = tile.jetonOnTop;
         if (jetonEnCours.name == "chevre"){
+        console.log("une chevre")
+            let chevreCibleX =jetonEnCours.currentNode.x
+            let chevreCibleY =jetonEnCours.currentNode.y
             // gauche
-            if (jetonEnCours.jetonX == (this.jetonX-1) && jetonEnCours.jetonY == (this.jetonY)){
+            if (jetonEnCours.jetonX == (this.jetonX-1) && jetonEnCours.currentNode.y == (this.jetonY)){
                 this.regardeSiCaseDeriereEstLibre(jetonEnCours ,-1, 0)
             }
             //droite
@@ -35,7 +38,7 @@ export default class Tigre extends Jeton {
                 }
                 // haut droite
                 if (jetonEnCours.jetonX == (this.jetonX+1) && jetonEnCours.jetonY == (this.jetonY-1)){
-                    this.regardeSiCaseDeriereEstLibre(jetonEnCours ,1, -1)
+                    this.regardeSiCaseDeriereEstLibre(jetonEnCours ,+1, -1)
                 }
                 // haut gauche
                 if (jetonEnCours.jetonX == (this.jetonX-1) && jetonEnCours.jetonY == (this.jetonY+1)){
@@ -43,12 +46,13 @@ export default class Tigre extends Jeton {
                 }
                 // haut droite
                 if (jetonEnCours.jetonX == (this.jetonX+1) && jetonEnCours.jetonY == (this.jetonY+1)){
-                    this.regardeSiCaseDeriereEstLibre(jetonEnCours ,1, +1)
+                    this.regardeSiCaseDeriereEstLibre(jetonEnCours ,+1, +1)
                 }
             }
         }
     };
     regardeSiCaseDeriereEstLibre(chevre ,modiX, modiY){
+        console.log("roar")
         for (let index = 0 ; index< this.BoardTile.length ; index++){
             let tile = this.BoardTile[index]
             if (tile.x == (chevre.jetonX+modiX) && tile.y == (chevre.jetonY+modiY) && tile.occupe== false){

@@ -83,8 +83,7 @@ export class Game {
         }
     }
     finirTour(name){
-        if (this.tourEnCours == name){
-            this.enclosChevre.deactiverSelectionChevre();
+        this.enclosChevre.deactiverSelectionChevre();
             this.enclosChevre.deactiverCreationChevre();
             for (let index= 0; index<this.listeJeton.length ; index++){
                 this.listeJeton[index].finirSelection();
@@ -93,6 +92,7 @@ export class Game {
             for (let indexGaz = 0; indexGaz< this.listeGazon.length ; indexGaz++){
                 this.listeGazon[indexGaz].deSouligneNode();
             }
+        if (this.tourEnCours == name){
             if (!this.verifierConditionsVictoire() ){
                 switch(this.tourEnCours){
                     case "chevre": this.debutTour("tigre"); 
