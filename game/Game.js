@@ -159,7 +159,7 @@ export class Game {
         }
 
         if (this.tourEnCours == "tigre"){
-            if (this.scoreChevreCapturer >= 4){
+            if (this.scoreChevreCapturer >= 5){
                 blnJugeVictoire = true;
                 strVictorieux = "tigres"
                 strRaison = "5 chèvres ont été mangé. Elles étaient savoureuses"

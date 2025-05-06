@@ -86,7 +86,6 @@ export default class Jeton extends Element{
                 if (this.currentNode.even == true){
                         if (tile.x >= (this.currentNode.x-1) && tile.x <= (this.currentNode.x+1) && tile.y >= (this.currentNode.y-1) && tile.y <= (this.currentNode.y+1)){
                             if (tile.occupe){ 
-                                console.log("occupe")
                                 this.selectionnerJetonSuperieur(tile);
                             } else {
                                 this.possibleMove.push(tile)
@@ -97,7 +96,6 @@ export default class Jeton extends Element{
                     } else {
                         if ((tile.x >= (this.jetonX-1) && tile.x <= (this.jetonX+1) && tile.y == this.currentNode.y ) || (tile.x == this.jetonX && tile.y >= (this.jetonY-1) && tile.y <= (this.jetonY+1)) ){
                             if (tile.occupe){ 
-                                console.log("occupe")
                                 this.selectionnerJetonSuperieur(tile);
                             } else {
                                 this.possibleMove.push(tile)
@@ -137,23 +135,17 @@ export default class Jeton extends Element{
         //clearInterval(this.timer)
 
         this.timerSlide= window.setInterval(() => this.slideADestination(), 30)
-        console.log(this.timerSlide)
-        //setTimeout(function( ) { console.log(this.timer); clearInterval(this.timer) ;console.log(this.timer) }, 500);
-        //setTimeout(clearInterval(this.timer), 50000)
         this.gameWorld.finirTour("");
         
 
     }
     slideADestination(){
-        //console.log("jeton: "+this.jetonX + " et "+ this.jetonY)
-        //console.log("Noeud: "+this.currentNode.x + " et "+ this.currentNode.y)
         let destinationX = this.currentNode.x
         let destinationY = this.currentNode.y
         let valeurBuffer = 0.05;
         if ( (destinationX-valeurBuffer) < this.jetonX && (destinationX+valeurBuffer) > this.jetonX 
                 && (destinationY-valeurBuffer) < this.jetonY&& (destinationY+valeurBuffer) > this.jetonY){
             //stop
-            console.log(this.timerSlide)
             window.clearInterval(this.timerSlide)
             
             this.timerSlide = null
