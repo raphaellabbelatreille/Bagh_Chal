@@ -26,19 +26,19 @@ h1 {
     }
 }
 h2 {
-    @include fontSize(24px);
+    @include fontSize(30px);
     @media (min-width:1000px) {
         @include fontSize(30px);
     }
 }
 h3 {
-    @include fontSize(20px);
+    @include fontSize(28px);
     @media (min-width:1000px) {
         @include fontSize(28px);
     }
 }
 p, span {
-    @include fontSize(20px);
+    @include fontSize(14px);
     @media (min-width:1000px) {
         @include fontSize(16px);
     }

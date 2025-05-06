@@ -77,7 +77,7 @@ main.page_jeu{
             }
         }
         .scoreBoard {
-            width: 90%;
+            width: 100%;
             max-width: 800px;
             margin: auto;
             display: flex;
@@ -87,18 +87,17 @@ main.page_jeu{
             border-radius: 12px;
             background-color: var(--couleurFondBoard);
             padding: 12px;
-            gap: 40px;
+            gap: 20px;
             align-items: center;
             .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise ,.indiquateur_tigres_scores{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 5px;
-                width:30%;
-            }
-            
-            .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
-                width:40%;
+                width:33%;
+                p {
+                    @include fontSize(22px);
+                }
                 .liste {
                     display: flex;
                     align-items: center;
@@ -129,6 +128,18 @@ main.page_jeu{
                 }
             }
             @media (min-width:1000px) {
+                width: 90%;
+                .indiquateur_chevres_reserves, .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
+                    p {
+                        @include fontSize(16px);
+                    }
+                    .liste {
+                        img {
+                            max-width:30px;
+                            max-height:30px;
+                        }
+                    }
+                }
                 .indiquateur_chevres_reserves {
                     width: 50%;
                     .liste {
@@ -138,14 +149,7 @@ main.page_jeu{
                         }
                     }
                 }
-                .indiquateur_tigres_imobilise, .indiquateur_tigres_scores {
-                    .liste {
-                        img {
-                            max-width:30px;
-                            max-height:30px;
-                        }
-                    }
-                }
+                
                 
             }
         }
