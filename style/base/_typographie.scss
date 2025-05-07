@@ -46,10 +46,13 @@ p, span {
 a {
     color : var(--couleurTexte);
     text-decoration: none;
+    &.hyperlien {
+        text-decoration: underline;
+    }
 }
 small {
-    @include fontSize(18px);
+    @include fontSize(12px);
     @media (min-width:1000px) {
-        @include fontSize(20px);
+        @include fontSize(14px);
     }
 }
