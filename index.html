@@ -1,12 +1,13 @@
-<html lan="en">
+<html lan="fr">
     <head>
         <meta charset="UTF-8">
         <title>La tactique des chèvres</title>
         <link rel="stylesheet" href="style/style.css">
         <script type="module" defer src="game/Game.js"></script>
+        <script type="module" defer src="game/Theme.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     </head>
     <body>
         <section class="section_context">
@@ -14,6 +15,12 @@
             <p>La Tactique des Chèvres, inspirée du Bagh Chal traditionnel népalais (<u><a href="https://fr.wikipedia.org/wiki/Bagh_Chal">Lien Wikipedia</a></u>), oppose quatre prédateurs $$$$ à une communauté de vingt individus surnommés les chèvres.</p>
             <p>Ce jeu asymétrique confronte la logique patriarcale capitaliste — exploitation des femmes, de la nature et des ressources (« drill, baby drill ! ») — et les valeurs de coopération et de solidarité.</p>
             <p>Ici, nous jouons pour la communauté : faites triompher les chèvres et développons notre intelligence collective !</p>
+        </section>
+        <section class="section_theme">
+            <h2>Selecteur de theme</h2>
+            <button id="default" class="btn_bulle default">Défaut</button>
+            <button id="grass" class="btn_bulle grass">Plaine de gazon</button>
+            <button id="midnight" class="btn_bulle midnight">Forêt de Minuit</button>
         </section>
 
         <main class="page_jeu">
