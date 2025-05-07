@@ -14,25 +14,65 @@
 }
 
 .jeton {
-    .behind{
+    z-index: 20;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    .behind {
+        border-radius:100px ;
+        margin: auto;
+        max-width: 50%;
+        max-height: 50%;
+        width: 75px;
+        height: 75px;
+        img, .texte {
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            //background:var(--couleurFondBoard);
+            border-radius: 100px;
+            -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
+            mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
+            -webkit-mask-size: 800%;
+            mask-size: 800%;
+            -webkit-mask-position: 0;
+            mask-position: 0;
+        }
+        
+        .texte {
+            /*height: 30px;
+            width: 30px;*/
+            background-color: var(--couleurCursor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            @include fontSize(35px);
+            margin: auto;
+            //padding: 25%;
+        }
+        img {
+            visibility: none;
+            display: none;
+        }
     }
-    img {
-        //background:var(--couleurFondBoard);
-        border-radius: 100px;
-        -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
-        mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.5) 50%,#000 75%);
-        -webkit-mask-size: 800%;
-        mask-size: 800%;
-        -webkit-mask-position: 0;
-        mask-position: 0;
+    &.chevre {
+        .behind {
+            img {
+                src: url(img/Chevre/Male.svg);
+                visibility: none;
+                display: block;
+            }
+        }    
     }
     
     
     &:hover {
         .behind {
             background:rgba(255,255,255,1);
-            img {
-                background:var(--couleurFondBoard);
+            img, .texte {
                 transition: mask-position 2s ease,-webkit-mask-position 2s ease;
                 -webkit-mask-position: 120%;
                 mask-position: 120%;
@@ -40,15 +80,39 @@
             }
         }
     }
-    &.bordered{
+
+    @media (min-width:800px) {
         .behind {
-            min-width: 45% !important;
-            min-height: 45% !important;
-            width: 50px;
-            height: 50px;
-            //border-width: 3px;
-            //border-style:dashed;
-            //border-color: var(--couleurFondBoard);
+            min-width: 40%;
+            min-height: 40%;
+            width: 45px;
+            height: 45px; 
+            .texte {
+                visibility: none;
+                display: none;
+            }
+            img {
+                display: block;
+            }
         }
+        &.bordered{
+            .behind {
+                min-width: 45% !important;
+                min-height: 45% !important;
+                width: 50px;
+                height: 50px;
+                //border-width: 3px;
+                //border-style:dashed;
+                //border-color: var(--couleurFondBoard);
+            }
+        }
+        &:hover {
+            .behind {
+                img {
+                    background:var(--couleurFondBoard);
+                }
+            }
+        }
+        
     }
 }

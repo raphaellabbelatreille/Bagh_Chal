@@ -374,24 +374,6 @@ main.page_jeu .section_game .board_gazon .banderole_victoire .conteneur_banderol
   border: 1px solid var(--couleurTexte);
   border-radius: 12px;
 }
-main.page_jeu .jeton {
-  z-index: 20;
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-}
-main.page_jeu .jeton .behind {
-  border-radius: 100px;
-  margin: auto;
-  min-width: 40%;
-  min-height: 40%;
-  width: 45px;
-  height: 45px;
-}
-main.page_jeu .jeton .behind img {
-  width: 100%;
-  height: 100%;
-}
 /* Pour stocker les noeuds qui vont être recopier dans le plateau */
 .hidden_board {
   display: none;
@@ -627,7 +609,26 @@ main.page_instruction .containeur_animaux .section_tigre {
   background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 30%);
 }
 
-.jeton img {
+.jeton {
+  z-index: 20;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+}
+.jeton .behind {
+  border-radius: 100px;
+  margin: auto;
+  max-width: 50%;
+  max-height: 50%;
+  width: 75px;
+  height: 75px;
+}
+.jeton .behind img, .jeton .behind .texte {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 100px;
   -webkit-mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.5) 50%, #000 75%);
   mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.5) 50%, #000 75%);
@@ -636,21 +637,59 @@ main.page_instruction .containeur_animaux .section_tigre {
   -webkit-mask-position: 0;
   mask-position: 0;
 }
+.jeton .behind .texte {
+  /*height: 30px;
+  width: 30px;*/
+  background-color: var(--couleurCursor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 3.5rem;
+  font-size: 35px;
+  margin: auto;
+}
+.jeton .behind img {
+  visibility: none;
+  display: none;
+}
+.jeton.chevre .behind img {
+  src: url(img/Chevre/Male.svg);
+  visibility: none;
+  display: block;
+}
 .jeton:hover .behind {
   background: rgb(255, 255, 255);
 }
-.jeton:hover .behind img {
-  background: var(--couleurFondBoard);
+.jeton:hover .behind img, .jeton:hover .behind .texte {
   transition: mask-position 2s ease, -webkit-mask-position 2s ease;
   -webkit-mask-position: 120%;
   mask-position: 120%;
   opacity: 1;
 }
-.jeton.bordered .behind {
-  min-width: 45% !important;
-  min-height: 45% !important;
-  width: 50px;
-  height: 50px;
+@media (min-width: 800px) {
+  .jeton .behind {
+    min-width: 40%;
+    min-height: 40%;
+    width: 45px;
+    height: 45px;
+  }
+  .jeton .behind .texte {
+    visibility: none;
+    display: none;
+  }
+  .jeton .behind img {
+    display: block;
+  }
+  .jeton.bordered .behind {
+    min-width: 45% !important;
+    min-height: 45% !important;
+    width: 50px;
+    height: 50px;
+  }
+  .jeton:hover .behind img {
+    background: var(--couleurFondBoard);
+  }
 }
 
 /* TRUC RÉCURENT */

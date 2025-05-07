@@ -53,19 +53,19 @@ export class Game {
             switch (indexTigre) {
                 case 1: 
                     x = 0; y = 0; 
-                    nameFile = "Dollar"
+                    nameFile = "$"
                     break;
                 case 2: 
                     x = 0; y = this.LONGUEUR-1;
-                    nameFile = "Yen";
+                    nameFile = "¥";
                     break;
                 case 3: 
                     x = this.LONGUEUR-1; y = 0;
-                    nameFile = "Euro";
+                    nameFile = "€";
                     break;
                 case 4: 
                     x = this.LONGUEUR-1; y = this.LONGUEUR-1; 
-                    nameFile = "Bitcoin";
+                    nameFile = "₿";
                     break;
             
                 default:
@@ -78,7 +78,11 @@ export class Game {
             newBehind.className = "behind"
             let newImg = document.createElement("img");
             newImg.src = "img/Tigre/"+nameFile+".svg"
+            let newText = document.createElement("p");
+            newText.innerText = nameFile
+            newText.className = "texte"
             newBehind.appendChild(newImg)
+            newBehind.appendChild(newText)
             newDiv.appendChild(newBehind)
             document.getElementById("board_gazon").appendChild(newDiv)
             
@@ -271,8 +275,5 @@ export class Game {
     }
 }
 
-
-
 let game = new Game();
 //s'assure que le jeu commence avec tour de la chevre et tout de réinitialiser 
-
