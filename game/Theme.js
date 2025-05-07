@@ -6,7 +6,11 @@ export class Theme {
         this.listOfDefaultColor = ["rgb(255, 255, 255)","rgb(0,155, 0)","rgb(180, 180, 180)","rgb(155, 155, 255)","rgb(155, 155, 255)", "rgb(0, 0, 0)","#FEE180"]
         this.listOfThemeAvailable = ["default", "grass", "midnight", "syrup"]
         this.prepareTheBtnToSwitchTheme();
-        this.takeNewRequest("default");
+        if (isset(localStorage.getItem("ThemeSelectionner"))){
+            this.takeNewRequest(localStorage.getItem("ThemeSelectionner"))
+        } else {
+            this.takeNewRequest("default");
+        }
     }
     prepareTheBtnToSwitchTheme(){
         for (let indexTheme = 0; indexTheme < this.listOfThemeAvailable.length; indexTheme++) {
@@ -30,6 +34,7 @@ export class Theme {
                 this.applyValue(this.listOfDefaultColor)
                 break;
         }  
+        localStorage.setItem("ThemeSelectionner",request)
         console.log(request)
         
     }
