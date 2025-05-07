@@ -29,6 +29,7 @@
 }
 
 footer {
+  background-color: var(--couleurFondBulle);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -190,7 +191,7 @@ main.page_jeu .section_game .banniere .conteneur_bannière hr {
 main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre, main.page_jeu .section_game .banniere .conteneur_bannière .tourTigre {
   width: 50%;
   height: 45px;
-  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -198,6 +199,7 @@ main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre, main.pag
   gap: 12px;
 }
 main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre.CURRENT, main.page_jeu .section_game .banniere .conteneur_bannière .tourTigre.CURRENT {
+  opacity: 1;
   color: var(--couleurTexte);
   border: 3px solid var(--couleurCursor);
 }
