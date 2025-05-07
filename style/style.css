@@ -148,6 +148,8 @@ main.page_jeu .section_game {
   gap: 20px;
 }
 main.page_jeu .section_game .banniere {
+  width: 800px;
+  max-width: 90%;
   display: flex;
   padding: 0px 2px;
   justify-content: center;
@@ -201,8 +203,8 @@ main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre .icon_tou
   height: 90%;
 }
 main.page_jeu .section_game .scoreBoard {
-  width: 100%;
-  max-width: 800px;
+  width: 800px;
+  max-width: 90%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -222,8 +224,8 @@ main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves, main.page
   width: 33%;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves p, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise p, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores p {
-  font-size: 2.2rem;
-  font-size: 22px;
+  font-size: 1.4rem;
+  font-size: 14px;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves .liste, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise .liste, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores .liste {
   display: flex;

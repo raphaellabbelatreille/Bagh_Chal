@@ -19,8 +19,8 @@ main.page_jeu{
         flex-direction: column;
         gap:20px;
         .banniere {
-            //height:55px;
-            //width: 80vw;//615px;
+            width: 800px;
+            max-width: 90%;
             display: flex;
             padding: 0px 2px;
             justify-content: center;
@@ -77,8 +77,8 @@ main.page_jeu{
             }
         }
         .scoreBoard {
-            width: 100%;
-            max-width: 800px;
+            width: 800px;
+            max-width: 90%;
             margin: auto;
             display: flex;
             flex-direction: row;
@@ -96,7 +96,7 @@ main.page_jeu{
                 gap: 5px;
                 width:33%;
                 p {
-                    @include fontSize(22px);
+                    @include fontSize(14px);
                 }
                 .liste {
                     display: flex;
