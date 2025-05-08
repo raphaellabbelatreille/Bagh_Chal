@@ -6,6 +6,7 @@
 }
 
 /* VARIABLES */
+/* Les variables peuvent être changer avec le sélecteur de theme sur la page principal */
 :root {
   --couleurFondDEcran:rgb(0, 77, 46);
   --couleurFondBoard:#352E29;
@@ -14,6 +15,8 @@
   --couleurFondBulle: #616161;
   --couleurTexte: white;
   --couleurCursor: #FEE180;
+  --couleurProie: blue;
+  --couleurPredateur: #FEE180;
 }
 
 /* MIXIN */
@@ -162,7 +165,7 @@ main.page_jeu .section_game .banniere {
   align-self: stretch;
   flex-wrap: wrap;
   margin: auto;
-  background: #868686;
+  background: var(--couleurFond);
   /*.replis_droite, .replis_gauche {
       margin-top: auto;
   }*/
@@ -363,7 +366,7 @@ main.page_jeu .section_game .board_gazon .banderole_victoire .conteneur_banderol
   gap: 10px;
   flex-shrink: 0;
   align-self: stretch;
-  background: #868686;
+  background: var(--couleurNode);
   border: 1px solid var(--couleurTexte);
   border-radius: 12px;
 }
@@ -631,7 +634,7 @@ main.page_instruction .containeur_animaux .section_tigre {
   height: 75px;
 }
 .jeton .behind img, .jeton .behind .texte {
-  margin: auto;
+  margin: none;
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -645,25 +648,33 @@ main.page_instruction .containeur_animaux .section_tigre {
   mask-position: 0;
 }
 .jeton .behind .texte {
-  /*height: 30px;
-  width: 30px;*/
-  background-color: var(--couleurCursor);
+  /*max-width: 84%;
+  max-height: 84%;
+  width: 65px;
+  height: 65px;*/
   display: flex;
   align-items: center;
   justify-content: center;
   color: #000;
   font-size: 3.5rem;
   font-size: 35px;
-  margin: auto;
 }
 .jeton .behind img {
   visibility: none;
   display: none;
 }
-.jeton.chevre .behind img {
-  src: url(img/Chevre/Male.svg);
-  visibility: none;
-  display: block;
+.jeton.chevre .behind .texte {
+  background-position: 70%;
+  background-repeat: no-repeat;
+  background-size: 64%;
+  background-image: url("/img/Chevre/Head.svg");
+  background-color: var(--couleurProie);
+  color: rgba(0, 0, 0, 0.7);
+}
+.jeton.tigre .behind .texte {
+  visibility: visible;
+  background-color: var(--couleurPredateur);
+  color: rgba(0, 0, 0, 0.7);
 }
 .jeton:hover .behind {
   background: rgb(255, 255, 255);
@@ -680,6 +691,7 @@ main.page_instruction .containeur_animaux .section_tigre {
     min-height: 40%;
     width: 45px;
     height: 45px;
+    background-image: none;
   }
   .jeton .behind .texte {
     visibility: none;

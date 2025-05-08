@@ -2,11 +2,10 @@
 export class Theme {
     constructor() {
         this.refRoot = document.querySelector(":root")
-        this.listOfVariable = ["--couleurFondDEcran", "--couleurFondBoard","--couleurNode","--couleurFond","--couleurFondBulle", "--couleurTexte", "--couleurCursor"]
-        this.listOfDefaultColor = ["rgb(255, 255, 255)","rgb(0,155, 0)","rgb(180, 180, 180)","rgb(155, 155, 255)","rgb(155, 155, 255)", "rgb(0, 0, 0)","#FEE180"]
+        this.listOfVariable = ["--couleurFondDEcran", "--couleurFondBoard","--couleurNode","--couleurFond","--couleurFondBulle", "--couleurTexte", "--couleurCursor", "--couleurProie", "--couleurPredateur"]
         this.listOfThemeAvailable = ["default", "grass", "midnight", "syrup"]
         this.prepareTheBtnToSwitchTheme();
-        if (isset(localStorage.getItem("ThemeSelectionner"))){
+        if (localStorage.getItem("ThemeSelectionner") != ""){
             this.takeNewRequest(localStorage.getItem("ThemeSelectionner"))
         } else {
             this.takeNewRequest("default");
@@ -19,23 +18,26 @@ export class Theme {
             document.getElementById(themeName).addEventListener("click", this.takeNewRequest.bind(this, themeName))
         }
     }
+    //"rgb(105, 35, 80)"
     takeNewRequest(request){
+        this.listOfDefaultColor = ["rgb(200, 200, 250)","rgb(105, 35, 80)","rgb(180, 180, 180)","rgb(180,180,180) ","rgb(180, 120, 170)", "rgb(0, 0, 0)","rgb(255,225,130)","rgb(100,150,255)",  "rgb(255,225,130)"]
         switch(request){
-            case "midnight":
-                this.applyValue(["rgb(0, 10, 46)","rgb(0, 30, 100)","rgb(180, 180, 180)","rgb(20, 10, 70)","#616161", "white","#FEE180"])
-                break;
-            case "grass":
-                this.applyValue(["rgb(0, 77, 46)","#352E29","rgb(180, 180, 180)","rgb(0, 96, 57)","#616161", "white","__"]);
-                break;
-            case "syrup":
-                this.applyValue(["__","#352E29","rgb(226, 226, 226)","rgb(255, 0, 0)","#616161", "__","__"]);
-                break;
             default: case "default":
+                request = "default"
                 this.applyValue(this.listOfDefaultColor)
                 break;
+            case "midnight":
+                this.applyValue(["rgb(0, 10, 46)","rgb(0, 30, 100)","rgb(180, 180, 180)","rgb(20, 10, 70)","#616161", "rgb(255, 255, 255)","rgb(255,225,130)", "__", "__"])
+                break;
+            case "grass":
+                this.applyValue(["rgb(0, 77, 46)","rgb(55,45,40)","rgb(180, 180, 180)","rgb(0, 96, 57)","#616161", "rgb(255, 255, 255)","rgb(255,225,130)", "__", "__"]);
+                break;
+            case "syrup":
+                this.applyValue(["rgb(0,0,0)","rgb(55,45,40)","rgb(226, 226, 226)","rgb(255, 0, 0)","#616161", "rgb(255, 255, 255)","rgb(255,225,130)", "__", "__"]);
+                break;
+            
         }  
         localStorage.setItem("ThemeSelectionner",request)
-        console.log(request)
         
     }
     applyValue(listOfValue){
@@ -45,8 +47,7 @@ export class Theme {
             if (newColor == "__"){
                 newColor = this.listOfDefaultColor[indexVar]
             }
-            this.setVariable(curentVariable , newColor)
-            
+            this.setVariable(curentVariable , newColor)  
         }
     }
     setVariable(thing , newColor){

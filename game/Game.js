@@ -154,7 +154,7 @@ export class Game {
         let strVictorieux = "";
         let strRaison = "";
 
-        if (this.verifierSiTigreSontCoincé() >= 5){
+        if (this.verifierSiTigreSontCoincé() >= 4){
             blnJugeVictoire = true;
             strVictorieux = "chèvres"
             strRaison = "Les tigres sont incapables de bouger!"
@@ -239,8 +239,8 @@ export class Game {
     initialiserScore(){
         this.refReservesChevre = document.getElementById("indiquateur_chevres_reserves")
         this.refReservesChevre.textContent= this.RESERVE_CHEVRE;
-        for (let index = 1; index < 20; index++) {
-            document.getElementById("chevre_reserve_"+index).src = "img/Chevre/Male.svg"
+        for (let index = 1; index <= 20; index++) {
+            document.getElementById("chevre_reserve_"+index).src = "img/Chevre/Head.svg"
         }
 
         this.scoreChevreCapturer = 0

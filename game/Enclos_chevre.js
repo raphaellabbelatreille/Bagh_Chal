@@ -44,10 +44,10 @@ export default class Enclos_chevre {
     invoquerChevre(targetNode){
         if(targetNode.occupe == false && this.nbrChevreEnJeu < this.RESERVE_CHEVRE){
             let newDiv = document.createElement("div");
-            let newBehind = document.createElement("div");
-            newBehind.className = "behind"
             newDiv.id = "chevre"+(this.nbrChevreEnJeu+1);
             newDiv.className = "jeton chevre" ;
+            let newBehind = document.createElement("div");
+            newBehind.className = "behind"
             let newImg = document.createElement("img");
             let chiffreAléatoire =Math.floor(Math.random()*2)
             if (chiffreAléatoire == 0){
@@ -57,6 +57,10 @@ export default class Enclos_chevre {
 
             }
             newBehind.appendChild(newImg)
+            let newText = document.createElement("p");
+            newText.innerText = ""
+            newText.className = "texte"
+            newBehind.appendChild(newText)
             newDiv.appendChild(newBehind)
             document.getElementById("board_gazon").appendChild(newDiv)
             this.gameWorld.listeJeton.push(new Chevre(targetNode.x,targetNode.y,this.gameWorld.listeGazon, this.gameWorld.listeJeton ,newDiv, this.gameWorld));

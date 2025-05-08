@@ -6,6 +6,7 @@
 }
 
 /* VARIABLES */
+/* Les variables peuvent être changer avec le sélecteur de theme sur la page principal */
 :root {
     --couleurFondDEcran:rgb(0, 77, 46);
     --couleurFondBoard:#352E29;
@@ -15,6 +16,9 @@
     
     --couleurTexte : white;
     --couleurCursor : #FEE180; //#FEE180
+
+    --couleurProie : blue;
+    --couleurPredateur : #FEE180;
 }
 /* MIXIN */
 @function calculateRem($size) {

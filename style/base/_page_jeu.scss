@@ -29,7 +29,7 @@ main.page_jeu{
             align-self: stretch;
             flex-wrap: wrap;
             margin: auto;
-            background: #868686;
+            background: var(--couleurFond);
             /*.replis_droite, .replis_gauche {
                 margin-top: auto;
             }*/
@@ -243,7 +243,7 @@ main.page_jeu{
                         gap: 10px;
                         flex-shrink: 0;
                         align-self: stretch;
-                        background: #868686;
+                        background: var(--couleurNode);
                         border: 1px solid var(--couleurTexte);
                         border-radius: 12px;
                     }
