@@ -34,7 +34,7 @@
 
 
 /* SECTION PARTAGÉ ENTRE lES DEUX PAGES*/
-.section_context {
+.section_context, .section_theme {
     width:80%;
     max-width: 700px;
     margin:auto;
@@ -43,8 +43,32 @@
     flex-direction: column;
     padding: 12px;
 }
+.section_theme {
+    gap:5px;
+    button{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 400px;
+        justify-content: center;
+        align-items: center;
+        gap:5px;
+        span {
+            width: 150px;
+        }
+        div{
+            display: none;
+        }
+        &:hover {
+            div {
+                display: block;
+            }
+        }
+    }
+}
 footer {
-    background-color: var(--couleurFondBulle) ;
+    background-color: var(--couleurFond) ;
+    border-top: 2px solid var(--couleurBorder);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -57,12 +81,6 @@ footer {
 }
 
 
-@import "base/typographie";
-@import "base/page_jeu";
-@import "base/page_instruction";
-@import "base/slider_resume_instruction";
-@import "base/etat_jeton";
-
 /* TRUC RÉCURENT */
 // bouton rond (peut autant être un <btn> que un <a>
 .btn_bulle {
@@ -74,7 +92,7 @@ footer {
     gap: 10px;
 
     border-radius: 10px;
-    border: 2px solid var(--couleurTexte);
+    border: 2px solid var(--couleurBorder);
     background-color: var(--couleurFondBulle) ;
     box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.50);
 
@@ -82,9 +100,6 @@ footer {
     min-width:150px;
     margin: auto;
     color: var(--couleurTexte);
-    .svg_bulle {
-
-    }
 }
 //petite entête de mini section avec l'icone/img/svg à côté
 .tete {
@@ -106,3 +121,9 @@ footer {
         max-height: 70px;
     }  
 }
+
+@import "base/typographie";
+@import "base/page_jeu";
+@import "base/page_instruction";
+@import "base/slider_resume_instruction";
+@import "base/etat_jeton";

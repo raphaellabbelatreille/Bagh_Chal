@@ -1,4 +1,18 @@
+//lien Vers la page d'intruction
+.btn_revenir, .btn_aller {
+    background-color: var(--couleurCursor);
+    color: black;
+    svg path{
+        fill: black;
+    }
+}
+.btn_revenir{
+    margin-top: 2em !important;
+    margin-left: 20% !important; 
+}
+
 /* INSTRUCTION */ 
+
  main.page_instruction, .section_titre , .section_chevre, .section_tigre, .section_plateau, .section_trophée, .section_deplacement, .section_debut, .section_plateau {
     display: flex;
     flex-direction: column;
@@ -6,6 +20,17 @@
     
     justify-content: center;
     align-items: baseline;
+    section {
+        .tete {
+            max-width: none;
+            display: flex;
+            //margin: 0px;
+            gap:10px;
+            h2 {
+                min-width: 0px;
+            }
+        }
+    }
 }
 main.page_instruction, .section_titre {
     gap: 40px;
@@ -17,7 +42,7 @@ main.page_instruction {
     flex-wrap: wrap;
     .section_chevre, .section_tigre, .section_plateau, .section_trophée, .section_deplacement, .section_debut {
         gap:12px;
-        border: 2px solid var(--couleurTexte);
+        border: 2px solid var(--couleurBorder);
         border-radius: 12px;
         background-color: var(--couleurFond);
         padding: 20px;
@@ -79,11 +104,25 @@ main.page_instruction {
         justify-content: center;
         align-items: center;
         gap: 20px;
+        section {
+            .tete {
+                max-width: none;
+                display: flex;
+                //margin: 0px;
+                gap:10px;
+                h2 {
+                    min-width: 0px;
+                }
+                img, svg {
+                    max-width:10%;
+                }
+            }
+        }
         .section_chevre {
-            background: rgba(90, 90, 90, 0.5);
+            border: 8px solid var(--couleurProie);
         }
         .section_tigre {
-            background: rgba(255, 218, 95, 0.1);
+            border: 8px solid var(--couleurPredateur);
         }
         @media (min-width:1000px) {
             flex-direction: row;

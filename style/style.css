@@ -21,7 +21,7 @@
 
 /* MIXIN */
 /* SECTION PARTAGÉ ENTRE lES DEUX PAGES*/
-.section_context {
+.section_context, .section_theme {
   width: 80%;
   max-width: 700px;
   margin: auto;
@@ -31,8 +31,31 @@
   padding: 12px;
 }
 
+.section_theme {
+  gap: 5px;
+}
+.section_theme button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.section_theme button span {
+  width: 150px;
+}
+.section_theme button div {
+  display: none;
+}
+.section_theme button:hover div {
+  display: block;
+}
+
 footer {
-  background-color: var(--couleurFondBulle);
+  background-color: var(--couleurFond);
+  border-top: 2px solid var(--couleurBorder);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -42,6 +65,42 @@ footer {
 }
 footer small {
   text-align: center;
+}
+
+/* TRUC RÉCURENT */
+.btn_bulle {
+  appearance: none;
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--couleurBorder);
+  background-color: var(--couleurFondBulle);
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+  max-height: 35px;
+  min-width: 150px;
+  margin: auto;
+  color: var(--couleurTexte);
+}
+
+.tete {
+  margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: fit-content;
+  align-items: center;
+}
+.tete h2 {
+  min-width: 300px;
+}
+.tete img, .tete svg {
+  max-width: 70px;
+  max-height: 70px;
 }
 
 /* TYPOGRAPHIE, couleur de texte et Font size*/
@@ -60,6 +119,9 @@ body {
   /*@media (min-width:1000px) {
       @include fontSize(16px);
   }*/
+}
+body svg path {
+  fill: var(--couleurTexte);
 }
 
 h1, h2 {
@@ -217,7 +279,7 @@ main.page_jeu .section_game .scoreBoard {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid var(--couleurTexte);
+  border: 1px solid var(--couleurBorder);
   border-radius: 12px;
   background-color: var(--couleurFondBoard);
   padding: 12px;
@@ -232,6 +294,7 @@ main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves, main.page
   width: 33%;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves p, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_imobilise p, main.page_jeu .section_game .scoreBoard .indiquateur_tigres_scores p {
+  color: white;
   font-size: 1.4rem;
   font-size: 14px;
 }
@@ -367,7 +430,7 @@ main.page_jeu .section_game .board_gazon .banderole_victoire .conteneur_banderol
   flex-shrink: 0;
   align-self: stretch;
   background: var(--couleurNode);
-  border: 1px solid var(--couleurTexte);
+  border: 1px solid var(--couleurBorder);
   border-radius: 12px;
 }
 main.page_jeu .section_game .board_gazon .banderole_victoire .conteneur_banderole .banderole_texte {
@@ -381,13 +444,26 @@ main.page_jeu .section_game .board_gazon .banderole_victoire .conteneur_banderol
   flex-shrink: 0;
   align-self: stretch;
   background: #868686;
-  border: 1px solid var(--couleurTexte);
+  border: 1px solid var(--couleurBorder);
   border-radius: 12px;
 }
 /* Pour stocker les noeuds qui vont être recopier dans le plateau */
 .hidden_board {
   display: none;
   visibility: hidden;
+}
+
+.btn_revenir, .btn_aller {
+  background-color: var(--couleurCursor);
+  color: black;
+}
+.btn_revenir svg path, .btn_aller svg path {
+  fill: black;
+}
+
+.btn_revenir {
+  margin-top: 2em !important;
+  margin-left: 20% !important;
 }
 
 /* INSTRUCTION */
@@ -397,6 +473,14 @@ main.page_instruction, .section_titre, .section_chevre, .section_tigre, .section
   align-items: flex-start;
   justify-content: center;
   align-items: baseline;
+}
+main.page_instruction section .tete, .section_titre section .tete, .section_chevre section .tete, .section_tigre section .tete, .section_plateau section .tete, .section_trophée section .tete, .section_deplacement section .tete, .section_debut section .tete, .section_plateau section .tete {
+  max-width: none;
+  display: flex;
+  gap: 10px;
+}
+main.page_instruction section .tete h2, .section_titre section .tete h2, .section_chevre section .tete h2, .section_tigre section .tete h2, .section_plateau section .tete h2, .section_trophée section .tete h2, .section_deplacement section .tete h2, .section_debut section .tete h2, .section_plateau section .tete h2 {
+  min-width: 0px;
 }
 
 main.page_instruction, .section_titre {
@@ -411,7 +495,7 @@ main.page_instruction {
 }
 main.page_instruction .section_chevre, main.page_instruction .section_tigre, main.page_instruction .section_plateau, main.page_instruction .section_trophée, main.page_instruction .section_deplacement, main.page_instruction .section_debut {
   gap: 12px;
-  border: 2px solid var(--couleurTexte);
+  border: 2px solid var(--couleurBorder);
   border-radius: 12px;
   background-color: var(--couleurFond);
   padding: 20px;
@@ -473,11 +557,22 @@ main.page_instruction .containeur_animaux {
   align-items: center;
   gap: 20px;
 }
+main.page_instruction .containeur_animaux section .tete {
+  max-width: none;
+  display: flex;
+  gap: 10px;
+}
+main.page_instruction .containeur_animaux section .tete h2 {
+  min-width: 0px;
+}
+main.page_instruction .containeur_animaux section .tete img, main.page_instruction .containeur_animaux section .tete svg {
+  max-width: 10%;
+}
 main.page_instruction .containeur_animaux .section_chevre {
-  background: rgba(90, 90, 90, 0.5);
+  border: 8px solid var(--couleurProie);
 }
 main.page_instruction .containeur_animaux .section_tigre {
-  background: rgba(255, 218, 95, 0.1);
+  border: 8px solid var(--couleurPredateur);
 }
 @media (min-width: 1000px) {
   main.page_instruction .containeur_animaux {
@@ -498,7 +593,7 @@ main.page_instruction .containeur_animaux .section_tigre {
   display: none;
 }
 .section_resume .containeur_resume, .section_resume .spaceur {
-  border: 1px solid var(--couleurTexte);
+  border: 1px solid var(--couleurBorder);
   border-radius: 12px;
   background-color: var(--couleurFond);
   padding: 12px;
@@ -551,9 +646,9 @@ main.page_instruction .containeur_animaux .section_tigre {
     background-color: var(--couleurFond);
     border-left: none;
     border-radius: 0px 12px 12px 0px;
-    border-top: 1px solid var(--couleurTexte);
-    border-bottom: 1px solid var(--couleurTexte);
-    border-right: 1px solid var(--couleurTexte);
+    border-top: 2px solid var(--couleurBorder);
+    border-bottom: 2px solid var(--couleurBorder);
+    border-right: 2px solid var(--couleurBorder);
     transform-origin: 0;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
@@ -610,13 +705,13 @@ main.page_instruction .containeur_animaux .section_tigre {
 }
 
 .node.focused_70 {
-  background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 70%);
+  background: radial-gradient(var(--couleurBorder) -30%, rgba(193, 193, 193, 0) 70%);
 }
 .node.focused_50 {
-  background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 50%);
+  background: radial-gradient(var(--couleurBorder) -30%, rgba(193, 193, 193, 0) 50%);
 }
 .node.focused_30 {
-  background: radial-gradient(var(--couleurNode) -30%, rgba(193, 193, 193, 0) 30%);
+  background: radial-gradient(var(--couleurBorder) -30%, rgba(193, 193, 193, 0) 30%);
 }
 
 .jeton {
@@ -709,39 +804,4 @@ main.page_instruction .containeur_animaux .section_tigre {
   .jeton:hover .behind img {
     background: var(--couleurFondBoard);
   }
-}
-
-/* TRUC RÉCURENT */
-.btn_bulle {
-  appearance: none;
-  display: inline-flex;
-  padding: 10px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
-  border: 2px solid var(--couleurTexte);
-  background-color: var(--couleurFondBulle);
-  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
-  max-height: 35px;
-  min-width: 150px;
-  margin: auto;
-  color: var(--couleurTexte);
-}
-.tete {
-  margin: auto;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  width: fit-content;
-  align-items: center;
-}
-.tete h2 {
-  min-width: 300px;
-}
-.tete img, .tete svg {
-  max-width: 70px;
-  max-height: 70px;
 }/*# sourceMappingURL=style.css.map */

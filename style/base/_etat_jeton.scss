@@ -2,13 +2,13 @@
 .node {
     &.focused {
         &_70{
-            background: radial-gradient(var(--couleurNode) -30%, rgb(193, 193, 193,0) 70%)
+            background: radial-gradient(var(--couleurBorder) -30%, rgb(193, 193, 193,0) 70%)
         }
         &_50{
-            background: radial-gradient(var(--couleurNode) -30%, rgb(193, 193, 193, 0%) 50%)
+            background: radial-gradient(var(--couleurBorder) -30%, rgb(193, 193, 193, 0%) 50%)
         }
         &_30{
-            background: radial-gradient(var(--couleurNode) -30%, rgb(193, 193, 193,0) 30%)
+            background: radial-gradient(var(--couleurBorder) -30%, rgb(193, 193, 193,0) 30%)
         }
     }
 }
@@ -25,7 +25,7 @@
         max-height: 50%;
         width: 75px;
         height: 75px;
-        //border: 5px solid white;
+        //border: 5px solid var(--couleurBorder);
         img, .texte {
             margin: none;
             width: 100%;

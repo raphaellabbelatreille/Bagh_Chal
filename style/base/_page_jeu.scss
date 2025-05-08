@@ -84,7 +84,7 @@ main.page_jeu{
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            border: 1px solid var(--couleurTexte);
+            border: 1px solid var(--couleurBorder);
             border-radius: 12px;
             background-color: var(--couleurFondBoard);
             padding: 12px;
@@ -97,6 +97,8 @@ main.page_jeu{
                 gap: 5px;
                 width:33%;
                 p {
+                    color:white;
+                    //text-shadow: 0px 0px 3px var(--couleurNode);
                     @include fontSize(14px);
                 }
                 .liste {
@@ -244,7 +246,7 @@ main.page_jeu{
                         flex-shrink: 0;
                         align-self: stretch;
                         background: var(--couleurNode);
-                        border: 1px solid var(--couleurTexte);
+                        border: 1px solid var(--couleurBorder);
                         border-radius: 12px;
                     }
                     .banderole_texte{
@@ -258,7 +260,7 @@ main.page_jeu{
                         flex-shrink: 0;
                         align-self: stretch;
                         background: #868686;
-                        border: 1px solid var(--couleurTexte);
+                        border: 1px solid var(--couleurBorder);
                         border-radius: 12px;
                     }
                 }

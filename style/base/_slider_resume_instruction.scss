@@ -5,7 +5,7 @@
         display: none;
     }
     .containeur_resume, .spaceur {
-        border: 1px solid var(--couleurTexte);
+        border: 1px solid var(--couleurBorder);
         border-radius: 12px;
         background-color: var(--couleurFond);
         padding: 12px;
@@ -60,9 +60,9 @@ main.page_jeu{
                 background-color: var(--couleurFond);
                 border-left :none;
                 border-radius: 0px 12px 12px 0px;
-                border-top: 1px solid var(--couleurTexte);
-                border-bottom: 1px solid var(--couleurTexte);
-                border-right: 1px solid var(--couleurTexte);
+                border-top: 2px solid var(--couleurBorder);
+                border-bottom: 2px solid var(--couleurBorder);
+                border-right: 2px solid var(--couleurBorder);
                 transform-origin: 0;
                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
             }

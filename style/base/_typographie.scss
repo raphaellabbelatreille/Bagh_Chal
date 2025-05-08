@@ -12,6 +12,9 @@ body {
     /*@media (min-width:1000px) {
         @include fontSize(16px);
     }*/
+    svg path {
+        fill: var(--couleurTexte);
+    }
 }
 h1, h2 {
     font-family: "Itim", cursive;

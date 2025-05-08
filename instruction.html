@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <title>Instructions
             -La tactique des chèvres</title>
+            <script type="module" defer src="game/Theme.js"></script>
         <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
@@ -12,8 +13,16 @@
             <p>Ce jeu asymétrique confronte la logique patriarcale capitaliste — exploitation des femmes, de la nature et des ressources (« drill, baby drill ! ») — et les valeurs de coopération et de solidarité.</p>
             <p>Ici, nous jouons pour la communauté : faites triompher les chèvres et développons notre intelligence collective !</p>
         </section>
+        <section class="section_theme" id="section_theme">
+            <h2>Selecteur de theme</h2>
+            <button id="Default" class="btn_bulle default"><span>Défaut</span></button>
+            <button id="Grass" class="btn_bulle grass"><span>Plaine de gazon</span></button>
+            <button id="Midnight" class="btn_bulle midnight"><span>Forêt de minuit</span></button>
+            <button id="Neon" class="btn_bulle neon"><span>Interface Néon</span></button>
+            <button id="Syrup" class="btn_bulle syrup"><span>Sirop d'érable</span></button>
+        </section>
 
-        <a class="btn_bulle" href="index.html">
+        <a class="btn_bulle btn_revenir" href="index.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                 <path d="M6.07075 7.29167L8.71242 9.93229L7.2395 11.4062L2.08325 6.25L7.2395 1.09375L8.71242 2.56771L6.07075 5.20833H13.5416C15.7517 5.20833 17.8713 6.08631 19.4341 7.64911C20.9969 9.21191 21.8749 11.3315 21.8749 13.5417C21.8749 15.7518 20.9969 17.8714 19.4341 19.4342C17.8713 20.997 15.7517 21.875 13.5416 21.875H4.16659V19.7917H13.5416C15.1992 19.7917 16.7889 19.1332 17.961 17.9611C19.1331 16.789 19.7916 15.1993 19.7916 13.5417C19.7916 11.8841 19.1331 10.2944 17.961 9.12225C16.7889 7.95015 15.1992 7.29167 13.5416 7.29167H6.07075Z" fill="white"/>
                 </svg>
@@ -145,10 +154,10 @@
                 <section class="section_tigre au_tigre">
                     <div class="tete">
                         <h2>Durant le tour des Tigres</h2>
-                        <img src="img/Tigre/Bitcoin.svg">
-                        <img src="img/Tigre/Dollar.svg">
-                        <img src="img/Tigre/Euro.svg">
-                        <img src="img/Tigre/Yen.svg">
+                        <img src="img/Tigre/₿.svg">
+                        <img src="img/Tigre/$.svg">
+                        <img src="img/Tigre/€.svg">
+                        <img src="img/Tigre/¥.svg">
                     </div>
                     <!--<div class="avant_de_jouer">
                         Au début de la partie, les 4 jetons de tigres seront placé sur les noeuds qui sont dans chaque coin du plateau. 
@@ -180,7 +189,7 @@
                 <p>Si l’un des joueurs se retrouvent incapable d’agir au début de son tour, alors le joueur opposé gagne.</p>
             </section>
         </main>
-        <a class="btn_bulle" href="index.html">
+        <a class="btn_bulle btn_revenir" href="index.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                 <path d="M6.07075 7.29167L8.71242 9.93229L7.2395 11.4062L2.08325 6.25L7.2395 1.09375L8.71242 2.56771L6.07075 5.20833H13.5416C15.7517 5.20833 17.8713 6.08631 19.4341 7.64911C20.9969 9.21191 21.8749 11.3315 21.8749 13.5417C21.8749 15.7518 20.9969 17.8714 19.4341 19.4342C17.8713 20.997 15.7517 21.875 13.5416 21.875H4.16659V19.7917H13.5416C15.1992 19.7917 16.7889 19.1332 17.961 17.9611C19.1331 16.789 19.7916 15.1993 19.7916 13.5417C19.7916 11.8841 19.1331 10.2944 17.961 9.12225C16.7889 7.95015 15.1992 7.29167 13.5416 7.29167H6.07075Z" fill="white"/>
             </svg>
