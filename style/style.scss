@@ -8,17 +8,16 @@
 /* VARIABLES */
 /* Les variables peuvent être changer avec le sélecteur de theme sur la page principal */
 :root {
-    --couleurFondDEcran:rgb(0, 77, 46);
-    --couleurFondBoard:#352E29;
-    --couleurNode: rgb(180, 180, 180); // ##829942;
-    --couleurFond : rgb(0, 96, 57);
-    --couleurFondBulle : #616161;
-    
-    --couleurTexte : white;
-    --couleurCursor : #FEE180; //#FEE180
-
-    --couleurProie : blue;
-    --couleurPredateur : #FEE180;
+    --couleurFondDEcran: rgb(255, 255, 255);
+    --couleurFondBoard: rgb(70, 10, 70);
+    --couleurNode: rgb(255, 255, 255);
+    --couleurFond: rgb(200, 205, 200);
+    --couleurFondBulle: rgb(180, 180, 180);
+    --couleurTexte: rgb(0, 0, 0);
+    --couleurBorder: rgba(255, 255, 255, .5);
+    --couleurCursor: rgb(255, 225, 130);
+    --couleurProie: rgb(100, 150, 255);
+    --couleurPredateur: rgb(255, 225, 130);
 }
 /* MIXIN */
 @function calculateRem($size) {
@@ -45,27 +44,39 @@
 }
 .section_theme {
     gap:5px;
-    button{
+    .conteneur_theme {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        max-width: 400px;
-        justify-content: center;
-        align-items: center;
-        gap:5px;
-        span {
-            width: 150px;
-        }
-        div{
-            display: none;
-        }
-        &:hover {
-            div {
-                display: block;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        button{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            min-width: 40%;
+            justify-content: center;
+            align-items: center;
+            gap:5px;
+            
+                span {
+                    min-width: 50px;
+                }
+                div{
+                    display: none;
+                    .square {
+                        border : 1px solid var(--couleurBorder);
+                    }
+                }
+                &:hover {
+                    div {
+                        display: block;
+                    }
+                }
             }
         }
     }
-}
+    
 footer {
     background-color: var(--couleurFond) ;
     border-top: 2px solid var(--couleurBorder);

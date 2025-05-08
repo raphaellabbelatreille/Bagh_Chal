@@ -8,15 +8,16 @@
 /* VARIABLES */
 /* Les variables peuvent être changer avec le sélecteur de theme sur la page principal */
 :root {
-  --couleurFondDEcran:rgb(0, 77, 46);
-  --couleurFondBoard:#352E29;
-  --couleurNode: rgb(180, 180, 180);
-  --couleurFond: rgb(0, 96, 57);
-  --couleurFondBulle: #616161;
-  --couleurTexte: white;
-  --couleurCursor: #FEE180;
-  --couleurProie: blue;
-  --couleurPredateur: #FEE180;
+  --couleurFondDEcran: rgb(255, 255, 255);
+  --couleurFondBoard: rgb(70, 10, 70);
+  --couleurNode: rgb(255, 255, 255);
+  --couleurFond: rgb(200, 205, 200);
+  --couleurFondBulle: rgb(180, 180, 180);
+  --couleurTexte: rgb(0, 0, 0);
+  --couleurBorder: rgba(255, 255, 255, .5);
+  --couleurCursor: rgb(255, 225, 130);
+  --couleurProie: rgb(100, 150, 255);
+  --couleurPredateur: rgb(255, 225, 130);
 }
 
 /* MIXIN */
@@ -34,22 +35,32 @@
 .section_theme {
   gap: 5px;
 }
-.section_theme button {
+.section_theme .conteneur_theme {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.section_theme .conteneur_theme button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  max-width: 400px;
+  min-width: 40%;
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
-.section_theme button span {
-  width: 150px;
+.section_theme .conteneur_theme button span {
+  min-width: 50px;
 }
-.section_theme button div {
+.section_theme .conteneur_theme button div {
   display: none;
 }
-.section_theme button:hover div {
+.section_theme .conteneur_theme button div .square {
+  border: 1px solid var(--couleurBorder);
+}
+.section_theme .conteneur_theme button:hover div {
   display: block;
 }
 
@@ -795,13 +806,19 @@ main.page_instruction .containeur_animaux .section_tigre {
   .jeton .behind img {
     display: block;
   }
+  .jeton:hover .behind img {
+    background: rgb(54, 58, 58);
+  }
   .jeton.bordered .behind {
     min-width: 45% !important;
     min-height: 45% !important;
     width: 50px;
     height: 50px;
   }
-  .jeton:hover .behind img {
-    background: var(--couleurFondBoard);
+  .jeton.bordered .behind img {
+    background: rgba(224, 228, 228, 0.5);
+  }
+  .jeton.bordered:hover .behind img {
+    background-color: var(--couleurBorder);
   }
 }/*# sourceMappingURL=style.css.map */
