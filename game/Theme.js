@@ -9,7 +9,7 @@ export class Theme {
         this.listOfGrassColor = ["rgb(0, 77, 46)","rgb(55,45,40)","rgb(180, 180, 180)","rgb(0, 96, 57)","#616161", "rgb(255, 255, 255)","rgba(255,255,255,.8)","rgb(255,225,130)", "__", "__"]
         this.listOfMidnightColor = ["rgb(0, 10, 46)","rgb(0, 30, 100)","rgb(180, 180, 180)","rgb(20, 10, 70)","#616161", "rgb(255, 255, 255)","rgba(255,255,255,.8)","rgb(255,225,130)", "__", "__"]
         this.listOfSyrupColor = ["rgb(255,250,230)","rgb(78, 10, 0)","rgb(226, 226, 226)","rgb(203, 160, 150)","rgb(233, 150, 80)", "rgb(0, 0, 0)","rgba(255,230,190, .9)","rgb(150,230,255)", "__", "__"]
-        this.listOfNeonColor = ["rgb(2,0,33)","rgb(30, 30, 50)","rgb(239, 116, 110)","rgb(30, 30, 50)","rgb(141, 215, 252)", "rgb(255, 255, 255)","rgba(255,255,255,.8)","rgb(255,225,130)", "rgb(100,250,155)", "__"]
+        this.listOfNeonColor = ["rgb(2,0,33)","rgb(30, 30, 50)","rgb(255, 50, 100)","rgb(30, 30, 50)","rgb(141, 215, 252)", "rgb(255, 255, 255)","rgba(141, 215, 252, .8)","rgb(255,225,130)", "rgb(100,250,155)", "__"]
         this.prepareTheBtnToSwitchTheme();
         if (localStorage.getItem("ThemeSelectionner") != ""){
             this.takeNewRequest(localStorage.getItem("ThemeSelectionner"))
