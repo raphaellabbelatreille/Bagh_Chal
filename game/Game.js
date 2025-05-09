@@ -120,6 +120,7 @@ export class Game {
                 } else {
                     this.enclosChevre.activerSelectionChevre();
                 }
+                
                 break;
         
             case "tigre":
@@ -140,9 +141,11 @@ export class Game {
         this.refBanniereTigre.classList.remove("CURRENT");
         switch (this.tourEnCours) {
             case "chevre":
+                this.board.changeColorOfBoard("chevre")
                 this.refBanniereChevre.classList.add("CURRENT");
                 break;
             case "tigre":
+                this.board.changeColorOfBoard("tigre")
                 this.refBanniereTigre.classList.add("CURRENT");
                 break;
             default:

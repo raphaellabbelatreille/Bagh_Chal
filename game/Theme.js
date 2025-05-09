@@ -5,7 +5,7 @@ export class Theme {
         this.listOfVariable = ["--couleurFondDEcran", "--couleurFondBoard","--couleurNode","--couleurFond","--couleurFondBulle", "--couleurTexte","--couleurBorder", "--couleurCursor", "--couleurProie", "--couleurPredateur"]
         this.listOfThemeAvailable = ["Default", "Grass", "Midnight", "Syrup", "Neon"]
 
-        this.listOfDefaultColor = ["rgb(255, 255, 255)","rgb(70, 10, 70)","rgb(255, 255, 255)","rgb(200, 205, 200) ","rgb(180,180,180)", "rgb(0, 0, 0)","rgba(255, 255, 255, .5)","rgb(255,225,130)","rgb(100,150,255)",  "rgb(255,225,130)"]
+        this.listOfDefaultColor = ["rgb(200, 205, 200)","rgb(65, 10, 65)","rgb(255, 255, 255)","rgb(155, 155, 155) ","rgb(180,180,180)", "rgb(0, 0, 0)","rgba(255, 255, 255, .8)","rgb(255,225,130)","rgb(100,150,255)",  "rgb(255,225,130)"]
         this.listOfGrassColor = ["rgb(0, 77, 46)","rgb(55,45,40)","rgb(180, 180, 180)","rgb(0, 96, 57)","#616161", "rgb(255, 255, 255)","rgba(255,255,255,.8)","rgb(255,225,130)", "__", "__"]
         this.listOfMidnightColor = ["rgb(0, 10, 46)","rgb(0, 30, 100)","rgb(180, 180, 180)","rgb(20, 10, 70)","#616161", "rgb(255, 255, 255)","rgba(255,255,255,.8)","rgb(255,225,130)", "__", "__"]
         this.listOfSyrupColor = ["rgb(255,250,230)","rgb(78, 10, 0)","rgb(226, 226, 226)","rgb(203, 160, 150)","rgb(233, 150, 80)", "rgb(0, 0, 0)","rgba(255,230,190, .9)","rgb(150,230,255)", "__", "__"]

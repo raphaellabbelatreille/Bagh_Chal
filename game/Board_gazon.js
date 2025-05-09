@@ -78,6 +78,15 @@ export default class Board_gazon {
     getListeGazon(){
         return this.listeGazon;
     }
+    changeColorOfBoard(animal){
+        this.board.classList.remove("chevre");
+        this.board.classList.remove("tigre");
+        switch(animal){
+            case "chevre": this.board.classList.add("chevre"); break;
+            case "tigre": this.board.classList.add("tigre"); break;
+            default: /* Nothing */ ; break;
+        }
+    }
     detruire(){
         for(let index = 0; index< this.listeGazon.length ; index++){
             this.listeGazon[index].this.detruireGazon();
