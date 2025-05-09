@@ -274,14 +274,19 @@ main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre, main.pag
   align-items: center;
   gap: 12px;
 }
-main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre.CURRENT, main.page_jeu .section_game .banniere .conteneur_bannière .tourTigre.CURRENT {
-  opacity: 1;
-  color: var(--couleurTexte);
-  border: 3px solid var(--couleurCursor);
-}
 main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre .icon_tour, main.page_jeu .section_game .banniere .conteneur_bannière .tourTigre .icon_tour {
   width: auto;
   height: 90%;
+}
+main.page_jeu .section_game .banniere .conteneur_bannière .tourChevre.CURRENT {
+  opacity: 1;
+  color: var(--couleurTexte);
+  border: 3px solid var(--couleurProie);
+}
+main.page_jeu .section_game .banniere .conteneur_bannière .tourTigre.CURRENT {
+  opacity: 1;
+  color: var(--couleurTexte);
+  border: 3px solid var(--couleurPredateur);
 }
 main.page_jeu .section_game .scoreBoard {
   width: 800px;
@@ -331,8 +336,12 @@ main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves .liste {
   max-height: 20px;
 }
 main.page_jeu .section_game .scoreBoard .indiquateur_chevres_reserves .liste img {
+  width: 10%;
+  height: 10%;
   max-width: 10%;
   max-height: 20px;
+  background-color: var(--couleurProie);
+  border-radius: 15px;
 }
 @media (min-width: 1000px) {
   main.page_jeu .section_game .scoreBoard {
