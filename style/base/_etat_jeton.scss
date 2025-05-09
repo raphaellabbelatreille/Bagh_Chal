@@ -90,7 +90,9 @@
     
     
     &:hover {
+        
         .behind {
+            cursor: pointer;
             background:rgba(255,255,255,1);
             img, .texte {
                 transition: mask-position 2s ease,-webkit-mask-position 2s ease;

@@ -799,6 +799,7 @@ main.page_instruction .containeur_animaux .section_tigre {
   color: rgba(0, 0, 0, 0.7);
 }
 .jeton:hover .behind {
+  cursor: pointer;
   background: rgb(255, 255, 255);
 }
 .jeton:hover .behind img, .jeton:hover .behind .texte {
